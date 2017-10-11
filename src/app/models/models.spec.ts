@@ -8,12 +8,14 @@ import User from './User';
 import {expect} from "chai";
 
 describe('models.spec.ts', () => {
-    let contact = new Contact( 
-        'unNom'
+    let contact = new Contact(
+        1
+        ,'unNom'
         , 'unPrenom'
         , ['senior', 'cardilogue']
         , new Coordonne(
-            'rue de la fontaine'
+            1
+            ,'rue de la fontaine'
             , 69000
             , 'Lyon'
             , '04 45 54 45 54'
