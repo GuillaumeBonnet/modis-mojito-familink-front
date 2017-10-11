@@ -3,7 +3,7 @@ export default class Coordonne {
                 , public adresse:String
                 , public codePostal:number
                 , public ville:String
-                , public telNumber:String
+                , public phone:String
                 , public email:String) {
     }
 
