@@ -1,26 +1,110 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="create-contact.component.css"  />
+   <meta name="viewport" content="width=device-width">
+   <link rel="stylesheet" href="../../assets/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"  />
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <title>Familink | Création contact</title>
+</head>
+
 <p>
   create-contact works!
 </p>
 
-<div class="formulairecontact">
-  <form method="get" action="" class="formulaire">
-    <label name="email">email</label>
-    <input type="text" name="email" value="Saisir un mail" >
-    <label name="nom">nom</label>
-    <input type="text" name="nom" value="Saisir un nom">
-    <label name="prenom">prenom</label>
-    <input type="text" name="prenom" value="Saisir un prénom">
-    <label name="profil">profil</label>
-    <select id="profil">
-      <option value="S" name="senior">Senior</option>
-      <option value="M" name="medecin">Medecin</option>
-      <option value="F" name="famille">Famille</option>
-    </select>
-    <label name="gravatar">gravatar</label>
-    <input type="text" name="gravatar" value="Saisir gravatar">
-    <input type="text" name="codepostal" value="Saisir saisir code postal">
-    <input type="text" name="ville" value="Saisir ville">
-    <input type="text" name="tel" value="Saisir téléphone">
-    <input type="submit" value="Valider" class="validation">
-  </form>
+<div class="container">
+  <div class="BLOCK__Center">
+    <h1> Créer un User</h1>
+        <div class="formulairecontact">
+
+      <form method="post" action="" class="formulaire">
+        <div class ="BLOCK__Middleform">
+          <div class="BLOCK_Leftform">
+        <div class="BLOCK__Form">
+          <div class="BLOCK__Field">
+            <label name="email">email</label>
+              <div class="BLOCK__Input">
+                <input type="text" name="email" placeholder="Saisir un mail" >
+              </div>
+          </div>
+        </div>
+
+        <div class="BLOCK__Form">
+          <div class="BLOCK__Field">
+            <label name="nom">nom</label>
+            <div class="BLOCK__Input">
+              <input type="text" name="nom" placeholder="Saisir un nom">
+            </div>
+          </div>
+        </div>
+
+          <div class="BLOCK__Form">
+            <div class="BLOCK__Field">
+              <label name="prenom">prenom</label>
+              <div class="BLOCK__Input">
+                   <input type="text" name="prenom" placeholder="Saisir un prénom">
+              </div>
+            </div>
+        </div>
+
+
+        <div class="BLOCK__Form">
+          <div class="BLOCK__Field">
+           <label name="profil">profil </label>
+           <select id="profil" placeholder="Profil">
+             <option value="S" name="senior">Senior</option>
+             <option value="M" name="medecin">Medecin</option>
+             <option value="F" name="famille">Famille</option>
+           </select>
+          </div>
+        </div>
+          </div>
+          <div class="BLOCK_Rightform">
+        <div class="BLOCK__Form">
+          <div class="BLOCK__Field">
+           <label name="gravatar">gravatar</label>
+            <div class="BLOCK__Input">
+              <input type="text" name="gravatar" placeholder="Saisir gravatar">
+            </div>
+          </div>
+        </div>
+
+        <div class="BLOCK__Form">
+           <label name="codepostal">Code postal</label>
+          <div class="BLOCK__Input">
+             <input type="text" name="codepostal" placeholder="Saisir saisir code postal">
+          </div>
+        </div>
+
+        <div class="BLOCK__Form">
+          <div class="BLOCK__Field">
+             <label name="ville">Ville</label>
+              <div class="BLOCK__Input">
+                <input type="text" name="ville" placeholder="Saisir ville">
+            </div>
+          </div>
+        </div>
+
+        <div class="BLOCK__Form">
+          <div class="BLOCK__Field">
+           <label name="telephone">Téléphone</label>
+            <div class="BLOCK__Input">
+                <input type="text" name="tel" placeholder="Saisir téléphone">
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="BLOCK__Form">
+          <div class="BLOCK__Field">
+            <div class="BLOCK__Input">
+              <input type="submit" placeholder="Valider" class="validation">
+            </div>
+          </div>
+        </div>
+
+         </form>
+        </div>
+    </div>
+</div>
+
 </div>

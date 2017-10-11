@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  font-family:Arial;
+}
+
+
+h1 {
+  color: white;
+  }
+
+body {
+  margin: 0;
+  height:100%;
+}
+
+
+img {
+  max-width: 100%;
+}
+
+form {
+  display:block;
+
+}
+
+input {
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+.BLOCK__Form{
+
+  margin-bottom: 15px;
+}
+
+.BLOCK__Field {
+  display: inline-block;
+}
+
+label{
+  margin-bottom: 15px;
+}
+
+.BLOCK__Input {
+  height: auto!important;
+  padding: 8px 12px !important;
+  display: inline-block;
+
+}
+
+.BLOCK__Input input{
+  background-color:rgba(5,5,5,0.4);
+  border-radius:6px;
+  border:0;
+  height:30px;
+  text-align:left;
+  color:rgba(255,255,255,.8);
+
+}
+
+.BLOCK__Middleform {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+.BLOCK__Center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 10px 40px;
+  background:#A43222;
+  color: #FFF;
+  text-shadow: none;
+   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+  border-radius:15px;
+
+}
+
+/*.formulairecontact{
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.formulairecontact fieldset{
+  border: none;
+}
+
+.formulairecontact label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+*/
