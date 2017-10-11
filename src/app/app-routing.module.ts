@@ -24,15 +24,16 @@ const routes: Routes = [
   { path: 'create-user', component: CreateUserComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reinitialize-password', component: ReinitializePasswordComponent },
-  { path: 'edit-user', component: EditUserComponent }, //TODO: pas accessible si pas token
+  { path: 'edit-user', component: EditUserComponent }, //TODO: pas accessible si pas token,
+  { path: PATH_GROUP, component: ChooseGroupComponent },
 
   {
-    path: PATH_GROUP,
+    path: PATH_GROUP + '/:groupId',
     component : ListContactComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo:  PATH_CONTACT + ':contactId'},
+      { path: '', pathMatch: 'full', redirectTo: PATH_CONTACT + '/1'},// TODO change '1'
+      { path: PATH_CONTACT + '/create-contact', component: CreateContactComponent },      
       { path: PATH_CONTACT + '/:contactId', component: ContactInfoComponent },
-      { path: PATH_CONTACT + '/create-contact', component: CreateContactComponent },
       { path: PATH_CONTACT + '/:contactId' + '/edit-contact', component: EditContactComponent }
       
     ]
