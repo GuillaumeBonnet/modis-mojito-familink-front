@@ -1,0 +1,10 @@
+<p>
+  list-contact works!
+</p>
+
+<!-- <a [routerLink]="" routerLinkActive="active">groups-id</a> -->
+<a [routerLink]="['contacts', 1]" routerLinkActive="active">contact-info</a>
+<a [routerLink]="['contacts', 'create-contact']" routerLinkActive="active">create-contact</a>
+<a routerLink="contacts/1/edit-contact" routerLinkActive="active">edit-contact</a>
+
+<router-outlet></router-outlet>

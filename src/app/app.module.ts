@@ -8,14 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { NewPasswordComponent } from './new-password/new-password.component';
-import { CreateGroupComponent } from './create-group/create-group.component';
-import { ChooseGroupComponent } from './choose-group/choose-group.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { CreateContactComponent } from './create-contact/create-contact.component';
-import { ContactsInfoComponent } from './contacts-info/contacts-info.component';
 
 import { AppRoutingModule }     from './app-routing.module';
+import { EditContactComponent } from './edit-contact/edit-contact.component';
+import { ListContactComponent } from './list-contact/list-contact.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { ReinitializePasswordComponent } from './reinitialize-password/reinitialize-password.component';
+import { ListeGroupComponent } from './liste-group/liste-group.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,14 @@ import { AppRoutingModule }     from './app-routing.module';
     LoginComponent,
     CreateUserComponent,
     ForgotPasswordComponent,
-    NewPasswordComponent,
-    CreateGroupComponent,
-    ChooseGroupComponent,
+    ReinitializePasswordComponent,
     EditUserComponent,
     CreateContactComponent,
-    ContactsInfoComponent
+    EditContactComponent,
+    ListContactComponent,
+    ContactInfoComponent,
+    ListeGroupComponent,
+    
   ],
   imports: [
     BrowserModule,
