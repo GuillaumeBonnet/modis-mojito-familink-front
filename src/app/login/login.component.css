@@ -10,13 +10,17 @@ body {
   height:100%;
 }
 
+a {
+  color: white;
+}
+
 
 img {
   max-width: 100%;
 }
 
 .headerblock {
-  background-color: #6f2ca4;
+  background-color: #009688;;
   color:white;
   text-align:center;
 }

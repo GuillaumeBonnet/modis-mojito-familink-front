@@ -1,3 +1,153 @@
 <p>
   create-user works!
 </p>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="create-user.component.css"  />
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../assets/font-awesome-4.7.0/css/font-awesome.min.css"  />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <title>Familink | Création user</title>
+</head>
+
+<div class="container">
+  <div class="BLOCK__Center">
+    <h1> Créer un user</h1>
+    <div class="formulaireuser">
+
+      <form method="post" action="" class="formulaire">
+        <div class ="BLOCK__Middleform">
+          <div class="BLOCK_Leftform">
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="email">
+                  <i class="fa fa-envelope" aria-hidden="true"></i> email
+                </label>
+                <div class="BLOCK__Input">
+
+                  <input type="text" name="email" placeholder="Saisir un mail" >
+                </div>
+              </div>
+            </div>
+
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="password">
+                  <i class="fa fa-unlock" aria-hidden="true"></i> password
+                </label>
+                <div class="BLOCK__Input">
+                  <input type="text" name="password" placeholder="Saisir password">
+                </div>
+              </div>
+            </div>
+
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="password">
+                  <i class="fa fa-unlock" aria-hidden="true"></i> confirm password
+                </label>
+                <div class="BLOCK__Input">
+                  <input type="text" name="password2" placeholder="Confirmer le password" >
+                </div>
+              </div>
+            </div>
+
+
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="nom">
+                  <i class="fa fa-user" aria-hidden="true"></i> nom
+                </label>
+                <div class="BLOCK__Input">
+                  <input type="text" name="nom" placeholder="Saisir un nom">
+                </div>
+              </div>
+            </div>
+
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="prenom"> <i class="fa fa-user" aria-hidden="true"></i>
+                  prenom</label>
+                <div class="BLOCK__Input">
+                  <input type="text" name="prenom" placeholder="Saisir un prénom">
+                </div>
+              </div>
+            </div>
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="profil">
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                  profil
+                </label>
+                <div class="BLOC__Select">
+                  <select id="profil" placeholder="Profil" name="profil">
+                    <option value="S" name="senior">Senior</option>
+                    <option value="M" name="medecin">Medecin</option>
+                    <option value="F" name="famille">Famille</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="BLOCK_Rightform">
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i>
+                  gravatar
+                </label>
+                <div class="BLOCK__Input">
+                  <input type="text" name="gravatar" placeholder="Saisir gravatar">
+                </div>
+              </div>
+            </div>
+
+            <div class="BLOCK__Form">
+              <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                code postal</label>
+              <div class="BLOCK__Input">
+                <input type="text" name="codepostal" placeholder="Saisir code postal">
+              </div>
+            </div>
+
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  ville
+                </label>
+                <div class="BLOCK__Input">
+                  <input type="text" name="ville" placeholder="Saisir ville">
+                </div>
+              </div>
+            </div>
+
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="telephone">
+                  <i class="fa fa-phone" aria-hidden="true"></i> téléphone
+                </label>
+                <div class="BLOCK__Input">
+                  <input type="text" name="tel" placeholder="Saisir téléphone">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="BLOCK__Footerform">
+          <div class="BLOCK__Form">
+            <div class="BLOCK__Field">
+              <div class="BLOCK__Input">
+                <input type="submit" value="Valider" class="validation">
+                <input type="submit" value="Annuler" class="validation">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
