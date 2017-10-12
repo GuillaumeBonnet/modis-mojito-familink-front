@@ -23,13 +23,48 @@ export class ApiRequestService {
   constructor(private http: HttpClient) { }
     //GROUPS : =======================================================================================================
     getGroups(): Observable<any> {
-        return this.http.get(this.apiUrl + '/groups/');
+        return this.http.get(this.apiUrl + '/groups/')
+        .map((elem:any) => 
+        new Contact(
+                elem.id
+                , elem.group
+                , elem.nom
+                , elem.prenom
+                , elem.profil
+                , new Coordonne(
+                        elem.coordonnees.id
+                        ,elem.coordonnees.adresse
+                        , elem.coordonnees.codePostal
+                        , elem.coordonnees.ville
+                        , elem.coordonnees.phone
+                        , elem.coordonnees.email
+                                )
+              , elem.gravatar)
+);
     }
 
     //CONTACTS : =======================================================================================================
   getContacts(idGroup:number): Observable<any> {
-    return this.http.get(this.apiUrl + '/groups/' + idGroup + '/contacts');
-    //return this.http.get(this.apiUrl +  '/contacts');
+    return this.http.get(this.apiUrl + '/groups/' + idGroup + '/contacts')
+            // .map((elem:any) => 
+            //           new Contact(
+            //                   elem.id
+            //                   , elem.group
+            //                   , elem.nom
+            //                   , elem.prenom
+            //                   , elem.profil
+            //                   , new Coordonne(
+            //                           elem.coordonnees.id
+            //                           ,elem.coordonnees.adresse
+            //                           , elem.coordonnees.codePostal
+            //                           , elem.coordonnees.ville
+            //                           , elem.coordonnees.phone
+            //                           , elem.coordonnees.email
+            //                                   )
+            //                 , elem.gravatar)
+            // )
+            ;
+    
   }
 
   postContact(idGroup:number, contact:Contact): Observable<any> {

@@ -37,10 +37,28 @@ import User from '../models/User';
   
     fit('should parse instances of contacts', inject([ApiRequestService], (service: ApiRequestService) => {
 
+      var tabContact:Array<Contact> = [];
       //expect("a").toBe("guillaumeBonnet");
        return service.getContacts(9).toPromise()
         .then((result) => {
           console.log('=====tableau de contacto', result, '=====tableau de contact');
+          // tabContact = result 
+          //   .map(elem => new Contact(
+          //       elem.id
+          //       , elem.group
+          //       , elem.nom
+          //       , elem.prenom
+          //       , elem.profil
+          //       , new Coordonne(
+          //               elem.coordonnees.id
+          //               ,elem.coordonnees.adresse
+          //               , elem.coordonnees.codePostal
+          //               , elem.coordonnees.ville
+          //               , elem.coordonnees.phone
+          //               , elem.coordonnees.email
+          //                       )
+          //       , elem.gravatar));
+          // console.log('tabContact : ', tabContact);
           return expect("a").toBe("guillaumeBonnet")
         })
         // .subscribe((result:any) => {
