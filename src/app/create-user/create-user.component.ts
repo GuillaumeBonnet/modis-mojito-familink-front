@@ -7,7 +7,7 @@ import Contact from "../models/Contact";
 @Component({
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
-  styleUrls: ['./create-user.component.css']
+  styleUrls: ['./create-user.component.css', '../../assets/font-awesome-4.7.0/css/font-awesome.min.css']
 })
 export class CreateUserComponent implements OnInit {
 
