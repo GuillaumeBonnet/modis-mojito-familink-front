@@ -1,4 +1,5 @@
 import Coordonnees from './Coordonnees';
+
 import Group from './Group'
 
 export default class Contact {

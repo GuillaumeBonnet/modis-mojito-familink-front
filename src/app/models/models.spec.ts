@@ -1,6 +1,8 @@
 import Contact from './Contact';
 import Conversation from './Conversation';
+
 import Coordonnees from './Coordonnees';
+
 import Group from './Group';
 import Message from './Message';
 import User from './User';
@@ -15,6 +17,7 @@ describe('models.spec.ts', () => {
         , 'unPrenom'
         , ['senior', 'cardilogue']
         , new Coordonnees(
+
             1
             ,'rue de la fontaine'
             , 69000
