@@ -25,24 +25,7 @@ export class ApiRequestService {
 
     //GROUPS : =======================================================================================================
     getGroups(): Observable<any> {
-        return this.http.get(this.apiUrl + '/groups')
-        .map((elem:any) => 
-            new Contact(
-                    elem.id,
-                    elem.group
-                    , elem.nom
-                    , elem.prenom
-                    , elem.profil
-                    , new Coordonnees(
-                            elem.coordonnees.id
-                            ,elem.coordonnees.adresse
-                            , elem.coordonnees.codePostal
-                            , elem.coordonnees.ville
-                            , elem.coordonnees.phone
-                            , elem.coordonnees.email
-                                    )
-                  , elem.gravatar)
-          );
+        return this.http.get(this.apiUrl + '/groups' + '/');         
     }
 
     //CONTACTS : =======================================================================================================
