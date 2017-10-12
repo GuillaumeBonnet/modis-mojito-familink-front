@@ -35,7 +35,7 @@ import User from '../models/User';
     //   expect("a").toBe("b");
     // }));
   
-    it('should parse instances of contacts', inject([ApiRequestService], (service: ApiRequestService) => {
+    fit('should parse instances of contacts', inject([ApiRequestService], (service: ApiRequestService) => {
 
       //expect("a").toBe("guillaumeBonnet");
        return service.getContacts(9).toPromise()
@@ -56,7 +56,7 @@ import User from '../models/User';
         // });
     }));
 
-    fit('should post a contact in DB', inject([ApiRequestService], (service: ApiRequestService) => {
+    it('should post a contact in DB', inject([ApiRequestService], (service: ApiRequestService) => {
       
              return service.postContact(
                 9
