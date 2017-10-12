@@ -10,6 +10,7 @@ import {expect} from "chai";
 describe('models.spec.ts', () => {
     let contact = new Contact(
         1
+        , null
         ,'unNom'
         , 'unPrenom'
         , ['senior', 'cardilogue']
