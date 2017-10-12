@@ -17,13 +17,13 @@ import User from '../models/User';
 export class ApiRequestService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private apiUrl = 'http://localhost:8080/atelier/mvc/';  // URL to web api
+  private apiUrl = 'http://localhost:8080/atelier/mvc';  // URL to web api
   //private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
     //GROUPS : =======================================================================================================
     getGroups(): Observable<any> {
-        return this.http.get(this.apiUrl + '/groups/')
+        return this.http.get(this.apiUrl + '/groups')
         .map((elem:any) => 
         new Contact(
                 elem.id
@@ -45,7 +45,7 @@ export class ApiRequestService {
 
     //CONTACTS : =======================================================================================================
   getContacts(idGroup:number): Observable<any> {
-    return this.http.get(this.apiUrl + '/groups/' + idGroup + '/contacts')
+    return this.http.get(this.apiUrl + '/groups' + '/' +  idGroup + '/contacts')
             // .map((elem:any) => 
             //           new Contact(
             //                   elem.id
@@ -68,7 +68,7 @@ export class ApiRequestService {
   }
 
   postContact(idGroup:number, contact:Contact): Observable<any> {
-      return this.http.post(this.apiUrl + '/groups' + idGroup + '/contact' , contact);
+      return this.http.post(this.apiUrl + '/groups' + '/' + idGroup + '/contact' , contact);
   }
 
 

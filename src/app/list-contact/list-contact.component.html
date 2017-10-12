@@ -6,7 +6,11 @@
 <a routerLink="contacts/1/edit-contact" routerLinkActive="active">edit-contact</a>
 
 <div>
-  <button (click) = "handleClick()">consoleLogContactHTTP</button>
+  <button (click) = "handleClickGet()">consoleLogContactHTTPget</button>
+</div>
+
+<div>
+  <button (click) = "handleClickPost()">consoleLogContactHTTPpost</button>
 </div>
 
 <router-outlet></router-outlet>

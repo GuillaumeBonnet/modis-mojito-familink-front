@@ -63,6 +63,7 @@ export class ListContactComponent implements OnInit {
                         , elem.gravatar)
         ) 
           console.log(this.listeContact, 'dans subscribse');
+          this.listeContact = result as Contact[]
           }
         , (error) => console.log(error, "une erruer")
         , () => console.log("unsubscribe")
@@ -70,8 +71,34 @@ export class ListContactComponent implements OnInit {
     
   }
 
-  handleClick() {
+  handleClickGet() {
     console.log('liste :', this.listeContact);
+  }
+
+  handleClickPost() {
+    let contact = new Contact(
+      1
+      , null
+      ,'unNom'
+      , 'unPrenom'
+      , ['senior', 'cardilogue']
+      , new Coordonne(
+          1
+          ,'rue de la fontaine'
+          , 69000
+          , 'Lyon'
+          , '04 45 54 45 54'
+          , 'unEmail@unDomaine.com'
+      )
+      , 'https://drafthouse.com/assets/img/victory-red.png'
+  );
+
+    this.apiRequestService.postContact(9, contact).subscribe(
+        (result) => console.log("dans sub post result:", result)
+        , (erreur) => console.log("dans sub post error:", erreur)
+        , () => console.log("dans sub post unsub:")
+    );
+    
   }
 
 }
