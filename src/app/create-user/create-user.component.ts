@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+
+
 
 @Component({
   selector: 'app-create-user',
@@ -7,9 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateUserComponent implements OnInit {
 
-  constructor() { }
+
+
+  emailCtrl : FormControl;
+  private passwordCtrl:FormControl;
+  private password2Ctrl:FormControl;
+  private nomCtrl:FormControl;
+  private prenomCtrl:FormControl;
+  private profilCtrl:FormControl;
+  private gravatarCtrl:FormControl;
+  private codepostalCtrl:FormControl;
+  private villeCtrl:FormControl;
+  private telephoneCtrl:FormControl;
+  userForm : FormGroup;
+
+  constructor(fb: FormBuilder) {
+
+    this.userForm = fb.group({
+
+      email : this.emailCtrl,
+      password : this.passwordCtrl,
+      password2 : this.password2Ctrl,
+      nom : this.nomCtrl,
+      prenom : this.prenomCtrl,
+      profil : this.profilCtrl,
+      gravatar : this.gravatarCtrl,
+      codepostal : this.codepostalCtrl,
+      ville : this.villeCtrl,
+      telephone : this.telephoneCtrl
+    });
+  }
 
   ngOnInit() {
+  }
+
+  handleSubmit (value) {
+    console.log (this.userForm.value);
   }
 
 }
