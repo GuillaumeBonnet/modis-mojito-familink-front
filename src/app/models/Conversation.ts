@@ -1,4 +1,4 @@
-import User from './Utilisateur';
+import User from './User';
 import Message from './Message';
 
 export default class Conversation {

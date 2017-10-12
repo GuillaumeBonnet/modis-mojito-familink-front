@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiRequestService } from "../services/apiRequests.service";
 
 import Contact from "../models/Contact";
-import Coordonne from "../models/Coordonne";
+import Coordonnees from "../models/Coordonnees";
 
 
 @Component({
@@ -44,15 +44,15 @@ export class ListContactComponent implements OnInit {
 
 
 
-    this.apiRequestService.getContacts(9).subscribe(
+    this.apiRequestService.getContacts(2).subscribe(
         (result: Array<Contact>) => { this.listeContact = result.map((elem:any) => 
                   new Contact(
-                          elem.id
-                          , elem.group
+                          elem.id,
+                           elem.group
                           , elem.nom
                           , elem.prenom
                           , elem.profil
-                          , new Coordonne(
+                          , new Coordonnees(
                                   elem.coordonnees.id
                                   ,elem.coordonnees.adresse
                                   , elem.coordonnees.codePostal
@@ -77,12 +77,12 @@ export class ListContactComponent implements OnInit {
 
   handleClickPost() {
     let contact = new Contact(
-      1
-      , null
+      null,
+       null
       ,'unNom'
       , 'unPrenom'
-      , ['senior', 'cardilogue']
-      , new Coordonne(
+      , null//'senior'
+      , new Coordonnees(
           1
           ,'rue de la fontaine'
           , 69000

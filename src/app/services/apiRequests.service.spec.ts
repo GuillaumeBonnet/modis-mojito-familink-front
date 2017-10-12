@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 
 import Contact from '../models/Contact';
 import Conversation from '../models/Conversation';
-import Coordonne from '../models/Coordonne';
+import Coordonnees from '../models/Coordonnees';
 import Group from '../models/Group';
 import Message from '../models/Message';
 import User from '../models/User';
@@ -84,7 +84,7 @@ import User from '../models/User';
                     , "Glover"
                     , "Donald"
                     , ["god", "singer", "actor"]
-                    , new Coordonne(4, "ici", 6900, "Lyon", "04 78 87 94 11", "toto@geronimo.com")
+                    , new Coordonnees(4, "ici", 6900, "Lyon", "04 78 87 94 11", "toto@geronimo.com")
                     , "gravatar1"))
                 .subscribe( 
                       (result) => console.log(result, "postResult")
