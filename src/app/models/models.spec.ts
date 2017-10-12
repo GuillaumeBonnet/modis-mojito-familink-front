@@ -1,6 +1,8 @@
 import Contact from './Contact';
 import Conversation from './Conversation';
-import Coordonne from './Coordonne';
+
+import Coordonnees from './Coordonnees';
+
 import Group from './Group';
 import Message from './Message';
 import User from './User';
@@ -14,7 +16,8 @@ describe('models.spec.ts', () => {
         ,'unNom'
         , 'unPrenom'
         , ['senior', 'cardilogue']
-        , new Coordonne(
+        , new Coordonnees(
+
             1
             ,'rue de la fontaine'
             , 69000
@@ -29,7 +32,7 @@ describe('models.spec.ts', () => {
             
             
             expect(contact).to.be.an.instanceOf(Contact);
-            expect(contact.coordonne).to.be.an.instanceOf(Coordonne);
+            expect(contact.coordonne).to.be.an.instanceOf(Coordonnees);
             expect(contact.coordonne.ville).to.equal('Lyon');
         })
     })
