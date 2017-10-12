@@ -3,7 +3,6 @@
   font-family:Arial;
 }
 
-
 h1 {
   color: white;
   text-align: center;
@@ -13,11 +12,9 @@ body {
   margin: 0;
   height:100%;
   background-repeat: no-repeat;
-  /*background:url(https://hdwallpapersbuzz.com/wp-content/uploads/2017/04/red-wallpaper-hd-images-15.jpg);*/
+
 
 }
-
-
 
 img {
   max-width: 100%;
@@ -33,7 +30,7 @@ input {
   padding-top: 3px;
 }
 .container {
-  background:url(http://worldofdtcmarketing.com/wp-content/uploads/2015/04/Istock-Seniors-at-Computer.jpg);
+  background-image: url("../../assets/Images/Istock-Seniors-at-Computer.jpg");
 
 }
 .BLOCK__Form{
@@ -98,14 +95,15 @@ label{
   padding-left:5px;
 }
 
-.BLOCK__Input .validation {
-
-  background-color:rgba(255, 255, 255, 0.06);
+.BLOCK__Input button {
+  background-color:darkorange;
   border:1px solid;
   border-color:white;
   color:rgba(255,255,255,.8);
   width: 145px;
   text-align: center;
+  border-radius:6px;
+
 }
 
 .BLOCK__Middleform {

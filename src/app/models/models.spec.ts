@@ -3,15 +3,12 @@ import Conversation from './Conversation';
 import Coordonne from './Coordonne';
 import Group from './Group';
 import Message from './Message';
-import User from './Utilisateur';
+import User from './user';
 
 import {expect} from "chai";
 
 describe('models.spec.ts', () => {
-    let contact = new Contact(
-        1
-        ,'unNom'
-        , 'unPrenom'
+    let contact = new Contact(1,'unNom' , 'unPrenom'
         , ['senior', 'cardilogue']
         , new Coordonne(
             1

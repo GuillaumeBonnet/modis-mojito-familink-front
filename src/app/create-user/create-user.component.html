@@ -3,8 +3,7 @@
 </p>
 
 
-  <title>Familink | Création user</title>
-
+<title>Familink | Création user</title>
 
 <div class="container">
   <div class="BLOCK__Center">
@@ -13,6 +12,8 @@
      <!-- Formulaire creation User -->
       <form (ngSubmit)="handleSubmit()"  class="formulaire" [formGroup]="userForm">
         <div class ="BLOCK__Middleform">
+
+          <!-- Formulaire Partie gauche -->
           <div class="BLOCK_Leftform">
             <div class="BLOCK__Form">
               <!-- champ Email -->
@@ -36,7 +37,6 @@
                 </div>
               </div>
             </div>
-
             <div class="BLOCK__Form">
               <div class="BLOCK__Field">
                 <label name="password">
@@ -69,21 +69,8 @@
                 </div>
               </div>
             </div>
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-                <label name="profil">
-                  <i class="fa fa-users" aria-hidden="true"></i>
-                  profil
-                </label>
-                <div class="BLOC__Select">
-                  <select formControlName="profil" id="profil" placeholder="Profil" name="profil" ngModel>
-                    <option value="S" name="senior">Senior</option>
-                    <option value="M" name="medecin">Medecin</option>
-                    <option value="F" name="famille">Famille</option>
-                  </select>
-                </div>
-              </div>
-            </div>
+            <!-- Formulaire Partie droite -->
+
           </div>
           <div class="BLOCK_Rightform">
             <div class="BLOCK__Form">
@@ -123,6 +110,21 @@
                 </label>
                 <div class="BLOCK__Input">
                   <input formControlName="telephone" type="text" name="tel" placeholder="Saisir téléphone" ngModel>
+                </div>
+              </div>
+            </div>
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="profil">
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                  profil
+                </label>
+                <div class="BLOC__Select">
+                  <select formControlName="profil" id="profil" placeholder="Profil" name="profil" ngModel>
+                    <option value="S" name="senior">Senior</option>
+                    <option value="M" name="medecin">Medecin</option>
+                    <option value="F" name="famille">Famille</option>
+                  </select>
                 </div>
               </div>
             </div>
