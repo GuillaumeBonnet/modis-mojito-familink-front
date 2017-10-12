@@ -8,7 +8,7 @@ export default class Contact {
                 , public nom:String
                 , public prenom:String
                 , public profil:Array<String>
-                , public coordonne:Coordonnees
+                , public coordonnees:Coordonnees
                 , public gravatar: String) {
     }
 
