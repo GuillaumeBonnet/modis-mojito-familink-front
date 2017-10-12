@@ -1,0 +1,118 @@
+{
+  box-sizing: border-box;
+  font-family:Arial;
+}
+
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  height:100%;
+  background-repeat: no-repeat;
+  /*background:url(https://hdwallpapersbuzz.com/wp-content/uploads/2017/04/red-wallpaper-hd-images-15.jpg);*/
+
+}
+
+
+
+img {
+  max-width: 100%;
+}
+
+form {
+  display:block;
+
+}
+
+input {
+  font-size: 12px;
+  padding-top: 3px;
+}
+.container {
+  background:url(http://worldofdtcmarketing.com/wp-content/uploads/2015/04/Istock-Seniors-at-Computer.jpg);
+
+}
+.BLOCK__Form{
+
+  margin-bottom: 15px;
+}
+
+.BLOCK__Field {
+  display: inline-block;
+}
+
+label{
+  margin-bottom: 15px;
+}
+
+.BLOCK__Center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 10px 40px;
+  background:#009688;
+  color: #FFF;
+  text-shadow: none;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+  border-radius:15px;
+
+
+}
+.BLOCK__Center:hover {
+  opacity: 0.7;
+
+}
+
+.BLOCK__Input {
+  height: auto!important;
+  padding: 8px 12px !important;
+  display: inline-block;
+
+}
+
+.BLOCK__Input input {
+  background-color:rgba(5,5,5,0.4);
+  border-radius:6px;
+  border:0;
+  height:30px;
+  color:rgba(255,255,255,.8);
+  padding-left:5px;
+
+}
+
+.BLOC__Select select {
+  background-color:rgba(5,5,5,0.4);
+  border-radius:6px;
+  border:0;
+  height:30px;
+  text-align:left;
+  color:rgba(255,255,255,.8);
+  width: 90px;
+  margin-top: 9px;
+  margin-left:10px;
+  padding-left:5px;
+}
+
+.BLOCK__Input .validation {
+
+  background-color:rgba(255, 255, 255, 0.06);
+  border:1px solid;
+  border-color:white;
+  color:rgba(255,255,255,.8);
+  width: 145px;
+  text-align: center;
+}
+
+.BLOCK__Middleform {
+  display:flex;
+  justify-content: space-between;
+  margin-bottom:25px;
+}
+
+.BLOCK__Footerform {
+
+}
