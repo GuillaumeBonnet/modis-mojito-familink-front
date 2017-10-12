@@ -1,4 +1,4 @@
-import Coordonne from './Coordonne';
+import Coordonnees from './Coordonnees';
 import Group from './Group'
 
 export default class Contact {
@@ -7,7 +7,7 @@ export default class Contact {
                 , public nom:String
                 , public prenom:String
                 , public profil:Array<String>
-                , public coordonne:Coordonne
+                , public coordonne:Coordonnees
                 , public gravatar: String) {
     }
 

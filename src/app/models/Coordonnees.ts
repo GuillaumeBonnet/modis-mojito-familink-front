@@ -1,4 +1,4 @@
-export default class Coordonne {
+export default class Coordonnees {
     constructor(  public id:number
                 , public adresse:String
                 , public codePostal:number
