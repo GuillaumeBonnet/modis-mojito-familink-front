@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-
+import User from '../models/user';
+import Contact from "../models/Contact";
 
 
 @Component({
@@ -23,6 +24,9 @@ export class CreateUserComponent implements OnInit {
   private villeCtrl:FormControl;
   private telephoneCtrl:FormControl;
   userForm : FormGroup;
+
+//contact : Contact = new Contact ('');
+  //user : User = new User();
 
   constructor(fb: FormBuilder) {
 
@@ -47,5 +51,11 @@ export class CreateUserComponent implements OnInit {
   handleSubmit (value) {
     console.log (this.userForm.value);
   }
+
+  handleClear() {  
+    this.emailCtrl.setValue('');     
+     
+  }
+
 
 }

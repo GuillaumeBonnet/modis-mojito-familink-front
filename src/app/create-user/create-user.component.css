@@ -60,11 +60,12 @@ label{
   text-shadow: none;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
   border-radius:15px;
-
-
-}
-.BLOCK__Center:hover {
   opacity: 0.7;
+}
+
+.BLOCK__Center:hover {
+  background:#009688;
+  opacity: 1;
 
 }
 
