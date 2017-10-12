@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule, ReactiveFormsModule}    from '@angular/forms';
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
 
@@ -17,6 +17,7 @@ import { ReinitializePasswordComponent } from './reinitialize-password/reinitial
 import { ListeGroupComponent } from './liste-group/liste-group.component';
 import { ApiRequestService } from './services/apiRequests.service';
 import { HttpClientModule } from '@angular/common/http';
+    
 
 
 
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ApiRequestService],
   bootstrap: [AppComponent]

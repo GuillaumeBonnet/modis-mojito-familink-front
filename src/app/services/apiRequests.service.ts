@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 import Contact from '../models/Contact';
 import Conversation from '../models/Conversation';
-import Coordonne from '../models/Coordonne';
+import Coordonnees from '../models/Coordonnees';
 import Group from '../models/Group';
 import Message from '../models/Message';
 import User from '../models/User';
@@ -31,7 +31,7 @@ export class ApiRequestService {
                 , elem.nom
                 , elem.prenom
                 , elem.profil
-                , new Coordonne(
+                , new Coordonnees(
                         elem.coordonnees.id
                         ,elem.coordonnees.adresse
                         , elem.coordonnees.codePostal
