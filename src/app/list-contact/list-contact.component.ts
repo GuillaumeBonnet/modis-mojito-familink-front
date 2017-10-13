@@ -43,7 +43,8 @@ export class ListContactComponent implements OnInit {
   }
 
   handleClickPost() {
-    this.contactCrudService.deleteElem();
+    this.apiRequestService.deleteContact(1, 3).subscribe();
+    //this.contactCrudService.deleteElem();
   //   let contact = new Contact(
   //     null,
   //      null
