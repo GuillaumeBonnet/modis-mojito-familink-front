@@ -7,8 +7,12 @@ export default class Contact {
                 , public group:Group
                 , public nom:String
                 , public prenom:String
-                , public profil:Array<String>
-                , public coordonnees:Coordonnees
+
+                , public profil:String
+                , public coordonne:Coordonnees
+
+                          
+
                 , public gravatar: String) {
     }
 
