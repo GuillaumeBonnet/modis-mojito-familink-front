@@ -50,13 +50,15 @@ export class ContactCrudService {
     }
   }
 
+  //update fonctionne mais retourne une erreur donc le tableau local n'est pas mis à jour
   updateContact(groupId: number, contact:Contact): void {
-    if(this.contactList.includes(contact) ) {
+    if(this.contactList.map(contact => contact.id).includes(contact.id) ) {
       this.apiRequestService.updateContact(groupId, contact).subscribe( 
-        (retour) => { this.contactList.splice(this.contactList.findIndex(elem => elem === contact), 1, contact); //NOT tested
+        (retour) => { this.contactList.splice(this.contactList.findIndex(elem => elem.id === contact.id), 1, contact);
                       this.subjectContactList.next(this.contactList);
         }
-        , (erreur) => console.log('contact-crud > deleteContact > subscribe > erreur:', erreur)
+        , (erreur) => { console.log('contact-crud > deleteContact > subscribe > erreur:', erreur);
+      }
         , () => console.log('contact-crud > deleteContact > subscribe > unsubscribe'));
     } else {
       throw Error("pas de contact à modifier");

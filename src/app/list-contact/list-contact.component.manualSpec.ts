@@ -8,8 +8,6 @@ import Contact from "../models/Contact";
 import Coordonnees from "../models/Coordonnees";
 
 
-//PAGE D'EXEMPLE D'UTILISATION DES SERVICES, SUPPRIMABLE PUISQUE CE CODE DE TESTE MANUEL EST COPIE DANS "list-contact.component.manualSpec.ts"
-
 @Component({
   selector: 'app-list-contact',
   templateUrl: './list-contact.component.html',
@@ -20,6 +18,8 @@ export class ListContactComponent implements OnInit {
 
   listeContact:any = [];
   groupId:number = 2;
+
+  //constructor() { }
   
   constructor(private apiRequestService: ApiRequestService
               , private contactCrudService: ContactCrudService) { }

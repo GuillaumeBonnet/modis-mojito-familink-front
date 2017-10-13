@@ -18,14 +18,17 @@ export class ApiRequestService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private apiUrl = 'http://localhost:8080/atelier/mvc';  // URL to web api
-  //private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
+    //PROFILS
+    getProfils(): Observable<any> {
+      return this.http.get(this.apiUrl + '/profils');       
+  }
 
 
     //GROUPS : =======================================================================================================
     getGroups(): Observable<any> {
-        this.http.request.arguments.add.headers.add()
+        //this.http.request.arguments.add.headers.add()
         return this.http.get(this.apiUrl + '/groups' + '/');         
     }
 
@@ -53,17 +56,11 @@ export class ApiRequestService {
 
   updateContact(idGroup:number, contact:Contact) {
     if(contact && contact.id) {
-      return this.http.put(this.apiUrl + '/groups' + '/' + idGroup + '/contacts' + '/' + contact.id, contact);
+      return this.http.put(this.apiUrl + '/groups' + '/' + idGroup + '/contact', contact);
+      //return this.http.put(this.apiUrl + '/groups' + '/' + idGroup + '/contacts' + '/' + contact.id, contact);
     } else {
       throw new Error('pas de contact ou pas d\'ID');
     }
     
-  }
-
-  //================================ERROR
-
-  private handleError(error: any): Promise<any> { //méthode appellée à l'endroit ou l'on subscribe un observable
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
   }
 }
