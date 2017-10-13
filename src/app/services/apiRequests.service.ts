@@ -41,7 +41,13 @@ export class ApiRequestService {
       return this.http.post(this.apiUrl + '/groups' + '/' + idGroup + '/contact' , contact);
   }
 
-  private handleError(error: any): Promise<any> { //méthodes appellée à l'endroit ou l'on subscribe un observable
+  deleteContact(idGroup:number, contactId:number) {
+    return this.http.delete(this.apiUrl + '/groups' + '/' + idGroup + '/contact' + '/' + contactId);
+  }
+
+
+
+  private handleError(error: any): Promise<any> { //méthode appellée à l'endroit ou l'on subscribe un observable
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }

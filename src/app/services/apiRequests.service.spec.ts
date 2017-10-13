@@ -7,7 +7,7 @@ import { ApiRequestService } from './apiRequests.service';
 
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
-//import { to} from 'jasmine';
+
 
 import Contact from '../models/Contact';
 import Conversation from '../models/Conversation';
