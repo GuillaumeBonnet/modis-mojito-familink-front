@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ApiRequestService } from "../services/apiRequests.service";
 import { ContactCrudService } from "../services/contact-crud.service";
+import * as _ from "lodash";
 
 import Contact from "../models/Contact";
 import Coordonnees from "../models/Coordonnees";
@@ -16,6 +17,7 @@ import Coordonnees from "../models/Coordonnees";
 export class ListContactComponent implements OnInit {
 
   listeContact:any = [];
+  groupId:number = 2;
 
   //constructor() { }
   
@@ -29,6 +31,7 @@ export class ListContactComponent implements OnInit {
           , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
           , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
 
+          this.contactCrudService.loadList(this.groupId);
 
     // this.contactCrudService.contactListObservable().subscribe(
     //     (retour) => this.listeContact = retour
@@ -38,36 +41,26 @@ export class ListContactComponent implements OnInit {
   }
 
   handleClickGet() {
-    this.contactCrudService.loadList(2);
-      //.then().catch();
+    this.contactCrudService.loadList(this.groupId);
+  }
+
+  handleClickDelete() {
+    console.log('list-contact > handleClickDelete > contact0=', this.listeContact[0]);
+    this.contactCrudService.deleteContact(this.groupId, this.listeContact[0]);
+  }
+
+  handleClickUpdate() {
+    let contact = _.clone(this.listeContact[0]);
+    contact.nom += 'Upd';
+    console.log('list-contact > handleClickUpdate > contact0=', contact);
+    this.contactCrudService.updateContact(this.groupId, contact);
   }
 
   handleClickPost() {
-    this.apiRequestService.deleteContact(1, 3).subscribe();
-    //this.contactCrudService.deleteElem();
-  //   let contact = new Contact(
-  //     null,
-  //      null
-  //     ,'unNom'
-  //     , 'unPrenom'
-  //     , null//'senior'
-  //     , new Coordonnees(
-  //         1
-  //         ,'rue de la fontaine'
-  //         , 69000
-  //         , 'Lyon'
-  //         , '04 45 54 45 54'
-  //         , 'unEmail@unDomaine.com'
-  //     )
-  //     , 'https://drafthouse.com/assets/img/victory-red.png'
-  // );
-
-  //   this.apiRequestService.postContact(9, contact).subscribe(
-  //       (result) => console.log("dans sub post result:", result)
-  //       , (erreur) => console.log("dans sub post error:", erreur)
-  //       , () => console.log("dans sub post unsub:")
-  //   );
-    
+    let contact = _.clone(this.listeContact[0]);
+    contact.nom += 'Pos';
+    console.log('list-contact > handleClickPost > contact0=', contact);
+    this.contactCrudService.postContact(this.groupId, contact);    
   }
 
 }

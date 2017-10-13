@@ -25,6 +25,7 @@ export class ApiRequestService {
 
     //GROUPS : =======================================================================================================
     getGroups(): Observable<any> {
+        this.http.request.arguments.add.headers.add()
         return this.http.get(this.apiUrl + '/groups' + '/');         
     }
 
@@ -41,11 +42,25 @@ export class ApiRequestService {
       return this.http.post(this.apiUrl + '/groups' + '/' + idGroup + '/contact' , contact);
   }
 
-  deleteContact(idGroup:number, contactId:number) {
-    return this.http.delete(this.apiUrl + '/groups' + '/' + idGroup + '/contact' + '/' + contactId);
+  deleteContact(idGroup:number, contact:Contact) {
+    if(contact && contact.id) {
+      return this.http.delete(this.apiUrl + '/groups' + '/' + idGroup + '/contacts' + '/' + contact.id);
+    } else {
+      throw new Error('pas de contact ou pas d\'ID');
+    }
+    
   }
 
+  updateContact(idGroup:number, contact:Contact) {
+    if(contact && contact.id) {
+      return this.http.put(this.apiUrl + '/groups' + '/' + idGroup + '/contacts' + '/' + contact.id, contact);
+    } else {
+      throw new Error('pas de contact ou pas d\'ID');
+    }
+    
+  }
 
+  //================================ERROR
 
   private handleError(error: any): Promise<any> { //méthode appellée à l'endroit ou l'on subscribe un observable
     console.error('An error occurred', error); // for demo purposes only
