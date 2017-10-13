@@ -25,10 +25,10 @@ export class CreateUserComponent implements OnInit {
   private telephoneCtrl:FormControl;
   userForm : FormGroup;
 
-//contact : Contact = new Contact ('');
-  //user : User = new User();
 
   constructor(fb: FormBuilder) {
+
+
 
     this.userForm = fb.group({
 

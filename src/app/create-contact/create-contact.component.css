@@ -40,10 +40,20 @@ input {
 
 .BLOCK__Field {
   display: inline-block;
+
 }
 
 label{
   margin-bottom: 15px;
+  font-size: 14px;
+}
+
+
+
+.errormessage {
+
+  font-size: 11px;
+  color: yellow;
 }
 
 .BLOCK__Center{

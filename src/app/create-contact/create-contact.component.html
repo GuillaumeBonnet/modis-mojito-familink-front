@@ -1,129 +1,145 @@
-<head>
-  <meta charset="utf-8">
+          <head>
+            <meta charset="utf-8">
+            <title>Familink | Création d'un contact</title>
+          </head>
 
+          <p>
+            create-contact works !
+          </p>
 
-  <title>Familink | Création contact</title>
-</head>
-
-<p>
-  create-contact works !
-</p>
-
-<div class="container">
-  <div class="BLOCK__Center">
-    <h1> Créer un contact</h1>
-        <div class="formulairecontact">
-
-      <form method="post" action="" class="formulaire">
-        <div class ="BLOCK__Middleform">
-          <div class="BLOCK_Leftform">
-        <div class="BLOCK__Form">
-          <div class="BLOCK__Field">
-            <label name="email">
-              <i class="fa fa-envelope" aria-hidden="true"></i> email
-            </label>
-              <div class="BLOCK__Input">
-
-                 <input type="text" name="email" placeholder="Saisir un mail" >
-              </div>
+          <div class="container">
+            <div class="BLOCK__Center">
+              <h1> Créer un contact</h1>
+                <div class="formulairecontact">
+                <!-- Formulaire creation Contact -->
+                        <form (ngSubmit) = "handleSubmit()" method="post" action="" class="formulaire" [formGroup]="contactForm">
+                          <div class ="BLOCK__Middleform">
+                 <!-- Formulaire Partie gauche -->
+                            <div class="BLOCK_Leftform">
+                              <div class="BLOCK__Form">
+                <!-- champ Email -->
+                              <div class="BLOCK__Field">
+                                  <label name="email">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i> email *
+                                  </label>
+                                  <div class="BLOCK__Input">
+                                      <input formControlName="email" type="text" name="email" placeholder="Saisir un mail" >
+                                      <div *ngIf="contactForm.get('email').dirty && contactForm.get('email').hasError('email')" class="errormessage">
+                                              Le champ email est invalide
+                                      </div>
+                                      <div *ngIf="emailCtrl.dirty && emailCtrl.hasError('required')" class="errormessage">
+                                              Le champ email doit être mentionné
+                                      </div>
+                                  </div>
+                            </div>
+                          </div>
+                 <!-- champ Nom -->
+                          <div class="BLOCK__Form">
+                            <div class="BLOCK__Field">
+                              <label name="nom">
+                                <i class="fa fa-user" aria-hidden="true"></i> nom *
+                              </label>
+                              <div class="BLOCK__Input">
+                                <input formControlName="nom" type="text" name="nom" placeholder="Saisir un nom">
+                                <div *ngIf="nomCtrl.dirty && nomCtrl.hasError('required')" class="errormessage">
+                                        Le champ nom doit être mentionné
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                 <!-- champ Prénom -->
+                              <div class="BLOCK__Form">
+                                <div class="BLOCK__Field">
+                                  <label name="prenom"> <i class="fa fa-user" aria-hidden="true"></i>
+                                    prenom *</label>
+                                  <div class="BLOCK__Input">
+                                       <input formControlName="prenom"  type="text" name="prenom" placeholder="Saisir un prénom">
+                                    <div *ngIf="prenomCtrl.dirty && prenomCtrl.hasError('required')" class="errormessage">
+                                            Le champ prénom doit être mentionné
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                 <!-- champ Profil -->
+                          <div class="BLOCK__Form">
+                            <div class="BLOCK__Field">
+                             <label name="profil">
+                               <i class="fa fa-users" aria-hidden="true"></i>
+                               profil *
+                             </label>
+                              <div class="BLOC__Select">
+                                 <select formControlName="profil"  id="profil" placeholder="Profil" name="profil">
+                                   <option value="S" name="senior">Senior</option>
+                                   <option value="M" name="medecin">Medecin</option>
+                                   <option value="F" name="famille">Famille</option>
+                                 </select>
+                                <div *ngIf="profilCtrl.dirty && profilCtrl.hasError('required')" class="errormessage">
+                                        Le champ profil doit être mentionné
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                         </div>
+                 <!-- Formulaire Partie gauche -->
+                       <div class="BLOCK_Rightform">
+                 <!-- champ Gravatar -->
+                          <div class="BLOCK__Form">
+                            <div class="BLOCK__Field">
+                             <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i>
+                               gravatar
+                             </label>
+                              <div class="BLOCK__Input">
+                                <input type="text" name="gravatar" placeholder="Saisir gravatar">
+                              </div>
+                            </div>
+                          </div>
+                 <!-- champ Codepostal -->
+                          <div class="BLOCK__Form">
+                             <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                               code postal</label>
+                            <div class="BLOCK__Input">
+                               <input type="text" name="codepostal" placeholder="Saisir code postal">
+                            </div>
+                          </div>
+                 <!-- champ Ville -->
+                          <div class="BLOCK__Form">
+                            <div class="BLOCK__Field">
+                               <label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                 ville
+                               </label>
+                                <div class="BLOCK__Input">
+                                  <input type="text" name="ville" placeholder="Saisir ville">
+                              </div>
+                            </div>
+                          </div>
+                <!-- champ Téléphone -->
+                          <div class="BLOCK__Form">
+                            <div class="BLOCK__Field">
+                             <label name="telephone">
+                               <i class="fa fa-phone" aria-hidden="true"></i> téléphone *
+                             </label>
+                              <div class="BLOCK__Input">
+                                  <input formControlName="telephone"  type="text" name="tel" placeholder="Saisir téléphone">
+                                <div *ngIf="telephoneCtrl.dirty && telephoneCtrl.hasError('required')" class="errormessage">
+                                        Le champ téléphone doit être mentionné
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                 <!-- Boutons de validation -->
+                          </div>
+                            <div class="BLOCK__Footerform">
+                              <div class="BLOCK__Form">
+                                <div class="BLOCK__Field">
+                                  <div class="BLOCK__Input">
+                                    <button type="submit" [disabled]="contactForm.invalid"  class="validation"> Valider </button>
+                                    <button type="reset" (click)="handleClear()" class="validation"> Annuler </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                           </form>
+                    </div>
+               </div>
           </div>
-        </div>
-
-        <div class="BLOCK__Form">
-          <div class="BLOCK__Field">
-            <label name="nom">
-              <i class="fa fa-user" aria-hidden="true"></i> nom
-            </label>
-            <div class="BLOCK__Input">
-              <input type="text" name="nom" placeholder="Saisir un nom">
-            </div>
-          </div>
-        </div>
-
-          <div class="BLOCK__Form">
-            <div class="BLOCK__Field">
-              <label name="prenom"> <i class="fa fa-user" aria-hidden="true"></i>
-                prenom</label>
-              <div class="BLOCK__Input">
-                   <input type="text" name="prenom" placeholder="Saisir un prénom">
-              </div>
-            </div>
-        </div>
-        <div class="BLOCK__Form">
-          <div class="BLOCK__Field">
-           <label name="profil">
-             <i class="fa fa-users" aria-hidden="true"></i>
-             profil
-           </label>
-            <div class="BLOC__Select">
-               <select id="profil" placeholder="Profil" name="profil">
-                 <option value="S" name="senior">Senior</option>
-                 <option value="M" name="medecin">Medecin</option>
-                 <option value="F" name="famille">Famille</option>
-               </select>
-            </div>
-          </div>
-        </div>
-          </div>
-          <div class="BLOCK_Rightform">
-        <div class="BLOCK__Form">
-          <div class="BLOCK__Field">
-           <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i>
-             gravatar
-           </label>
-            <div class="BLOCK__Input">
-              <input type="text" name="gravatar" placeholder="Saisir gravatar">
-            </div>
-          </div>
-        </div>
-
-        <div class="BLOCK__Form">
-           <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i>
-             code postal</label>
-          <div class="BLOCK__Input">
-             <input type="text" name="codepostal" placeholder="Saisir code postal">
-          </div>
-        </div>
-
-        <div class="BLOCK__Form">
-          <div class="BLOCK__Field">
-             <label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>
-               ville
-             </label>
-              <div class="BLOCK__Input">
-                <input type="text" name="ville" placeholder="Saisir ville">
-            </div>
-          </div>
-        </div>
-
-        <div class="BLOCK__Form">
-          <div class="BLOCK__Field">
-           <label name="telephone">
-             <i class="fa fa-phone" aria-hidden="true"></i> téléphone
-           </label>
-            <div class="BLOCK__Input">
-                <input type="text" name="tel" placeholder="Saisir téléphone">
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-          <div class="BLOCK__Footerform">
-        <div class="BLOCK__Form">
-          <div class="BLOCK__Field">
-            <div class="BLOCK__Input">
-
-              <button type="submit" class="validation"> Valider </button>
-              <button type="reset" class="validation"> Annuler </button>
-
-            </div>
-          </div>
-        </div>
-          </div>
-
-         </form>
-
-    </div>
-</div>
-
-</div>
