@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule}    from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
 
@@ -15,6 +17,9 @@ import { ListContactComponent } from './list-contact/list-contact.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { ReinitializePasswordComponent } from './reinitialize-password/reinitialize-password.component';
 import { ListeGroupComponent } from './liste-group/liste-group.component';
+import { ApiRequestService } from './services/apiRequests.service';
+import { HttpClientModule } from '@angular/common/http';
+    
 
 
 
@@ -38,9 +43,12 @@ import { ListeGroupComponent } from './liste-group/liste-group.component';
     FormsModule,
     AppRoutingModule,
     RouterModule,
+
+    HttpClientModule,
+
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ApiRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

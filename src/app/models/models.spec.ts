@@ -1,8 +1,11 @@
 import Contact from './Contact';
 import Conversation from './Conversation';
-import Coordonne from './Coordonne';
+
+import Coordonnees from './Coordonnees';
+
 import Group from './Group';
 import Message from './Message';
+
 import User from './user';
 
 import {expect} from "chai";
@@ -25,8 +28,15 @@ describe('models.spec.ts', () => {
 
 
             expect(contact).to.be.an.instanceOf(Contact);
-            expect(contact.coordonne).to.be.an.instanceOf(Coordonne);
+            expect(contact.coordonne).to.be.an.instanceOf(Coordonnees);
             expect(contact.coordonne.ville).to.equal('Lyon');
+
+            
+            
+            // expect(contact).to.be.an.instanceOf(Contact);
+            // expect(contact.coordonne).to.be.an.instanceOf(Coordonnees);
+            // expect(contact.coordonne.ville).to.equal('Lyon');
+
         })
     })
 
