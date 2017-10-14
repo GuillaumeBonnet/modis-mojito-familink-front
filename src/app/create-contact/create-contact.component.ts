@@ -10,8 +10,8 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 export class CreateContactComponent implements OnInit {
 
   emailCtrl : FormControl;
-  private nomCtrl:FormControl;
-  private prenomCtrl:FormControl;
+  private nomCtrl: FormControl;
+  private prenomCtrl: FormControl;
   private profilCtrl:FormControl;
   private gravatarCtrl:FormControl;
   private codepostalCtrl:FormControl;

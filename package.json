@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mt" : "mocha -r ts-node/register .\\src\\app\\models\\*.spec.ts"
+    "mt": "mocha -r ts-node/register .\\src\\app\\models\\*.spec.ts"
   },
   "private": true,
   "dependencies": {
@@ -48,5 +48,17 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.3.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bewizyu-formation/modis-mojito-familink-front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/bewizyu-formation/modis-mojito-familink-front/issues"
+  },
+  "homepage": "https://github.com/bewizyu-formation/modis-mojito-familink-front#readme"
 }
