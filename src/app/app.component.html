@@ -4,15 +4,53 @@
   <h1>
     Welcome to {{title}}!
   </h1>
+
+  <div class="NAVIGATION">
+    <div class="container NAVIGATION_CONTAINER">
+      <div class="LOGO">
+        <i class="fa fa-universal-access" aria-hidden="true"></i>
+
+        <span> FAMILINK </span>
+      </div>
+      <ul class ="MENU" >
+        <li class="MENU__Item"><a class="MENU__Link MENU__Link--courante" routerLink="/login" routerLinkActive="active">Accueil</a></li>
+
+
+        <li class="MENU__Item MENU__Item--unroll">
+          <a class="MENU__Link MENU__Link--unroll" href="">Utilisateur</a>
+          <div class="MENU__dropdown">
+            <ul class="DROPDOWN">
+              <li><a class="DROPDOWN__Link" routerLink="/create-user" routerLinkActive="active">Ajouter</a></li>
+              <li><a class="DROPDOWN__Link" routerLink="/edit-user" routerLinkActive="active">Editer</a></li>
+            </ul>
+          </div>
+
+        </li>
+        <li class="MENU__Item MENU__Item--unroll">
+          <a class="MENU__Link MENU__Link--unroll" href="">Group</a>
+          <div class="MENU__dropdown">
+            <ul class="DROPDOWN">
+              <li><a class="DROPDOWN__Link" routerLink="/groups" routerLinkActive="active">Group List</a></li>
+              <li><a class="DROPDOWN__Link" routerLink="/groups/3" routerLinkActive="active">One Group</a></li>
+            </ul>
+          </div>
+
+        </li>
+
+        <li class="MENU__Item"><a class="MENU__Link" href="Contact.html">Contact</a></li>
+        <li class="MENU__Item MENU__Item--button">
+          <form action="Signin.html">
+            <input class="MENU__Button" type="submit" value="SIGN IN / SIGN UP" name="sign"/>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <nav>
-    <a routerLink="/login" routerLinkActive="active">Login</a>
-    <a routerLink="/create-user" routerLinkActive="active">Create user</a>
-    <a routerLink="/forgot-password" routerLinkActive="active">forgot-password</a>
-    <a routerLink="/reinitialize-password" routerLinkActive="active">reinitialize-password</a>
-    <a routerLink="/edit-user" routerLinkActive="active">edit-user</a>
-    <a routerLink="/groups" routerLinkActive="active">liste groupe</a>
-    <a routerLink="/groups/3" routerLinkActive="active">dans un groupe</a>
-  </nav>
+
+
+ </nav>
 
   <router-outlet></router-outlet>
 </div>

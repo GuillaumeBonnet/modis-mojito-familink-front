@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+
 import User from '../models/User';
 import Contact from "../models/Contact";
 import Coordonnees from "../models/Coordonnees";
@@ -10,8 +11,10 @@ import { ApiRequestService } from "../services/apiRequests.service";
 @Component({
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
+
   styleUrls: ['./create-user.component.css', '../../assets/font-awesome-4.7.0/css/font-awesome.min.css'],
   providers: [ApiRequestService],
+
 })
 export class CreateUserComponent implements OnInit {
 
@@ -29,10 +32,11 @@ export class CreateUserComponent implements OnInit {
   private telephoneCtrl:FormControl;
   userForm : FormGroup;
 
-//contact : Contact = new Contact ('');
-  //user : User = new User();
+
+
 
   constructor(fb: FormBuilder, private apiRequestService: ApiRequestService) {
+
 
     this.userForm = fb.group({
 
@@ -53,7 +57,7 @@ export class CreateUserComponent implements OnInit {
   }
 
   handleSubmit (value) {
-    console.log (this.userForm.value);
+    
     console.log(this.userForm.value.email);
     let contact = new Contact(
         null
@@ -75,6 +79,7 @@ export class CreateUserComponent implements OnInit {
         , (erreur) => console.log("dans sub post error:", erreur)
         , () => console.log("dans sub post unsub:")
     );
+
   }
 
   handleClear() {  
