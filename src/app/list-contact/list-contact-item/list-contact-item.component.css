@@ -1,18 +1,13 @@
+#elderDivListContactItem {
+    text-align: none;
+}
+
 .overview {
     border: black solid 1px;
     margin: 10px;
     display: flex;
     align-items: center;
-}
-
-.overview__info {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-}
-
-.overview__info_ligne1, .overview__info_ligne2 {
-
+    
 }
 
 .overview__gravatar {
@@ -22,9 +17,21 @@
     margin: 5px;
 }
 
+.overview__info {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 100%;
+}
+
+.overview__info_ligne1 {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .overview__info_ligne2 {
     display: flex;
-    align-content: space-between;
+    justify-content: space-between;
 }
 
 
@@ -32,4 +39,8 @@
     width: 5px;
     height: 20px;
     background-color: black;
+}
+
+.overview__text {
+    text-align: none;
 }
