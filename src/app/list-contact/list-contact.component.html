@@ -9,6 +9,8 @@
   <button (click) = "handleClickGet()">consoleLogContactHTTPget</button>
 </div>
 
+
+
 <div>
   <button (click) = "handleClickPost()">consoleLogContactHTTPpost</button>
 </div>
@@ -21,8 +23,12 @@
   <button (click) = "handleClickUpdate()">consoleLogContactHTTPupdate</button>
 </div>
 
-<div *ngFor="let contact of listeContact">
-  contact: 
-  <p>nom: {{contact.nom}}, prenom: {{contact.prenom}}, ville: {{contact.coordonnees?.phone}}</p> 
+<div class = "pannelListContact">
+  <div *ngFor="let contact of listeContact">
+    <app-list-contact-item [contact]="contact"></app-list-contact-item>
+  </div>
 </div>
+
+
+
 <router-outlet></router-outlet>

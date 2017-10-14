@@ -1,0 +1,35 @@
+.overview {
+    border: black solid 1px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.overview__info {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.overview__info_ligne1, .overview__info_ligne2 {
+
+}
+
+.overview__gravatar {
+    border: black solid 1px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.overview__info_ligne2 {
+    display: flex;
+    align-content: space-between;
+}
+
+
+.overview__info__ligne2__favori {
+    width: 5px;
+    height: 20px;
+    background-color: black;
+}

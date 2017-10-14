@@ -24,6 +24,7 @@ import { CookieTokenService } from './services/cookie-token.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { CookieModule } from 'ngx-cookie';
+import { ListContactItemComponent } from './list-contact/list-contact-item/list-contact-item.component';
 
     
 
@@ -42,6 +43,7 @@ import { CookieModule } from 'ngx-cookie';
     ListContactComponent,
     ContactInfoComponent,
     ListeGroupComponent,
+    ListContactItemComponent,
 
   ],
   imports: [

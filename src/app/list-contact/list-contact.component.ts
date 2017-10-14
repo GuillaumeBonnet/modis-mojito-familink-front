@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import * as _ from "lodash";
 
 import { ApiRequestService } from "../services/apiRequests.service";
 import { ContactCrudService } from "../services/contact-crud.service";
 import { CookieTokenService } from "../services/cookie-token.service";
 
-import * as _ from "lodash";
-
 import Contact from "../models/Contact";
 import Coordonnees from "../models/Coordonnees";
+
+import {ListContactItemComponent} from "./list-contact-item/list-contact-item.component";
+
+
 
 
 //PAGE D'EXEMPLE D'UTILISATION DES SERVICES, SUPPRIMABLE PUISQUE CE CODE DE TESTE MANUEL EST COPIE DANS "list-contact.component.manualSpec.ts"
@@ -18,11 +19,12 @@ import Coordonnees from "../models/Coordonnees";
   selector: 'app-list-contact',
   templateUrl: './list-contact.component.html',
   styleUrls: ['./list-contact.component.css'],
-  providers: [ApiRequestService, ContactCrudService, CookieTokenService],
+  providers: [ApiRequestService, ContactCrudService, CookieTokenService, ListContactItemComponent],
 })
 export class ListContactComponent implements OnInit {
 
   listeContact:any = [];
+  contacto:Contact = new Contact(1, null, "nom", "prenom", "profils", null, "avatar");
   groupId:number = 2;
   
   constructor(private apiRequestService: ApiRequestService
