@@ -34,7 +34,7 @@ import User from '../models/User';
     //   expect("a").toBe("b");
     // }));
   
-    fit('should parse instances of contacts', inject([ApiRequestService], (service: ApiRequestService) => {
+    it('should parse instances of contacts', inject([ApiRequestService], (service: ApiRequestService) => {
 
       var tabContact:Array<Contact> = [];
       //expect("a").toBe("guillaumeBonnet");

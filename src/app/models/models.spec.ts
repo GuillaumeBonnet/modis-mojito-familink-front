@@ -5,7 +5,6 @@ import Coordonnees from './Coordonnees';
 
 import Group from './Group';
 import Message from './Message';
-import User from './Utilisateur';
 
 import {expect} from "chai";
 
@@ -29,19 +28,11 @@ import {expect} from "chai";
 //     );
     describe('#Contact', () => {
         it('should be a contact  with a specific attribute belonging to a Coordonne property', () => {
-<<<<<<< Updated upstream
-
-
-            expect(contact).to.be.an.instanceOf(Contact);
-            expect(contact.coordonne).to.be.an.instanceOf(Coordonnees);
-            expect(contact.coordonne.ville).to.equal('Lyon');
-=======
             
             
             // expect(contact).to.be.an.instanceOf(Contact);
             // expect(contact.coordonne).to.be.an.instanceOf(Coordonnees);
             // expect(contact.coordonne.ville).to.equal('Lyon');
->>>>>>> Stashed changes
         })
     })
 
