@@ -33,13 +33,7 @@ export class ListContactComponent implements OnInit {
           , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
           , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
 
-          this.contactCrudService.loadList(this.groupId);
-
-    // this.contactCrudService.contactListObservable().subscribe(
-    //     (retour) => this.listeContact = retour
-    //     , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
-    //     , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
-    
+          this.contactCrudService.loadList(this.groupId);    
   }
 
   handleClickGet() {
@@ -47,8 +41,8 @@ export class ListContactComponent implements OnInit {
   }
 
   handleClickDelete() {
-    console.log('list-contact > handleClickDelete > contact0=', this.listeContact[2]);
-    this.contactCrudService.deleteContact(this.groupId, this.listeContact[2]);
+    console.log('list-contact > handleClickDelete > contact0=', this.listeContact[0]);
+    this.contactCrudService.deleteContact(this.groupId, this.listeContact[0]);
   }
 
   handleClickUpdate() {

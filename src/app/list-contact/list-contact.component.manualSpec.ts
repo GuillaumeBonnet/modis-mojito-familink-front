@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 import { ApiRequestService } from "../services/apiRequests.service";
 import { ContactCrudService } from "../services/contact-crud.service";
 import * as _ from "lodash";
@@ -7,6 +9,8 @@ import * as _ from "lodash";
 import Contact from "../models/Contact";
 import Coordonnees from "../models/Coordonnees";
 
+
+//PAGE D'EXEMPLE D'UTILISATION DES SERVICES, SUPPRIMABLE PUISQUE CE CODE DE TESTE MANUEL EST COPIE DANS "list-contact.component.manualSpec.ts"
 
 @Component({
   selector: 'app-list-contact',
@@ -18,8 +22,6 @@ export class ListContactComponent implements OnInit {
 
   listeContact:any = [];
   groupId:number = 2;
-
-  //constructor() { }
   
   constructor(private apiRequestService: ApiRequestService
               , private contactCrudService: ContactCrudService) { }
@@ -31,13 +33,7 @@ export class ListContactComponent implements OnInit {
           , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
           , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
 
-          this.contactCrudService.loadList(this.groupId);
-
-    // this.contactCrudService.contactListObservable().subscribe(
-    //     (retour) => this.listeContact = retour
-    //     , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
-    //     , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
-    
+          this.contactCrudService.loadList(this.groupId);    
   }
 
   handleClickGet() {
@@ -45,8 +41,8 @@ export class ListContactComponent implements OnInit {
   }
 
   handleClickDelete() {
-    console.log('list-contact > handleClickDelete > contact0=', this.listeContact[2]);
-    this.contactCrudService.deleteContact(this.groupId, this.listeContact[2]);
+    console.log('list-contact > handleClickDelete > contact0=', this.listeContact[0]);
+    this.contactCrudService.deleteContact(this.groupId, this.listeContact[0]);
   }
 
   handleClickUpdate() {

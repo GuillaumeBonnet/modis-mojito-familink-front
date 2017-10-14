@@ -20,7 +20,7 @@ export class ContactCrudService {
 
   loadList(groupId: number):any {      
       this.apiRequestService.getContacts(groupId).subscribe(
-        (result) => { this.contactList = result;
+        (result) => { this.contactList = result.reverse();
                     this.subjectContactList.next(this.contactList);
                     //return Promise.resolve(true);
                   }
@@ -39,7 +39,7 @@ export class ContactCrudService {
     if(contact) {
       this.apiRequestService.postContact(groupId, contact).subscribe(
         (retour) => { //todo retour parse id et insérer dans idContact et idCoordonnees
-            this.contactList.push(contact);
+            this.contactList.unshift(contact);
             this.subjectContactList.next(this.contactList);
         }
         , (erreur) => console.log('contact-crud > postContact > subscribe > erreur:', erreur)
@@ -57,14 +57,19 @@ export class ContactCrudService {
         (retour) => { this.contactList.splice(this.contactList.findIndex(elem => elem.id === contact.id), 1, contact);
                       this.subjectContactList.next(this.contactList);
         }
-        , (erreur) => { console.log('contact-crud > deleteContact > subscribe > erreur:', erreur);
+        , (erreur) => { console.log('contact-crud > updateContact > subscribe > erreur:', erreur);
       }
-        , () => console.log('contact-crud > deleteContact > subscribe > unsubscribe'));
+        , () => console.log('contact-crud > updateCContact > subscribe > unsubscribe'));
     } else {
       throw Error("pas de contact à modifier");
     }
   
   }
+ 
+  //le back renvoi 200 et body vide. 200 en rest signifie: "OK et envois de ressource suprimée dans le body",
+  // donc http.delete essais de parser un body vide -> erreur -> supression en base mais pas en locale
+  //si on force le serveur à renvoyer 202(NO-CONTENT) -> supression en base et supression locale
+  //https://stackoverflow.com/questions/2342579/http-status-code-for-update-and-delete
 
   deleteContact(groupId: number, contact:Contact): void {
     if(this.contactList.includes(contact) ) {
