@@ -58,7 +58,7 @@ import { CookieModule } from 'ngx-cookie';
   ],
   providers: [ApiRequestService,
      ContactCrudService,
-     CookieTokenService],
+     CookieTokenService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
