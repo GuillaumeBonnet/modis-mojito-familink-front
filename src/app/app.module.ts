@@ -21,7 +21,6 @@ import { ListeGroupComponent } from './liste-group/liste-group.component';
 
 import { ApiRequestService } from './services/apiRequests.service';
 import { ContactCrudService } from './services/contact-crud.service';
-import { CookieTokenService } from './services/cookie-token.service';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -57,8 +56,7 @@ import { CookieModule } from 'ngx-cookie';
     CookieModule.forRoot()
   ],
   providers: [ApiRequestService,
-     ContactCrudService,
-     CookieTokenService], 
+     ContactCrudService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

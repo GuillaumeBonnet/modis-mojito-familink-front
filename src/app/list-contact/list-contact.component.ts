@@ -4,8 +4,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { ApiRequestService } from "../services/apiRequests.service";
 import { ContactCrudService } from "../services/contact-crud.service";
-import { CookieTokenService } from "../services/cookie-token.service";
-
 import * as _ from "lodash";
 
 import Contact from "../models/Contact";
@@ -18,7 +16,7 @@ import Coordonnees from "../models/Coordonnees";
   selector: 'app-list-contact',
   templateUrl: './list-contact.component.html',
   styleUrls: ['./list-contact.component.css'],
-  providers: [ApiRequestService, ContactCrudService, CookieTokenService],
+  providers: [ApiRequestService, ContactCrudService],
 })
 export class ListContactComponent implements OnInit {
 
@@ -26,12 +24,9 @@ export class ListContactComponent implements OnInit {
   groupId:number = 2;
   
   constructor(private apiRequestService: ApiRequestService
-              , private contactCrudService: ContactCrudService
-              , private cookieTokenService: CookieTokenService) { }
+              , private contactCrudService: ContactCrudService) { }
 
   ngOnInit() {
-    
-
     this.contactCrudService.contactListObservable()
           .subscribe(
           (retour:any) => this.listeContact = retour
@@ -42,7 +37,6 @@ export class ListContactComponent implements OnInit {
   }
 
   handleClickGet() {
-    console.log("init list contact");
     this.contactCrudService.loadList(this.groupId);
   }
 
