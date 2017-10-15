@@ -17,7 +17,11 @@ import { ListContactComponent } from './list-contact/list-contact.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { ReinitializePasswordComponent } from './reinitialize-password/reinitialize-password.component';
 import { ListeGroupComponent } from './liste-group/liste-group.component';
+    
+
 import { ApiRequestService } from './services/apiRequests.service';
+import { ContactCrudService } from './services/contact-crud.service';
+
 import { HttpClientModule } from '@angular/common/http';
     
 
@@ -48,7 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
 
     ReactiveFormsModule
   ],
-  providers: [ApiRequestService],
+  providers: [ApiRequestService, ContactCrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

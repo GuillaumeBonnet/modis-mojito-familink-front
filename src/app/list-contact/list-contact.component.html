@@ -13,4 +13,16 @@
   <button (click) = "handleClickPost()">consoleLogContactHTTPpost</button>
 </div>
 
+<div>
+  <button (click) = "handleClickDelete()">consoleLogContactHTTPdelete</button>
+</div>
+
+<div>
+  <button (click) = "handleClickUpdate()">consoleLogContactHTTPupdate</button>
+</div>
+
+<div *ngFor="let contact of listeContact">
+  contact: 
+  <p>nom: {{contact.nom}}, prenom: {{contact.prenom}}, ville: {{contact.coordonnees?.phone}}</p> 
+</div>
 <router-outlet></router-outlet>
