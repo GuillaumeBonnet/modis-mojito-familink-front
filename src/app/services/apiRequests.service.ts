@@ -21,10 +21,6 @@ export class ApiRequestService {
   private apiUrl = 'http://localhost:8080/atelier/mvc';  // URL to web api
 
   constructor(private http: HttpClient) { }
-    //PROFILS
-    getProfils(): Observable<any> {
-      return this.http.get(this.apiUrl + '/profils');       
-  }
 
     //LOGINS
     postLogin(login: Login): Observable<any> {
