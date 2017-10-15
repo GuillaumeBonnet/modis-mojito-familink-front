@@ -21,8 +21,10 @@ import { ListeGroupComponent } from './liste-group/liste-group.component';
 
 import { ApiRequestService } from './services/apiRequests.service';
 import { ContactCrudService } from './services/contact-crud.service';
+import { LoginService } from "./services/login.service";
+import { HeaderInterceptorService } from "./services/header-interceptor.service";
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CookieModule } from 'ngx-cookie';
 
@@ -56,7 +58,10 @@ import { CookieModule } from 'ngx-cookie';
     CookieModule.forRoot()
   ],
   providers: [ApiRequestService,
-     ContactCrudService], 
+              ContactCrudService,
+              LoginService,
+              { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptorService, multi: true }
+            ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

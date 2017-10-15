@@ -25,6 +25,10 @@ export class LoginService {
     
     
     return Promise.resolve(false);
-  }  
+  }
+
+  getToken(): String {
+    return this.cookieService.get("tokenAuth");
+  }
 
 }
