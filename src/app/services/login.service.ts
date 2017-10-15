@@ -16,8 +16,8 @@ export class LoginService {
                                         )
                                     ).subscribe(
         (result) => {
-            this.cookieService.put("Authentification", result);
-            console.log('loginService > renewToken > subscribe > result: ', result)
+            this.cookieService.put("tokenAuth", result.token);
+            //console.log('loginService > renewToken > subscribe > result: ', result)
         }
         , (error) => console.log('loginService > renewToken > subscribe > error: ', error)
         , () => console.log('loginService > renewToken > subscribe > unsubcribe: ')
