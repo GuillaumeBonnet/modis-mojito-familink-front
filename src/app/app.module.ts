@@ -21,8 +21,12 @@ import { ListeGroupComponent } from './liste-group/liste-group.component';
 
 import { ApiRequestService } from './services/apiRequests.service';
 import { ContactCrudService } from './services/contact-crud.service';
+import { CookieTokenService } from './services/cookie-token.service';
 
 import { HttpClientModule } from '@angular/common/http';
+
+import { CookieModule } from 'ngx-cookie';
+
     
 
 
@@ -49,10 +53,12 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
 
     HttpClientModule,
-
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CookieModule.forRoot()
   ],
-  providers: [ApiRequestService, ContactCrudService],
+  providers: [ApiRequestService,
+     ContactCrudService,
+     CookieTokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
