@@ -9,17 +9,19 @@
                       action=""
                       class="formulaire"
                       [formGroup]="loginForm">
-                  <div class="BLOCK__Input" >
-                      <input formControlName="email"
-                             type="text"
-                             name="email"
-                             placeholder="Email">
-                  </div>
-                  <div class="BLOCK__Input" >
-                      <input formControlName="password"
-                             type="text"
-                             name="password"
-                             placeholder="Password">
+                  <div class="BLOCK__Input">
+                            <div class="BLOCK__Input1" >
+                                <input formControlName="email"
+                                       type="text"
+                                       name="email"
+                                       placeholder="Email">
+                            </div>
+                            <div class="BLOCK__Input2" >
+                                <input formControlName="password"
+                                       type="text"
+                                       name="password"
+                                       placeholder="Password">
+                            </div>
                   </div>
                   <div class="BLOCK__Validation">
                       <button type="submit"

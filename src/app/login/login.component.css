@@ -56,11 +56,9 @@ form {
 .headerblock {
   color:black;
   text-align:center;
-
-
   min-height: 520px;
   text-align: center;
-  color: white;
+
   font-family: "Open sans", Helvetica, Arial;
   background-repeat: no-repeat;
 
@@ -69,10 +67,13 @@ form {
 
 .BLOCK__Input {
   height: auto!important;
-  padding: 8px 12px !important;
-  display: inline-block;
+  background-color:white;
+  border-radius:6px;
 
+}
 
+.BLOCK__Input1{
+  border-bottom: 1px #455A64 solid;
 }
 
 
@@ -89,18 +90,22 @@ form {
   display:flex;
   margin-bottom:25px;
   align-items: center;
+
+
 }
 
 
-.formulaire input{
-
+.formulairelogin input{
+align-items: center;
   background-color:white;
   border-radius:6px;
   border:0;
   height: 30px;
   text-align:left;
-  color:rgba(255,255,255,.8);
-  width: 100%;
+  color: gray;
+  width: 140%;
+  font-size: 16px;
+
 
 }
 
@@ -109,6 +114,7 @@ form {
   border:1px solid;
   border-color:white;
   color:rgba(255,255,255,.8);
+  margin-top: 20px;
 }
 
 .imagelogin {
