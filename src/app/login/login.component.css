@@ -3,9 +3,12 @@
   font-family:Arial;
 }
 
+
 body {
   margin: 0;
   height:100%;
+  background-repeat: no-repeat;
+
 }
 
 a {
@@ -17,13 +20,62 @@ img {
   max-width: 100%;
 }
 
+form {
+  display:block;
+
+}
+
+.container {
+
+}
+
+.container {
+  background-image: url("../../assets/Images/Istock-Seniors-at-Computer.jpg");
+
+}
+
+form {
+  display:block;
+
+}
+
+.BLOCK__Field {
+  display: block;
+}
+
+
+.BLOCK__Center {
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 10px 40px;
+  color: #FFF;
+  height: 50%;
+}
+
+
+
 .headerblock {
-  background-color: #009688;
-  color:white;
+  color:black;
   text-align:center;
+  background-image: url("../../assets/Images/familink3.jpg");
+
+  min-height: 520px;
+  text-align: center;
+  color: white;
+  font-family: "Open sans", Helvetica, Arial;
+  background-repeat: no-repeat;
 
 
 }
+
+.BLOCK__Input {
+  height: auto!important;
+  padding: 8px 12px !important;
+  display: inline-block;
+
+}
+
 
 .content{
   max-width:700px;
@@ -39,8 +91,8 @@ img {
 }
 
 .formulaire{
-  display:inline-block;
-  flex:auto;
+  /*display:inline-block;*/
+  /*flex:auto;*/
 
 }
 
