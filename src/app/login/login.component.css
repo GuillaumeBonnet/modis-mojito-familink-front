@@ -26,11 +26,9 @@ form {
 }
 
 .container {
-
-}
-
-.container {
-  background-image: url("../../assets/Images/Istock-Seniors-at-Computer.jpg");
+  background-image: url("../../assets/Images/bg_login.jpg");
+  min-height: 350px;
+  background-size: cover;
 
 }
 
@@ -58,7 +56,7 @@ form {
 .headerblock {
   color:black;
   text-align:center;
-  background-image: url("../../assets/Images/backgroundhome.jpeg");
+
 
   min-height: 520px;
   text-align: center;
@@ -74,6 +72,7 @@ form {
   padding: 8px 12px !important;
   display: inline-block;
 
+
 }
 
 
@@ -82,27 +81,26 @@ form {
   margin-left:auto;
   margin-right:auto;
   overflow:hidden;
+
 }
 
 .formulairelogin{
   flex-direction: column;
-  justify-content: center;
-
+  display:flex;
+  margin-bottom:25px;
+  align-items: center;
 }
 
-.formulaire{
-
-
-}
 
 .formulaire input{
 
-  background-color:rgba(5,5,5,0.4);
+  background-color:white;
   border-radius:6px;
   border:0;
   height: 30px;
   text-align:left;
   color:rgba(255,255,255,.8);
+  width: 100%;
 
 }
 
