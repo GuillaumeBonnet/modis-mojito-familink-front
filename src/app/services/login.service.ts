@@ -3,11 +3,11 @@ import * as CryptoJS from 'crypto-js';
 import Login from "../models/Login";
 
 import { ApiRequestService } from "./apiRequests.service";
-//import { CookieService } from 'ngx-cookie';
+import { CookieService } from 'ngx-cookie';
 @Injectable()
 export class LoginService {
 
-  constructor(private apiRequestService: ApiRequestService ) { } //private cookieService:CookieService
+  constructor(private apiRequestService: ApiRequestService, private cookieService:CookieService ) { }
 
   renewToken(email: string, password: string): Promise<any> {
     this.apiRequestService.postLogin(new Login(
@@ -16,7 +16,7 @@ export class LoginService {
                                         )
                                     ).subscribe(
         (result) => {
-            window.localStorage.setItem("tokenAuth", result.token);
+            this.cookieService.put("tokenAuth", result.token);
             //console.log('loginService > renewToken > subscribe > result: ', result)
         }
         , (error) => console.log('loginService > renewToken > subscribe > error: ', error)
@@ -25,10 +25,6 @@ export class LoginService {
     
     
     return Promise.resolve(false);
-  }
-
-  getToken(): String {
-    return window.localStorage.getItem("tokenAuth");
-    }
+  }  
 
 }

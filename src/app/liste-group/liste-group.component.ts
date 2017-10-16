@@ -17,18 +17,14 @@ export class ListeGroupComponent implements OnInit {
   
 
   ngOnInit() {
-    this.apiRequestService.getGroups ().subscribe(
+    this.apiRequestService.getGroups().subscribe(
           (result: Array<Group>) => { this.listeGroupe = result }
-          , (error) => console.log("liste-group > ngOnInit > subcribe > error", error)
-          , () => console.log("liste-group > ngOnInit > subcribe > unsubscribe"));
+          , (error) => console.log(error, "une erruer dans group subscribe")
+          , () => console.log("unsubscribe-group"));
   }
 
   handleClickGet() {
-    console.log('liste groupe:', this.listeGroupe);
-    this.apiRequestService.getGroups ().subscribe(
-      (result: Array<Group>) => { this.listeGroupe = result }
-      , (error) => console.log("liste-group > ngOnInit > subcribe > error", error)
-      , () => console.log("liste-group > ngOnInit > subcribe > unsubscribe"));
+    console.log('liste groupe:', this.listeGroupe);   
   }
 
 }
