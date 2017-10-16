@@ -12,7 +12,7 @@ import { ApiRequestService } from "../services/apiRequests.service";
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
 
-  styleUrls: ['./create-user.component.css', '../../assets/font-awesome-4.7.0/css/font-awesome.min.css'],
+  styleUrls: ['./create-user.component.css'],
   providers: [ApiRequestService],
 
 })
@@ -57,7 +57,7 @@ export class CreateUserComponent implements OnInit {
   }
 
   handleSubmit (value) {
-    
+
     console.log(this.userForm.value.email);
     let contact = new Contact(
         null

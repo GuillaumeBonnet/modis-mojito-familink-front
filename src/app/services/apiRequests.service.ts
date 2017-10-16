@@ -3,6 +3,7 @@ import { Headers, Http } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
+
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
 
@@ -14,23 +15,23 @@ import Message from '../models/Message';
 import User from '../models/User';
 import Login from "../models/Login";
 
-export const apiUrl = 'http://localhost:8080/atelier/mvc';  // URL to web api
+export const apiUrl = `${environment.baseURL}/atelier/mvc`;  // URL to web api
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class ApiRequestService {
 
-    constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) { }
 
     //LOGINS
     postLogin(login: Login): Observable<any> {
       return this.http.post(apiUrl + '/login', login);
     }
 
-
-
     //PROFILS
     getProfils(): Observable<any> {
-      return this.http.get(apiUrl + '/profils');       
+      return this.http.get(apiUrl + '/profils');
   }
 
 
@@ -46,7 +47,7 @@ export class ApiRequestService {
   }
 
   postContact(idGroup:number, contact:Contact): Observable<any> {
-     
+
     delete (contact.id);
     delete (contact.coordonnees.id);
       return this.http.post(apiUrl + '/groups' + '/' + idGroup + '/contact' , contact);
@@ -58,7 +59,7 @@ export class ApiRequestService {
     } else {
       throw new Error('pas de contact ou pas d\'ID');
     }
-    
+
   }
 
   updateContact(idGroup:number, contact:Contact) {
@@ -68,6 +69,6 @@ export class ApiRequestService {
     } else {
       throw new Error('pas de contact ou pas d\'ID');
     }
-    
+
   }
 }
