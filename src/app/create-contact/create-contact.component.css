@@ -7,6 +7,7 @@
 h1 {
   color: white;
   text-align: center;
+  padding-top: 15px;
   }
 
 body {
@@ -35,7 +36,6 @@ input {
 .BLOCK__Form{
 
 
-  border: 1px solid black;
 }
 
 .BLOCK__Field {
@@ -54,8 +54,14 @@ label{
 
 .errormessage {
 
-  font-size: 11px;
-  color: yellow;
+  font-size: 12px;
+  color: red;
+}
+
+.BLOCK__Header {
+  background-image: url("../../assets/Images/headerpage.jpg");
+  min-height: 100px;
+
 }
 
 .BLOCK__Center{
@@ -67,14 +73,10 @@ label{
   text-shadow: none;
   /*box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);-->*/
   border-radius:15px;
-  opacity: 0.7;
 
 
-}
-.BLOCK__Center:hover {
- /* background:#009688;
-  opacity: 1;
-*/
+
+
 }
 
 .BLOCK__Middleform {
@@ -88,7 +90,7 @@ label{
 .BLOCK_Identity1, .BLOCK_Identity2, .BLOCK_Identity3 {
   max-width: 450px;
   border-bottom: #72b1ff;
-  border: 1px solid #16a085;
+  /*border: 1px solid #16a085;*/
 
 
 }
@@ -99,46 +101,47 @@ label{
   height: 100%;
   padding: 8px 12px !important;
   width: 100%;
-  border: 2px solid red;
-  font-size: 15px;
-
-
+  /*border: 2px solid red;*/
+  font-size: 16px;
 
 }
 
 .BLOCK__Input input {
  /* background-color:rgba(5,5,5,0.4);*/
   border-radius:6px;
-  border:1px #030203;
   height:30px;
-  color:rgba(255,255,255,.8);
+  color: #1A237E;
   padding-left:5px;
   display: inline-block;
-  border: 2px solid black;
+  border: 1px solid gray;
   font-size: 15px;
 }
 
 .BLOC__Select select {
-  background-color:rgba(5,5,5,0.4);
   border-radius:6px;
   border:0;
   height:30px;
   text-align:left;
-  color:rgba(255,255,255,.8);
-  width: 90px;
-  margin-top: 9px;
-  margin-left:10px;
-  padding-left:5px;
+  width: 96%;
+  border: 1px solid gray;
+  padding: 8px 12px !important;
 }
 
 .BLOCK__Input button {
-  background-color:darkorange;
+  background-color:#0D47A1;
   border:1px solid;
   border-color:white;
-  color:rgba(255,255,255,.8);
+  color:rgba(255,255,255,1);
   width: 145px;
   text-align: center;
   border-radius:6px;
+  height: 35px;
+  margin-top: 25px;
+
+}
+
+.BLOCK__Input p{
+  color: gray;
 
 }
 

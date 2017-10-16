@@ -1,45 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-    <title>Familink | Page de Login</title>
-</head>
-
-
-<body>
-
 <div class="container">
-  <div class="BLOCK__Center">
-
-    <div class="formulairelogin">
-      <!-- Formulaire cconnexion -->
-      <form class="formulaire">
-        <div class ="BLOCK__Middleform">
-          <div class="BLOCK__Form">
-               <div class="BLOCK__Field">
-                    <div class="BLOCK__Input">
-                      <input type="text" name="email" placeholder="Email">
-                    </div>
-                      <div class="BLOCK__Input">
-                      <input type="text" name="password" placeholder="Password">
-                      </div>
-                 <div class="BLOCK__Input">
-                      <input type="submit" value="Valider" class="validation">
-                    </div>
+  <div class="headerblock">
+    <div class="content">
+          <h1> Identifiant FAMILINK</h1>
+              <div class="paragraphe1">
+                <p> Solution applicative pour faciliter la mise en relation d’un certain nombre de contact autour d’une ou
+                    plusieurs personnes agées nécessitant une attention
+                    particulière.
+                </p>
               </div>
+              <div class="formulairelogin">
+                <form (ngSubmit)="handleSubmit()"
+                      method="post"
+                      action=""
+                      class="formulaire"
+                      [formGroup]="loginForm">
+                  <div class="BLOCK__Input" >
+                      <input formControlName="email"
+                             type="text"
+                             name="email"
+                             placeholder="Email">
+                      <input formControlName="password"
+                             type="text"
+                             name="password"
+                             placeholder="Password">
+                  </div>
+                  <div class="BLOCK__Validation">
+                      <button type="submit"
+                              class="validation"> Valider
+                      </button>
+                  </div>
+                </form>
+              </div>
+              <p><a class="DROPDOWN__Link"
+                    routerLink="/create-user"
+                    routerLinkActive="active">Créer un compte</a> | <a routerLink="/forgot-password"
+                                                                       routerLinkActive="active">forgot-password</a> |
+                <a routerLink="/reinitialize-password"
+                   routerLinkActive="active">reinitialize-password</a></p>
+
             </div>
-        </div>
-
-       </form>
-
-    </div>
-  </div>
+      </div>
 </div>
-
-
-
-</body>
-
-
-</html>

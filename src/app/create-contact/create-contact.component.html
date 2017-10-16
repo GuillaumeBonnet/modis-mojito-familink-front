@@ -4,8 +4,11 @@
             </head>
 
             <div class="container">
+              <div class="BLOCK__Header">
+                <h1> Créer un contact Familink</h1>
+              </div>
                     <div class="BLOCK__Center">
-                          <h1> Créer un contact</h1>
+
                             <div class="formulairecontact">
                             <!-- Formulaire creation Contact -->
                                     <form (ngSubmit) = "handleSubmit()" method="post" action="" class="formulaire" [formGroup]="contactForm">
@@ -83,10 +86,12 @@
                                             </div>
                                                 <!-- champ Gravatar -->
                                                 <div class="BLOCK__Form">
+
                                                   <div class="BLOCK__Field">
 
                                                     <div class="BLOCK__Input">
-                                                      <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i> </label>
+                                                      <i class="fa fa-id-badge" aria-hidden="true"></i>
+                                                      <label name="gravatar">  </label>
 
                                                       <input type="text" name="gravatar" placeholder="gravatar">
                                                     </div>
@@ -98,8 +103,8 @@
                                                 <!-- champ Codepostal -->
                                               <div class="BLOCK_Identity3">
                                                 <div class="BLOCK__Form">
-                                                  <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                                    code postal</label>
+                                                  <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i></label>
+
                                                   <div class="BLOCK__Input">
                                                     <input type="text" name="codepostal" placeholder="Saisir code postal">
                                                   </div>
@@ -107,10 +112,8 @@
                                               <!-- champ Adresse -->
                                               <div class="BLOCK__Form">
                                                 <div class="BLOCK__Field">
-                                                  <label name="adresse"> <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                                    adresse
-                                                  </label>
-                                                  <div class="BLOCK__Input">
+                                                  <label name="adresse"> <i class="fa fa-map-marker" aria-hidden="true"></i> </label>
+                                                    <div class="BLOCK__Input">
                                                     <input type="text" name="adresse" placeholder="Saisir une adresse">
                                                   </div>
                                                 </div>
@@ -128,8 +131,7 @@
                                                 <div class="BLOCK__Form">
                                                   <div class="BLOCK__Field">
                                                     <label name="telephone">
-                                                      <i class="fa fa-phone" aria-hidden="true"></i> téléphone
-                                                    </label>
+                                                      <i class="fa fa-phone" aria-hidden="true"></i></label>
                                                     <div class="BLOCK__Input">
                                                       <input formControlName="telephone"  type="text" name="tel" placeholder="téléphone *">
                                                       <div *ngIf="telephoneCtrl.dirty && telephoneCtrl.hasError('required')" class="errormessage">
@@ -147,6 +149,7 @@
                                                 <div class="BLOCK__Form">
                                                   <div class="BLOCK__Field">
                                                     <div class="BLOCK__Input">
+                                                      <p>Familink est susceptible d'utiliser vos données à des fins commerciales.</p>
                                                       <button type="submit" [disabled]="contactForm.invalid"  class="validation"> Valider </button>
                                                       <button type="reset" (click)="handleClear()" class="validation"> Annuler </button>
                                                     </div>

@@ -30,37 +30,47 @@ import User from '../models/User';
       expect(service).toBeTruthy();
     }));
 
-    it('should fail the test', inject([ApiRequestService], (service: ApiRequestService) => {
-      expect("a").toBe("b");
-    }));
+    // it('should fail the test', inject([ApiRequestService], (service: ApiRequestService) => {
+    //   expect("a").toBe("b");
+    // }));
   
-    fit('should parse instances of contacts', inject([ApiRequestService], (service: ApiRequestService) => {
+    it('should parse instances of contacts', inject([ApiRequestService], (service: ApiRequestService) => {
 
       var tabContact:Array<Contact> = [];
       //expect("a").toBe("guillaumeBonnet");
        return service.getContacts(9).toPromise()
         .then((result) => {
           console.log('=====tableau de contacto', result, '=====tableau de contact');
-          tabContact = result 
-            .map(elem => new Contact(
-                elem.id
-                , elem.group
-                , elem.nom
-                , elem.prenom
-                , elem.profil
-                , new Coordonnees(
-                        elem.coordonnees.id
-                        ,elem.coordonnees.adresse
-                        , elem.coordonnees.codePostal
-                        , elem.coordonnees.ville
-                        , elem.coordonnees.phone
-                        , elem.coordonnees.email
-                                )
-                , elem.gravatar));
-          console.log('tabContact : ', tabContact);
-       
+          // tabContact = result 
+          //   .map(elem => new Contact(
+          //       elem.id
+          //       , elem.group
+          //       , elem.nom
+          //       , elem.prenom
+          //       , elem.profil
+          //       , new Coordonne(
+          //               elem.coordonnees.id
+          //               ,elem.coordonnees.adresse
+          //               , elem.coordonnees.codePostal
+          //               , elem.coordonnees.ville
+          //               , elem.coordonnees.phone
+          //               , elem.coordonnees.email
+          //                       )
+          //       , elem.gravatar));
+          // console.log('tabContact : ', tabContact);
+          return expect("a").toBe("guillaumeBonnet")
         })
-       
+        // .subscribe((result:any) => {
+        //   console.log('next');
+        //   console.log('=====tableau de contact', result, '=====tableau de contact');
+        //   expect(result[0]).toBe('Contact');
+        //   expect("a").toBe("guillaumeBonnet");
+        // }, () => {
+        //   console.log('error');
+        //   fail("Do not fail")
+        // }, () => {
+        //   console.log('complete');
+        // });
     }));
 
     it('should post a contact in DB', inject([ApiRequestService], (service: ApiRequestService) => {
@@ -79,7 +89,7 @@ import User from '../models/User';
                       (result) => console.log(result, "postResult")
                       , (error) => console.log(error, "error dans post")
                       , () => console.log('unsubscribe'));
-    }));
+          }));
 
     
   

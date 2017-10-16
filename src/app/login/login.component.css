@@ -58,7 +58,7 @@ form {
 .headerblock {
   color:black;
   text-align:center;
-  background-image: url("../../assets/Images/familink3.jpg");
+  background-image: url("../../assets/Images/backgroundhome.jpeg");
 
   min-height: 520px;
   text-align: center;
@@ -85,14 +85,13 @@ form {
 }
 
 .formulairelogin{
-  display:flex;
-  align-items:center;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
 .formulaire{
-  /*display:inline-block;*/
-  /*flex:auto;*/
+
 
 }
 
