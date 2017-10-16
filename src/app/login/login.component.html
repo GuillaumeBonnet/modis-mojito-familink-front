@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="../../assets/font-awesome-4.7.0/css/font-awesome.min.css"  />
-  <link href="https://fonts.googleapis.com/css?family=OpenSans:300,400,700" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="../../assets/font-awesome-4.7.0/css/font-awesome.min.css"  />
+  <link href="https://fonts.googleapis.com/css?family=OpenSans:300,400,700" rel="stylesheet"> -->
   <title>Familink | Page de Login</title>
 </head>
 
-
-<body>
 <div class="headerblock">
   <div class="content">
     <h1> FAMILINK</h1>
@@ -19,10 +16,10 @@
       </p>
     </div>
     <div class="formulairelogin">
-      <form method="get" action="" class="formulaire">
-        <input type="text" name="email" placeholder="Email">
-        <input type="text" name="password" placeholder="Password">
-        <input type="submit" value="Valider" class="validation">
+      <form (ngSubmit) = "handleSubmit()" method="post" action="" class="formulaire" [formGroup]="loginForm">
+        <input formControlName="email" type="text" name="email" placeholder="Email">
+        <input formControlName="password" type="text" name="password" placeholder="Password">
+        <button type="submit" class="validation"> Valider </button>
       </form>
     </div>
     <p> <a class="DROPDOWN__Link" routerLink="/create-user" routerLinkActive="active">Créer un compte</a> | <a routerLink="/forgot-password" routerLinkActive="active">forgot-password</a> | <a routerLink="/reinitialize-password" routerLinkActive="active">reinitialize-password</a> </p>
@@ -31,8 +28,3 @@
     </div>
   </div>
 </div>
-
-</body>
-
-
-</html>

@@ -23,6 +23,9 @@ import { ApiRequestService } from './services/apiRequests.service';
 import { ContactCrudService } from './services/contact-crud.service';
 
 import { HttpClientModule } from '@angular/common/http';
+
+import { CookieModule } from 'ngx-cookie';
+
     
 
 
@@ -49,10 +52,11 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
 
     HttpClientModule,
-
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CookieModule.forRoot()
   ],
-  providers: [ApiRequestService, ContactCrudService],
+  providers: [ApiRequestService,
+     ContactCrudService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

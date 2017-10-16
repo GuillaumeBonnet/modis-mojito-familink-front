@@ -12,6 +12,7 @@ import Coordonnees from '../models/Coordonnees';
 import Group from '../models/Group';
 import Message from '../models/Message';
 import User from '../models/User';
+import Login from "../models/Login";
 
 @Injectable()
 export class ApiRequestService {
@@ -20,6 +21,18 @@ export class ApiRequestService {
   private apiUrl = 'http://localhost:8080/atelier/mvc';  // URL to web api
 
   constructor(private http: HttpClient) { }
+    //PROFILS
+    getProfils(): Observable<any> {
+      return this.http.get(this.apiUrl + '/profils');       
+  }
+
+    //LOGINS
+    postLogin(login: Login): Observable<any> {
+      return this.http.post(this.apiUrl + '/login', login);
+    }
+
+
+
     //PROFILS
     getProfils(): Observable<any> {
       return this.http.get(this.apiUrl + '/profils');       
