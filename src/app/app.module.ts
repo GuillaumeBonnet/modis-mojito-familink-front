@@ -25,9 +25,6 @@ import { LoginService } from "./services/login.service";
 import { HeaderInterceptorService } from "./services/header-interceptor.service";
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-import { CookieModule } from 'ngx-cookie';
-
     
 
 
@@ -55,7 +52,6 @@ import { CookieModule } from 'ngx-cookie';
 
     HttpClientModule,
     ReactiveFormsModule,
-    CookieModule.forRoot()
   ],
   providers: [ApiRequestService,
               ContactCrudService,

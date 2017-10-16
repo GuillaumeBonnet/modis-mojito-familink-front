@@ -28,7 +28,7 @@ export class ListeGroupComponent implements OnInit {
     this.apiRequestService.getGroups ().subscribe(
       (result: Array<Group>) => { this.listeGroupe = result }
       , (error) => console.log("liste-group > ngOnInit > subcribe > error", error)
-      , () => console.log("liste-group > ngOnInit > subcribe > unsubscribe"));
+      , () => console.log("liste-group > handleClickGet > subcribe > unsubscribe"));
   }
 
 }
