@@ -25,6 +25,10 @@ img {
 
 }
 
+.container {
+  background-image: url("../../assets/Images/Istock-Seniors-at-Computer.jpg");
+}
+
 .content{
   max-width:700px;
   margin-left:auto;

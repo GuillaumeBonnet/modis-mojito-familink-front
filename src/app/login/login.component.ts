@@ -7,7 +7,7 @@ import { LoginService } from "../services/login.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css', '../../assets/font-awesome-4.7.0/css/font-awesome.min.css'],
+  styleUrls: ['./login.component.css'],
   providers: [ LoginService ]
 })
 export class LoginComponent implements OnInit {
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private loginService: LoginService) {
     this.loginForm = fb.group({
-      
+
             email : this.emailCtrl,
             password : this.passwordCtrl
           });
