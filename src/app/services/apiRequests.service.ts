@@ -19,7 +19,6 @@ export const apiUrl = 'http://localhost:8080/atelier/mvc';  // URL to web api
 @Injectable()
 export class ApiRequestService {
 
-    header=new HttpHeaders({'Authorization': 'Bearer '});
     constructor(private http: HttpClient) { }
 
     //LOGINS
@@ -37,8 +36,7 @@ export class ApiRequestService {
 
     //GROUPS : =======================================================================================================
     getGroups(): Observable<any> {
-        //this.http.request.arguments.add.headers.add()
-        return this.http.get(apiUrl + '/groups' + '/', {headers : this.header});         
+        return this.http.get(apiUrl + '/groups' + '/');         
     }
 
     //CONTACTS : =======================================================================================================

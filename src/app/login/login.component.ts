@@ -30,6 +30,6 @@ export class LoginComponent implements OnInit {
   handleSubmit (value) {
     let logVal = this.loginForm.value;
     this.loginService.renewToken(logVal.email, logVal.password);
-  }
+   }
 
 }

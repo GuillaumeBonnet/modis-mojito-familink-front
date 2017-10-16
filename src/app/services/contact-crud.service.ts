@@ -25,7 +25,7 @@ export class ContactCrudService {
                     //return Promise.resolve(true);
                   }
         , (error) => {
-                      console.log(error, "une erruer dans loadList CRUDcontact service subscribe");
+                      console.log("une error dans loadList CRUDcontact service subscribe : ", error);
                       //return Promise.reject("une erruer dans loadList CRUDcontact service subscribe");
                     }
         , () => {
