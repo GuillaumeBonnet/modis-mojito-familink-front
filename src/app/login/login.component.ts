@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private loginService: LoginService) {
     this.loginForm = fb.group({
-
             email : this.emailCtrl,
             password : this.passwordCtrl
           });
