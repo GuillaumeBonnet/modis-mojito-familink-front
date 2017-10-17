@@ -8,9 +8,8 @@ import * as _ from "lodash";
 
 import Contact from "../models/Contact";
 import Coordonnees from "../models/Coordonnees";
+import {Router, ActivatedRoute, ParamMap} from "@angular/router";
 
-
-//PAGE D'EXEMPLE D'UTILISATION DES SERVICES, SUPPRIMABLE PUISQUE CE CODE DE TESTE MANUEL EST COPIE DANS "list-contact.component.manualSpec.ts"
 
 @Component({
   selector: 'app-list-contact',
@@ -21,10 +20,13 @@ import Coordonnees from "../models/Coordonnees";
 export class ListContactComponent implements OnInit {
 
   listeContact:any = [];
-  groupId:number = 2;
+  groupId:number;
+  selectedContact : Contact;
   
   constructor(private apiRequestService: ApiRequestService
-              , private contactCrudService: ContactCrudService) { }
+              , private contactCrudService: ContactCrudService
+              , private route: ActivatedRoute
+              ,  private router: Router) { }
 
   ngOnInit() {
     this.contactCrudService.contactListObservable()
@@ -32,12 +34,22 @@ export class ListContactComponent implements OnInit {
           (retour:any) => this.listeContact = retour
           , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
           , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
+          
+    this.groupId = Number(this.route.snapshot.paramMap.get('groupId'));
+    this.contactCrudService.loadList(this.groupId);
+    this.selectedContact = ListContactComponent[0];
+   
+    
+  }
 
-          this.contactCrudService.loadList(this.groupId);    
+  onSelect(contact:Contact): void {
+    this.selectedContact = contact;
+    console.log(this.selectedContact);
   }
 
   handleClickGet() {
     this.contactCrudService.loadList(this.groupId);
+    
   }
 
   handleClickDelete() {
@@ -54,7 +66,7 @@ export class ListContactComponent implements OnInit {
 
   handleClickPost() {
     let contact = _.clone(this.listeContact[0]);
-    contact.nom += 'Pos';
+    contact.lastName += 'Pos';
     contact.coordonnees.email += 'Pos';
     console.log('list-contact > handleClickPost > contact0=', contact);
     this.contactCrudService.postContact(this.groupId, contact);    

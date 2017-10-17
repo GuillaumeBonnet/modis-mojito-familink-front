@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiRequestService } from "../services/apiRequests.service";
-import  Group  from "../models/Group";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
+import Group from "../models/Group";
 
 @Component({
   selector: 'app-liste-group',
@@ -9,26 +11,56 @@ import  Group  from "../models/Group";
   providers: [ApiRequestService]
 })
 export class ListeGroupComponent implements OnInit {
-  
-  listeGroupe:Group[] = [];
 
-  constructor(private apiRequestService: ApiRequestService) { }
+  listeGroupe: Group[] = [];
+  private nameCtrl: FormControl;
+  groupForm: FormGroup;
 
-  
+  constructor(private apiRequestService: ApiRequestService
+    , private router: Router, fb: FormBuilder) {
+    this.groupForm = fb.group({
+      name: this.nameCtrl,
+    });
+  }
+
+
 
   ngOnInit() {
-    this.apiRequestService.getGroups ().subscribe(
-          (result: Array<Group>) => { this.listeGroupe = result }
-          , (error) => console.log("liste-group > ngOnInit > subcribe > error", error)
-          , () => console.log("liste-group > ngOnInit > subcribe > unsubscribe"));
+    this.apiRequestService.getGroups().subscribe(
+      (result: Array<Group>) => { this.listeGroupe = result }
+      , (error) => console.log("liste-group > ngOnInit > subcribe > error", error)
+      , () => console.log("liste-group > ngOnInit > subcribe > unsubscribe"));
+  }
+
+  onSelect(group: Group): void {
+    this.router.navigate(['/groups', group.id]);
   }
 
   handleClickGet() {
     console.log('liste groupe:', this.listeGroupe);
-    this.apiRequestService.getGroups ().subscribe(
+    this.apiRequestService.getGroups().subscribe(
       (result: Array<Group>) => { this.listeGroupe = result }
       , (error) => console.log("liste-group > ngOnInit > subcribe > error", error)
       , () => console.log("liste-group > handleClickGet > subcribe > unsubscribe"));
   }
 
+
+  handleSubmit(value) {
+    console.log(this.groupForm.value);
+    console.log('liste groupe:', this.listeGroupe);
+    this.apiRequestService.postGroup(new Group(null, this.groupForm.value.name, null, null)).subscribe(
+      (result: any) => {
+        console.log("liste-group > HandleClickPost > subcribe > result", result)
+        this.apiRequestService.getGroups().subscribe(
+          (result: Array<Group>) => { this.listeGroupe = result }
+          , (error) => console.log("liste-group > ngOnInit > subcribe > error", error)
+          , () => console.log("liste-group > handleClickGet > subcribe > unsubscribe"));
+      
+      }
+      , (error) => console.log("liste-group > HandleClickPost > subcribe > error", error)
+      , () => console.log("liste-group > HandleClickPost > subcribe > unsubscribe"));
+  }
+
+
 }
+

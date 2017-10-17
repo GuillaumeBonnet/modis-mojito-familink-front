@@ -1,7 +1,4 @@
-.selected { 
-    background-color: #198DBE !important; 
-    color: white; 
-} 
+
 .groups { 
     height: 300px;
     display: -webkit-flex;
@@ -27,7 +24,7 @@
     cursor: pointer; 
     color: lightgray;
     font-size: 30px;
-    background-color:#61524e;;; ; 
+    background-color:#61524e; 
     margin: .5em; 
     padding: .3em 0;
     /* height: 4em;  */
@@ -35,12 +32,12 @@
 
 } 
 .groups li.selected:hover { 
-    background-color: #4e423f!important; 
+    background-color: #13BCDC!important; 
     color: white; 
 } 
 .groups li:hover {
      color: white;
-      background-color: #4e423f;
+      background-color: #13BCDC;
     left: .1em; 
 }
 
@@ -54,4 +51,49 @@
     /* justify-content: center; */
     /* justify-items: center; */
     width: 600px;
+}
+.selected {
+    background-color: #198DBE !important;
+    color: white;
+}
+
+
+
+  .meta-container{
+	display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+}
+
+.midHeader{
+    padding: 100px;
+    width: auto;
+    background-image: url("../../assets/Images/MidHeader.jpg");
+    background-size: cover;
+}
+
+.fixHeader{
+    padding: 40px;
+}
+
+.midHeader input{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 550;
+    background-color: white;
+    opacity: 0.8
+}
+
+.midHeader button{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 550;
+    background-color: white;
+    opacity: 0.8
+}
+
+ul li{
+    width: 400px;
 }
