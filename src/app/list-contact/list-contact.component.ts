@@ -11,9 +11,6 @@ import Coordonnees from "../models/Coordonnees";
 import {Router, ActivatedRoute, ParamMap} from "@angular/router";
 
 
-
-//PAGE D'EXEMPLE D'UTILISATION DES SERVICES, SUPPRIMABLE PUISQUE CE CODE DE TESTE MANUEL EST COPIE DANS "list-contact.component.manualSpec.ts"
-
 @Component({
   selector: 'app-list-contact',
   templateUrl: './list-contact.component.html',
