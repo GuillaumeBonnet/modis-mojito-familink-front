@@ -27,7 +27,7 @@ a {
   .MENU{
     display: flex;
     justify-content: space-between;
-    width : 490px;
+    width : 120px;
     height: 50px;
   }
 
