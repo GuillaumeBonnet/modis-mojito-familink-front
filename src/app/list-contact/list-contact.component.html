@@ -21,10 +21,9 @@
 </div> -->
   <div class="OVERVIEWLISTCONTACT">
     <input class="CONTACT" type="text" name="searchText" placeholder="Rechercher">search bar
-    <a routerLink="/groups/1/contacts/create-contact"
-      routerLinkActive="active">Créer nouveau contact</a>
-    <a routerLink="contacts/create-contact"
+    <a href = "" [routerLink]="['/groups', groupId, 'contacts', 'create-contact']"
     routerLinkActive="active">Créer nouveau contact</a>
+
     <div class="CONTACT" *ngFor="let contact of listeContact" (click)="onSelect(contact)" [class.selected]="contact === selectedContact">
       <div class="CONTACT__Gravatar" [style.border-color]="contact.profil?.color | lowercase"><img src={{contact.gravatar}} alt="User's gravatar"/></div>
       <div class="OVERVIEW">
