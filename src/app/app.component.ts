@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private route: Router) {}  
 
   pageIsNotLogin() : boolean {
-    if( this.route.url === '/login' || this.route.url ===  '/groups') {
+    if( this.route.url === '/login') {
       return false; 
     }
     else {
