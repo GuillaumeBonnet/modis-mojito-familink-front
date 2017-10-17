@@ -6,6 +6,8 @@
   <button (click) = "handleClickGet()">consoleLogContactHTTPget</button>
 </div>
 
-<div *ngFor="let groupe of listeGroupe">
-  <p>group name: {{groupe.name}}</p>
-</div>
+<ul class = "groups">
+  <li *ngFor="let groupe of listeGroupe" (click)="onSelect(groupe)">
+    group name: {{groupe.name}}
+  </li>
+</ul>
