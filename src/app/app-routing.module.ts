@@ -31,7 +31,7 @@ const routes: Routes = [
     path: PATH_GROUP + '/:groupId',
     component : ListContactComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: PATH_CONTACT + '/1'},// TODO change '1'
+      { path: '', pathMatch: 'full', redirectTo: PATH_CONTACT},
       { path: PATH_CONTACT + '/create-contact', component: CreateContactComponent },      
       { path: PATH_CONTACT + '/:contactId', component: ContactInfoComponent },
       { path: PATH_CONTACT + '/:contactId' + '/edit-contact', component: EditContactComponent }

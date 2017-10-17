@@ -47,6 +47,14 @@ export class ListContactComponent implements OnInit {
     console.log(this.selectedContact);
   }
 
+  handleClickCreateContact() {
+    let contact = _.clone(this.listeContact[0]);
+    contact.lastName += 'Pos';
+    contact.coordonnees.email += 'Pos';
+    console.log('list-contact > handleClickPost > contact0=', contact);
+    this.contactCrudService.postContact(this.groupId, contact);    
+  }
+
   handleClickGet() {
     this.contactCrudService.loadList(this.groupId);
     
