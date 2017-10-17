@@ -3,7 +3,7 @@
 
 
  <app-header></app-header>
- <div class="fix_header"></div>
+ <div *ngIf="pageIsNotLogin()" class="fix_header"></div>
 
 <router-outlet></router-outlet>
 
