@@ -7,7 +7,6 @@
         <form (ngSubmit)="handleSubmit()" method="post" action="" class="formulaire" [formGroup]="groupForm">
             <div class="BLOCK__Input">
                 <input formControlName="name" type="text" name="name" placeholder="Nom de groupe" size="35">
-
                 <button type="submit" class="validation"> Creer votre groupe
                 </button>
             </div>
@@ -16,7 +15,6 @@
 </div>
 
 <div class="meta-container">
-
     <ul class="groups">
         <h1>Veuillez selectionnez un groupe</h1>
         <li *ngFor="let groupe of listeGroupe" (click)="onSelect(groupe)">

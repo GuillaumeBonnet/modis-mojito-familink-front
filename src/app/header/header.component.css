@@ -1,0 +1,115 @@
+.NAVIGATION{
+    background-color: #61524e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    position:fixed;
+    z-index: 10;
+    top:0;
+    width: 100%;
+    color : white;
+  }
+
+  .NAVIGATION_CONTAINER{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .LOGO{
+    padding : 27px 10px;
+    font-size: 25px;
+  
+  }
+  
+  .MENU{
+    display: flex;
+    justify-content: space-between;
+    width : 490px;
+    height: 50px;
+  }
+  
+  .MENU__Item{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .MENU__Item--unroll{
+    position: relative;
+    display : flex;
+  }
+  
+  .MENU__dropdown{
+    display: none;
+    position: absolute;
+    top: 90%;
+  }
+  
+  .MENU__Item--unroll:hover .MENU__dropdown,
+  .MENU__Item--unroll:focus-within + .MENU__dropdown {
+    display: block;
+  }
+  
+  
+  .MENU__Link{
+    color : inherit;
+  }
+  
+  .MENU__Link--courante , .MENU__Link:hover{
+    color : white;
+  }
+  
+  .MENU__Link--unroll{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .DROPDOWN{
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    background-color: black;
+    opacity:0.6;
+    padding: 0px;
+    list-style-type: none;
+    font-size: 13px;
+  }
+  .DROPDOWN__Link{
+    display: block;
+    color: white;
+    min-height: 10px;
+    padding: 5px 10px;
+  }
+  
+  .DROPDOWN__Link:hover{
+    color: white;
+    background-color: #221f21;
+  }
+  
+  .MENU__Button{
+    font-weight: bold;
+    background: none;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    padding: 10px 15px;
+    line-height: 20px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .MENU__Button:hover{
+    color : white;
+    border-color : white;
+  }
+  
+  @media(max-width: 640px ){
+    .MENU {
+      display: block;
+    }
+  
+    .LOGO{
+      flex: none;
+    }
+  
+  }

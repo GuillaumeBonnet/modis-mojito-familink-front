@@ -1,30 +1,41 @@
+<div class="LISTGROUP_CONTAINER">
+  <!-- <a [routerLink]="" routerLinkActive="active">groups-id</a> -->
+  <!-- <a [routerLink]="['contacts', 1]" routerLinkActive="active">contact-info</a>
+  <a [routerLink]="['contacts', 'create-contact']" routerLinkActive="active">create-contact</a>
+  <a routerLink="contacts/1/edit-contact" routerLinkActive="active">edit-contact</a>
+<p></p> -->
+  <!-- <div>
+  <button (click) = "handleClickGet()">consoleLogContactHTTPget</button>
+</div>
+
+<div>
+  <button (click) = "handleClickPost()">consoleLogContactHTTPpost</button>
+</div>
+
+<div>
+  <button (click) = "handleClickDelete()">consoleLogContactHTTPdelete</button>
+</div>
+
+<div>
+  <button (click) = "handleClickUpdate()">consoleLogContactHTTPupdate</button>
+</div> -->
+  <div class="OVERVIEWLISTCONTACT">
+    <div class="CONTACT">search bar</div>
+    <div class="CONTACT" *ngFor="let contact of listeContact" (click)="onSelect(contact)" [class.selected]="contact === selectedContact">
+      <div class="CONTACT__Gravatar" [style.border-color]="contact.profil?.color | lowercase"><img src={{contact.gravatar}} alt="User's gravatar"/></div>
+      <div class="OVERVIEW">
+        <div class="OVERVIEW__Identite">{{contact.lastName | uppercase}} {{contact.firstName | titlecase}}</div>
+        <div class="OVERVIEW__Identite">
+          <div class="OVERVIEW__Profil">{{contact.profil?.profilName | titlecase}}</div>
+          <div class="OVERVIEW__Profil"><img class="OVERVIEW__ImageFavori" src="../../assets/Images/etoile_favori.jpg" alt="étoile des favoris"/></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="DETAILCONTACT">
+      <app-contact-info></app-contact-info>
+    <!-- <router-outlet></router-outlet> -->
+  </div>
 
 
-<!-- <a [routerLink]="" routerLinkActive="active">groups-id</a> -->
-<!--<a [routerLink]="['contacts', 1]" routerLinkActive="active">contact-info</a>-->
-<!--<a [routerLink]="['contacts', 'create-contact']" routerLinkActive="active">create-contact</a>-->
-<!--<a routerLink="contacts/1/edit-contact" routerLinkActive="active">edit-contact</a>-->
-
-<!--<div>-->
-  <!--<button (click) = "handleClickGet()">consoleLogContactHTTPget</button>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<button (click) = "handleClickPost()">consoleLogContactHTTPpost</button>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<button (click) = "handleClickDelete()">consoleLogContactHTTPdelete</button>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<button (click) = "handleClickUpdate()">consoleLogContactHTTPupdate</button>-->
-<!--</div>-->
-
-<ul class = "contacts">
-    <li *ngFor="let contact of listeContact" (click)="onSelect(contact)">
-        nom: {{contact.firstName}}, prenom: {{contact.lastName}}, ville: {{contact.coordonnees?.phone}}
-    </li>
-  </ul>
-
-<router-outlet></router-outlet>
+</div>

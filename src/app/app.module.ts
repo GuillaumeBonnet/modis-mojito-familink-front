@@ -24,6 +24,7 @@ import { ContactCrudService } from './services/contact-crud.service';
 import { LoginService } from "./services/login.service";
 import { HeaderInterceptorService } from "./services/header-interceptor.service"
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
     
 
 
@@ -42,6 +43,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ListContactComponent,
     ContactInfoComponent,
     ListeGroupComponent,
+    HeaderComponent,
 
   ],
   imports: [
