@@ -20,6 +20,7 @@ import { ListeGroupComponent } from './liste-group/liste-group.component';
 import { ApiRequestService } from './services/apiRequests.service';
 import { ContactCrudService } from './services/contact-crud.service';
 import { LoginService } from "./services/login.service";
+
 import { HeaderInterceptorService } from "./services/header-interceptor.service";
 
 
@@ -55,11 +56,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ReactiveFormsModule,
   ],
   providers: [ApiRequestService,
-
-              ContactCrudService,
+     ContactCrudService,
               LoginService,
               { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptorService, multi: true }
             ],
+
 
   bootstrap: [AppComponent]
 })
