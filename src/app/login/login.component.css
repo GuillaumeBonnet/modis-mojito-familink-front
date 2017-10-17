@@ -25,17 +25,19 @@ form {
 
 }
 
+.content h1 {
+  color: #FFFFFF;
+  text-shadow: #221f21;
+}
+
 .container {
   background-image: url("../../assets/Images/bg_login.jpg");
-  min-height: 350px;
+  min-height: 420px;
   background-size: cover;
+  margin-top: 80px;
 
 }
 
-form {
-  display:block;
-
-}
 
 .BLOCK__Field {
   display: block;
@@ -56,9 +58,6 @@ form {
 .headerblock {
   color:black;
   text-align:center;
-  min-height: 520px;
-  text-align: center;
-
   font-family: "Open sans", Helvetica, Arial;
   background-repeat: no-repeat;
 
@@ -70,11 +69,21 @@ form {
   background-color:white;
   border-radius:6px;
 
+
 }
+
+
 
 .BLOCK__Input1{
   border-bottom: 1px #455A64 solid;
+  padding-left: 6px;
 }
+
+.BLOCK__Input2{
+
+  padding-left: 6px;
+}
+
 
 
 .content{
@@ -92,18 +101,19 @@ form {
   align-items: center;
 
 
+
 }
 
 
 .formulairelogin input{
-align-items: center;
+
   background-color:white;
   border-radius:6px;
   border:0;
-  height: 30px;
+  height: 25px;
   text-align:left;
   color: gray;
-  width: 140%;
+
   font-size: 16px;
 
 
@@ -115,10 +125,23 @@ align-items: center;
   border-color:white;
   color:rgba(255,255,255,.8);
   margin-top: 20px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+
+.formulaire .validation:hover{
+  background-color:#61524e;
+  border:1px solid;
+  border-color:white;
+  color:rgba(255,255,255,.8);
+  margin-top: 20px;
+  border-radius: 6px;
+  font-size: 16px;
+
 }
 
 .imagelogin {
-
   margin-bottom: -280px;
   transition: margin 0.6s;
 
@@ -128,3 +151,84 @@ align-items: center;
   margin-top: -180px;
   margin-bottom:0px;
 }
+
+/* Partie Présentation Texte FAMILINK*/
+
+.paragraphemiddle1 h2{
+  font-size:36px;
+  font-family:'Open Sans', sans-serif;
+  text-align:center;
+  font-weight:300;
+}
+
+.paragraphemiddle1 p{
+  font-size:21px;
+  font-family:Georgia;
+  text-align:center;
+  color:#999;
+  font-style:italic;
+
+}
+
+.blockmiddle1, .blockmiddle2, .blockmiddle3{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-bottom:40px;
+
+}
+
+
+.content2{
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+  overflow:hidden;
+}
+
+.block__img {
+  border: 15px solid;
+  border-radius: 50%;
+  border-color:#f5f5f5;
+  overflow: hidden;
+  margin-right:20px;
+}
+
+.block__text{
+
+  font-size: 15px;
+  line-height: 1.6em;
+  color:#333;
+}
+
+.block__text h3{
+  font-size:30px;
+  font-family:'Open Sans', sans-serif;
+  font-weight:300;
+}
+
+.block__text span{
+  color:#999;
+}
+
+.blockmiddle2 p{
+  margin: 0 0 10px;
+}
+
+.blockmiddle2 .block__img {
+  margin-right:0px;
+}
+
+@media (max-width: 600px) {
+  .blockmiddle1, .blockmiddle3{
+    flex-direction:column;
+  }
+  .blockmiddle2 {
+    flex-direction:column-reverse;
+  }
+
+  .block__img {
+    max-width: 320px;
+  }
+}
+
