@@ -10,7 +10,6 @@ import Contact from "../models/Contact";
 import Coordonnees from "../models/Coordonnees";
 
 
-//PAGE D'EXEMPLE D'UTILISATION DES SERVICES, SUPPRIMABLE PUISQUE CE CODE DE TESTE MANUEL EST COPIE DANS "list-contact.component.manualSpec.ts"
 
 @Component({
   selector: 'app-list-contact',
