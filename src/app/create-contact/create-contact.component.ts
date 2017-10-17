@@ -68,14 +68,14 @@ export class CreateContactComponent implements OnInit {
   handleSubmit (value) {
     console.log (this.contactForm.value.profil);
 
-    let contactToPost = new Contact(
-        null
-        , null
-        , this.contactForm.value.nom
-        , this.contactForm.value.prenom
-        , new Profil(this.contactForm.value.profil, null, null)
-        , new Coordonnees(null, this.contactForm.value)
-        , this.contactForm.value.gravatar);
+    // let contactToPost = new Contact(
+    //     null
+    //     , null
+    //     , this.contactForm.value.nom
+    //     , this.contactForm.value.prenom
+    //     , new Profil(this.contactForm.value.profil, null, null)
+    //     , new Coordonnees(null, this.contactForm.value)
+    //     , this.contactForm.value.gravatar);
     
     // this.contactCrudService.postContact(this.groupId, contactToPost);
   }
