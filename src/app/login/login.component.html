@@ -1,38 +1,87 @@
+<body>
 <div class="container">
   <div class="headerblock">
     <div class="content">
-      <h1> FAMILINK</h1>
-      <div class="paragraphe1">
-        <p> Solution applicative pour faciliter la mise en relation d’un certain nombre de contact autour d’une ou
-            plusieurs personnes agées nécessitant une attention
-            particulière.
-        </p>
+          <h1> Identifiant FAMILINK</h1>
+
+              <div class="formulairelogin">
+                <form (ngSubmit)="handleSubmit()"
+                      method="post"
+                      action=""
+                      class="formulaire"
+                      [formGroup]="loginForm">
+                  <div class="BLOCK__Input">
+                            <div class="BLOCK__Input1" >
+                                <input formControlName="email"
+                                       type="text"
+                                       name="email"
+                                       placeholder="Email">
+                            </div>
+                            <div class="BLOCK__Input2" >
+                                <input formControlName="password"
+                                       type="text"
+                                       name="password"
+                                       placeholder="Password">
+                            </div>
+                  </div>
+                  <div class="BLOCK__Validation">
+                      <button type="submit"
+                              class="validation"> Valider
+                      </button>
+                  </div>
+                </form>
+              </div>
+              <p><a class="DROPDOWN__Link"
+                    routerLink="/create-user"
+                    routerLinkActive="active">Créer un compte</a> | <a routerLink="/forgot-password"
+                                                                       routerLinkActive="active">forgot-password</a> |
+                <a routerLink="/reinitialize-password"
+                   routerLinkActive="active">reinitialize-password</a></p>
+
+            </div>
       </div>
-      <div class="formulairelogin">
-        <form (ngSubmit)="handleSubmit()"
-              method="post"
-              action=""
-              class="formulaire"
-              [formGroup]="loginForm">
-          <input formControlName="email"
-                 type="text"
-                 name="email"
-                 placeholder="Email">
-          <input formControlName="password"
-                 type="text"
-                 name="password"
-                 placeholder="Password">
-          <button type="submit"
-                  class="validation"> Valider
-          </button>
-        </form>
+
+</div>
+<div class="middlebox">
+  <div class="content2">
+    <div class="paragraphemiddle1">
+      <h2> Plateforme FAMILINK</h2>
+      <p> Le projet Familink est une solution applicative pour faciliter la mise en relation d’un certain
+        nombre de contact autour d’une ou plusieurs personnes agées nécessitant une attention
+        particulière.   </p>
+    </div>
+    <div class="blockmiddle1">
+      <div class="block__img">
+        <img src="../../assets/Images/familytechnologies.jpg" alt="">
       </div>
-      <p><a class="DROPDOWN__Link"
-            routerLink="/create-user"
-            routerLinkActive="active">Créer un compte</a> | <a routerLink="/forgot-password"
-                                                               routerLinkActive="active">forgot-password</a> |
-        <a routerLink="/reinitialize-password"
-           routerLinkActive="active">reinitialize-password</a></p>
+      <div class="block__text">
+        <h3>FAMILINK <span>SYNOPSIS</span></h3>
+        <p>Le but de l’application est de centraliser au sein d’une application tous les
+          interlocuteurs ainsi que leurs coordonnées. </p>
+      </div>
+    </div>
+    <div class="blockmiddle2">
+      <div class="block__text">
+        <h3>FAMILINK <span>SYNOPSIS</span></h3>
+        <p>Ainsi, que vous soyez médecin ou bien un membre de la famille, l’accès à tous les contacts est
+          facilité. Les contacts d’un même réseau ou groupe ont la possibilité de s’envoyer des messages au sein de
+          l’application.</p>
+      </div>
+
+
+      <div class="block__img">
+        <img src="../../assets/Images/familymedecine.jpg" alt="">
+      </div>
+    </div>
+    <div class="blockmiddle3">
+      <div class="block__img">
+        <img src="../../assets/Images/familink2.jpg">
+      </div>
+      <div class="block__text">
+        <h3>FAMILINK <span>SYNOPSIS</span></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      </div>
     </div>
   </div>
 </div>
+</body>

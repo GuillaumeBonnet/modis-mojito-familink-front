@@ -17,15 +17,15 @@ import { ListContactComponent } from './list-contact/list-contact.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { ReinitializePasswordComponent } from './reinitialize-password/reinitialize-password.component';
 import { ListeGroupComponent } from './liste-group/liste-group.component';
-    
+
 
 import { ApiRequestService } from './services/apiRequests.service';
 import { ContactCrudService } from './services/contact-crud.service';
 import { LoginService } from "./services/login.service";
-import { HeaderInterceptorService } from "./services/header-interceptor.service";
-
+import { HeaderInterceptorService } from "./services/header-interceptor.service"
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     
+
 
 
 
@@ -49,7 +49,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     FormsModule,
     AppRoutingModule,
     RouterModule,
-
     HttpClientModule,
     ReactiveFormsModule,
   ],
@@ -58,6 +57,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
               LoginService,
               { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptorService, multi: true }
             ], 
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
