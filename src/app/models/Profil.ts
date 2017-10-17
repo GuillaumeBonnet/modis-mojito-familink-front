@@ -1,5 +1,6 @@
 export default class Profil {
-    constructor(  
+    constructor(
+        public id:number,
         public profilName:String,
         public color:String) {}
-  }
+}

@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="BLOCK__Center">
-    <h1> Créer un user</h1>
+    <h1> Créer un user FAMILINK</h1>
     <div class="formulaireuser">
      <!-- Formulaire creation User -->
       <form (ngSubmit)="handleSubmit()"  class="formulaire" [formGroup]="userForm">
@@ -67,7 +67,22 @@
                 </div>
               </div>
             </div>
-            
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="profil">
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                  profil
+                </label>
+                <div class="BLOC__Select">
+                  <select formControlName="profil" id="profil" placeholder="Profil" name="profil" ngModel>
+                    <option value="S" name="senior">Senior</option>
+                    <option value="M" name="medecin">Medecin</option>
+                    <option value="F" name="famille">Famille</option>
+                  </select>
+
+                </div>
+              </div>
+            </div>
             <!-- Formulaire Partie droite -->
 
           </div>
