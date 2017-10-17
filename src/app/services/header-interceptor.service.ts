@@ -16,11 +16,13 @@ export class HeaderInterceptorService implements HttpInterceptor {
    if (req.url.includes(apiUrl)) {
       // Ajout du header Content-Type 
       // => Il est important de noter qu'une requête est immuable, vous devez la cloner
-                
-      let tokenHeader = new HttpHeaders({'Authorization': window.localStorage.getItem("tokenAuth")});
-      const clone = req.clone({ headers : tokenHeader});
-                           
-      return next.handle(clone);
+      if(window.localStorage.getItem("tokenAuth")) {
+        let tokenHeader = new HttpHeaders({'Authorization': window.localStorage.getItem("tokenAuth")});
+        const clone = req.clone({ headers : tokenHeader});
+                             
+        return next.handle(clone);
+      }        
+      
     }
     return next.handle(req);
   }
