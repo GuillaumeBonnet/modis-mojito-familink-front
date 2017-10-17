@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule}    from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
+
 import { LoginComponent } from './login/login.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -17,17 +18,14 @@ import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { ReinitializePasswordComponent } from './reinitialize-password/reinitialize-password.component';
 import { ListeGroupComponent } from './liste-group/liste-group.component';
 
+
 import { ApiRequestService } from './services/apiRequests.service';
 import { ContactCrudService } from './services/contact-crud.service';
 import { LoginService } from "./services/login.service";
-
-import { HeaderInterceptorService } from "./services/header-interceptor.service";
-
-
-
-
+import { HeaderInterceptorService } from "./services/header-interceptor.service"
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { HeaderComponent } from './header/header.component';
+    
 
 
 
@@ -45,6 +43,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ListContactComponent,
     ContactInfoComponent,
     ListeGroupComponent,
+    HeaderComponent,
 
   ],
   imports: [
@@ -56,11 +55,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ReactiveFormsModule,
   ],
   providers: [ApiRequestService,
-     ContactCrudService,
+              ContactCrudService,
               LoginService,
               { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptorService, multi: true }
-            ],
-
+            ], 
 
   bootstrap: [AppComponent]
 })

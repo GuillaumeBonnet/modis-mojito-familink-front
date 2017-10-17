@@ -21,8 +21,10 @@
   <!--<button (click) = "handleClickUpdate()">consoleLogContactHTTPupdate</button>-->
 <!--</div>-->
 
-<!--<div *ngFor="let contact of listeContact">-->
-  <!--contact: -->
-  <!--<p>nom: {{contact.nom}}, prenom: {{contact.prenom}}, ville: {{contact.coordonnees?.phone}}</p> -->
-<!--</div>-->
+<ul class = "contacts">
+    <li *ngFor="let contact of listeContact" (click)="onSelect(contact)">
+        nom: {{contact.firstName}}, prenom: {{contact.lastName}}, ville: {{contact.coordonnees?.phone}}
+    </li>
+  </ul>
+
 <router-outlet></router-outlet>

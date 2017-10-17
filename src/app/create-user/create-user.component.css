@@ -37,8 +37,9 @@ input {
 }
 label{
   margin-bottom: 15px;
-  font-size: 14px;
-  color: #221f21;
+  font-size: 15px;
+  color: white;
+  text-align: center;
 
 }
 
