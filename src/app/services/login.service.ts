@@ -3,13 +3,15 @@ import * as CryptoJS from 'crypto-js';
 import Login from "../models/Login";
 
 import { ApiRequestService } from "./apiRequests.service";
-//import { CookieService } from 'ngx-cookie';
+import { Observable, Subject } from 'rxjs';
+
 @Injectable()
 export class LoginService {
 
   constructor(private apiRequestService: ApiRequestService ) { } //private cookieService:CookieService
 
-  renewToken(email: string, password: string): Promise<any> {
+  renewToken(email: string, password: string): Observable<any> {
+    let retourObservable = new Subject();
     this.apiRequestService.postLogin(new Login(
                                         email
                                         , password //CryptoJS.MD5(password).toString()
@@ -17,14 +19,27 @@ export class LoginService {
                                     ).subscribe(
         (result) => {
             window.localStorage.setItem("tokenAuth", result.token);
+            retourObservable.next(true);
             //console.log('loginService > renewToken > subscribe > result: ', result)
         }
-        , (error) => console.log('loginService > renewToken > subscribe > error: ', error)
-        , () => console.log('loginService > renewToken > subscribe > unsubcribe: ')
+        , (error) => { 
+            console.log('loginService > renewToken > subscribe > error: ', error)
+            retourObservable.next(false);
+        }
+        , () => { 
+            console.log('loginService > renewToken > subscribe > unsubcribe: ');
+        }
+        
                                     );
+      return retourObservable;
+        //return Promise.resolve(retourStatus);
+    // if(retourStatus) {
+    //   return Promise.resolve(retourStatus);
+    // }
+    // else {
+    //   return Promise.reject(retourStatus);
+    // }
     
-    
-    return Promise.resolve(false);
   }
 
   getToken(): String {
