@@ -61,3 +61,18 @@
       height: 22px;
       width: 22px;
   }
+
+  .CONTACT .selected:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+  }
+  .CONTACT:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+
+.selected {
+  background-color: #198DBE !important;
+  color: white;
+}
