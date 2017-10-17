@@ -1,11 +1,13 @@
-<p>
-  liste-group works!
-</p>
-
 <div>
-  <button (click) = "handleClickGet()">consoleLogContactHTTPget</button>
+  <button (click)="handleClickGet()">consoleLogContactHTTPget</button>
 </div>
 
-<div *ngFor="let groupe of listeGroupe">
-  <p>group name: {{groupe.name}}</p>
+<div class="BLOCK_middle">
+  <div class="BLOCK_group">
+
+    <ul class="groups">
+        <h2>Selectionnez un de vos groupes</h2>
+      <li *ngFor="let groupe of listeGroupe" (click)="onSelect(groupe)"> {{groupe.name}} </li>
+    </ul>
+  </div>
 </div>
