@@ -1,23 +1,22 @@
+
+
 * {
   box-sizing: border-box;
   font-family:Arial;
+  width: 100%;
 }
-
 
 h1 {
   color: white;
   text-align: center;
+  padding-top: 15px;
 }
 
 body {
   margin: 0;
   height:100%;
   background-repeat: no-repeat;
-  /*background:url(https://hdwallpapersbuzz.com/wp-content/uploads/2017/04/red-wallpaper-hd-images-15.jpg);*/
-
 }
-
-
 
 img {
   max-width: 100%;
@@ -33,21 +32,31 @@ input {
   padding-top: 3px;
 }
 .container {
-  background-image: url("../../assets/Images/Istock-Seniors-at-Computer.jpg");
-
+  background-image: url("../../assets/Images/bg_login2.jpg");
+  background-size: cover;
 }
-
-.BLOCK__Form{
-
-  margin-bottom: 15px;
-}
-
-.BLOCK__Field {
-  display: inline-block;
-}
-
 label{
   margin-bottom: 15px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+
+}
+
+
+.errormessage {
+
+  font-size: 14px;
+  color: white;
+}
+
+.BLOCK__Header {
+
+  min-height: 100px;
+
+
+
+
 }
 
 .BLOCK__Center{
@@ -55,68 +64,98 @@ label{
   margin: 0 auto;
   max-width: 400px;
   padding: 10px 40px;
-  background:#009688;
+  background-color:#61524e;
   color: #FFF;
   text-shadow: none;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
   border-radius:15px;
-  opacity: 0.7;
+  opacity: 0.8;
+
 }
 
-.BLOCK__Center:hover {
-  background:#009688;
+
+.BLOCK__Center:hover{
+
+  background-color:#61524e;
   opacity: 1;
 
 }
 
 
+
+.BLOCK__Middleform {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom:25px;
+  align-items: center;
+
+
+}
+
+.BLOCK_Identity1, .BLOCK_Identity2, .BLOCK_Identity3 {
+  max-width: 450px;
+  border-bottom: #72b1ff;
+  /*border: 1px solid #16a085;*/
+
+
+}
+
+
 .BLOCK__Input {
-  height: auto!important;
+  /* height: auto!important;*/
+  height: 100%;
   padding: 8px 12px !important;
-  display: inline-block;
+  width: 100%;
+  font-size: 16px;
 
 }
 
 .BLOCK__Input input {
-  background-color:rgba(5,5,5,0.4);
+  /* background-color:rgba(5,5,5,0.4);*/
   border-radius:6px;
-  border:0;
   height:30px;
-  color:rgba(255,255,255,.8);
+  color: #1A237E;
   padding-left:5px;
-
+  display: inline-block;
+  border: 1px solid gray;
+  font-size: 15px;
 }
 
+
+
 .BLOC__Select select {
-  background-color:rgba(5,5,5,0.4);
   border-radius:6px;
   border:0;
   height:30px;
   text-align:left;
-  color:rgba(255,255,255,.8);
-  width: 90px;
-  margin-top: 9px;
-  margin-left:10px;
-  padding-left:5px;
+  width: 96%;
+  border: 1px solid gray;
+  padding: 8px 12px !important;
 }
 
-.BLOCK__Input .validation {
-
-  background-color:rgba(255, 255, 255, 0.06);
+.BLOCK__Input button {
+  background-color:#0D47A1;
   border:1px solid;
   border-color:white;
-  color:rgba(255,255,255,.8);
+  color:rgba(255,255,255,1);
   width: 145px;
   text-align: center;
+  border-radius:6px;
+  height: 35px;
+  margin-top: 25px;
+
 }
 
-.BLOCK__Middleform {
-  display:flex;
-  justify-content: space-between;
-  margin-bottom:25px;
+.BLOCK__Input p{
+  color:rgba(255,255,255,1);
+  font-style: italic;
+
 }
+
 
 .BLOCK__Footerform {
 
 }
+
 

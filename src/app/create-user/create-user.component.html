@@ -2,164 +2,356 @@
 <title>Familink | Création user</title>
 
 
-<div class="container">
-  <div class="BLOCK__Center">
-    <h1> Créer un user FAMILINK</h1>
-    <div class="formulaireuser">
-     <!-- Formulaire creation User -->
-      <form (ngSubmit)="handleSubmit()"  class="formulaire" [formGroup]="userForm">
-        <div class ="BLOCK__Middleform">
 
-          <!-- Formulaire Partie gauche -->
-          <div class="BLOCK_Leftform">
+<div class="container">
+  <div class="BLOCK__Header">
+  </div>
+  <div class="BLOCK__Center">
+
+    <div class="formulairecontact">
+      <!-- Formulaire creation Contact -->
+      <form (ngSubmit) = "handleSubmit()" method="post" action="" class="formulaire" [formGroup]="userForm">
+        <div class ="BLOCK__Middleform">
+          <h1> Créer un User</h1>
+          <!-- Formulaire Partie Email, Nom Prénom -->
+          <div class="BLOCK_Identity1">
             <div class="BLOCK__Form">
               <!-- champ Email -->
               <div class="BLOCK__Field">
-                <label name="email">
-                  <i class="fa fa-envelope" aria-hidden="true"></i> email
-                </label>
-                <div class="BLOCK__Input">
-                 <input formControlName="email" type="text" name="email" placeholder="Saisir un mail" ngModel>
-                </div>
-              </div>
-            </div>
-            <div class="BLOCK__Form">
-              <!-- champ Password -->
-              <div class="BLOCK__Field">
-                <label name="password">
-                  <i class="fa fa-unlock" aria-hidden="true"></i> password
-                </label>
-                <div class="BLOCK__Input">
-                  <input formControlName="password" type="text" name="password" placeholder="Saisir password" ngModel>
-                </div>
-              </div>
-            </div>
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-                <label name="password">
-                  <i class="fa fa-unlock" aria-hidden="true"></i> confirm password
-                </label>
-                <div class="BLOCK__Input">
-                  <input formControlName="password2" type="text" name="password2" placeholder="Confirmer le password" ngModel>
-                </div>
-              </div>
-            </div>
 
 
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-                <label name="nom">
-                  <i class="fa fa-user" aria-hidden="true"></i> nom
-                </label>
                 <div class="BLOCK__Input">
-                  <input formControlName="nom" type="text" name="nom" placeholder="Saisir un nom" ngModel>
+                  <label name="email">
+                    <i class="fa fa-gear" aria-hidden="true"></i>
+                  </label>
+
+                  <input formControlName="email" type="text" name="email" placeholder="email *" >
+                  <div *ngIf="userForm.get('email').dirty && userForm.get('email').hasError('email')" class="errormessage">
+                          Le champ email est invalide
+                  </div>
+                  <div *ngIf="emailCtrl.dirty && emailCtrl.hasError('required')" class="errormessage">
+                          Le champ email doit être mentionné
+                  </div>
                 </div>
               </div>
             </div>
-
+            <!-- champ Nom -->
             <div class="BLOCK__Form">
               <div class="BLOCK__Field">
-                <label name="prenom"> <i class="fa fa-user" aria-hidden="true"></i>
-                  prenom</label>
-                <div class="BLOCK__Input">
-                  <input formControlName="prenom" type="text" name="prenom" placeholder="Saisir un prénom" ngModel>
 
+                <div class="BLOCK__Input">
+                  <label name="nom">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                  </label>
+                  <input formControlName="nom" type="text" name="nom" placeholder="Saisir un nom *">
+                  <div *ngIf="nomCtrl.dirty && nomCtrl.hasError('required')" class="errormessage">
+                          Le champ nom doit être mentionné
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- champ Prénom -->
             <div class="BLOCK__Form">
               <div class="BLOCK__Field">
-                <label name="profil">
-                  <i class="fa fa-users" aria-hidden="true"></i>
-                  profil
-                </label>
+
+                <div class="BLOCK__Input">
+                  <label name="prenom"> <i class="fa fa-user" aria-hidden="true"></i> </label>
+                  <input formControlName="prenom"  type="text" name="prenom" placeholder="Saisir un prénom *">
+                  <div *ngIf="prenomCtrl.dirty && prenomCtrl.hasError('required')" class="errormessage">
+                          Le champ prénom doit être mentionné
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="BLOCK__Form">
+          <!-- champ Password -->
+          <div class="BLOCK__Field">
+          <label name="password">
+          <i class="fa fa-unlock" aria-hidden="true"></i>
+          </label>
+          <div class="BLOCK__Input">
+             <input formControlName="password" type="password" name="password" placeholder="Saisir password" ngModel>
+            <div *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')" class="errormessage">
+                    Le champ mot de passe doit être mentionné
+            </div>
+          </div>
+          </div>
+          </div>
+         <div class="BLOCK__Form">
+         <div class="BLOCK__Field">
+         <label name="password">
+          <i class="fa fa-unlock" aria-hidden="true"></i>
+          </label>
+         <div class="BLOCK__Input">
+           <input formControlName="password2" type="password" name="password2" placeholder="Confirmer le password" ngModel>
+           <div *ngIf="password2Ctrl.dirty && password2Ctrl.hasError('required')" class="errormessage">
+                   Le champ mot de passe doit être mentionné
+           </div>
+          </div>
+          </div>
+         </div>
+
+
+          <!-- Formulaire Partie Profil, Gravatar -->
+          <div class="BLOCK_Identity2">
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+
                 <div class="BLOC__Select">
-                  <select formControlName="profil" id="profil" placeholder="Profil" name="profil" ngModel>
+                  <label name="profil">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                  </label>
+                  <select formControlName="profil"  id="profil" placeholder="Profil" name="profil *">
                     <option value="S" name="senior">Senior</option>
                     <option value="M" name="medecin">Medecin</option>
                     <option value="F" name="famille">Famille</option>
                   </select>
-
+                  <div *ngIf="profilCtrl.dirty && profilCtrl.hasError('required')" class="errormessage">
+                          Le champ profil doit être mentionné
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- Formulaire Partie droite -->
+            <!-- champ Gravatar -->
+            <div class="BLOCK__Form">
 
+              <div class="BLOCK__Field">
+
+                <div class="BLOCK__Input">
+
+                  <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i> </label>
+
+                  <input type="text" name="gravatar" placeholder="gravatar">
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="BLOCK_Rightform">
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-                <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i>
-                  gravatar
-                </label>
-                <div class="BLOCK__Input">
-                  <input formControlName="gravatar" type="text" name="gravatar" placeholder="Saisir gravatar" ngModel>
-                </div>
-              </div>
-            </div>
 
+          <!-- Formulaire Partie Code postal, Ville, Adresse, telephone -->
+          <!-- champ Codepostal -->
+          <div class="BLOCK_Identity3">
             <div class="BLOCK__Form">
-              <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i>
-                code postal</label>
+              <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i></label>
+
               <div class="BLOCK__Input">
-                <input formControlName="codepostal" type="text" name="codepostal" placeholder="Saisir code postal" ngModel>
+                <input type="text" name="codepostal" placeholder="Saisir code postal">
               </div>
             </div>
-
+            <!-- champ Adresse -->
             <div class="BLOCK__Form">
               <div class="BLOCK__Field">
-                <label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  ville
-                </label>
+                <label name="adresse"> <i class="fa fa-map-marker" aria-hidden="true"></i> </label>
                 <div class="BLOCK__Input">
-                  <input formControlName="ville" type="text" name="ville" placeholder="Saisir ville" ngModel>
+                  <input type="text" name="adresse" placeholder="Saisir une adresse">
                 </div>
               </div>
             </div>
-
+            <!-- champ Ville -->
+            <div class="BLOCK__Form">
+              <div class="BLOCK__Field">
+                <label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>  </label>
+                <div class="BLOCK__Input">
+                  <input type="text" name="ville" placeholder="Saisir ville">
+                </div>
+              </div>
+            </div>
+            <!-- champ Téléphone -->
             <div class="BLOCK__Form">
               <div class="BLOCK__Field">
                 <label name="telephone">
-                  <i class="fa fa-phone" aria-hidden="true"></i> téléphone
-                </label>
+                  <i class="fa fa-phone" aria-hidden="true"></i></label>
                 <div class="BLOCK__Input">
-                  <input formControlName="telephone" type="text" name="tel" placeholder="Saisir téléphone" ngModel>
-
+                  <input formControlName="telephone"  type="text" name="tel" placeholder="téléphone *">
+                  <div *ngIf="telephoneCtrl.dirty && telephoneCtrl.hasError('required')" class="errormessage">
+                          Le champ téléphone doit être mentionné
+                  </div>
                 </div>
               </div>
             </div>
+
+          </div>
+
+          <!-- Boutons de validation -->
+
+          <div class="BLOCK__Footerform">
             <div class="BLOCK__Form">
               <div class="BLOCK__Field">
-                <label name="profil">
-                  <i class="fa fa-users" aria-hidden="true"></i>
-                  profil
-                </label>
-                <div class="BLOC__Select">
-                  <select formControlName="profil" id="profil" placeholder="Profil" name="profil" ngModel>
-                    <option value="S" name="senior">Senior</option>
-                    <option value="M" name="medecin">Medecin</option>
-                    <option value="F" name="famille">Famille</option>
-                  </select>
-
+                <div class="BLOCK__Input">
+                  <p>Familink est susceptible d'utiliser vos données à des fins commerciales.</p>
+                  <button type="submit" [disabled]="userForm.invalid"  class="validation"> Valider </button>
+                  <button type="reset" (click)="handleClear()" class="validation"> Annuler </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="BLOCK__Footerform">
-          <div class="BLOCK__Form">
-            <div class="BLOCK__Field">
-              <div class="BLOCK__Input">
-                <button type="submit" class="validation"> Valider </button>
-                <button type="reset" (click) ="handleClear()" class="validation"> Annuler </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </form>
-
     </div>
   </div>
-
 </div>
+
+
+
+
+<!--<div class="container">-->
+  <!--<div class="BLOCK__Center">-->
+    <!--<h1> Créer un user FAMILINK</h1>-->
+    <!--<div class="formulaireuser">-->
+     <!--&lt;!&ndash; Formulaire creation User &ndash;&gt;-->
+      <!--<form (ngSubmit)="handleSubmit()"  class="formulaire" [formGroup]="userForm">-->
+        <!--<div class ="BLOCK__Middleform">-->
+
+          <!--&lt;!&ndash; Formulaire Partie gauche &ndash;&gt;-->
+          <!--<div class="BLOCK_Leftform">-->
+            <!--<div class="BLOCK__Form">-->
+              <!--&lt;!&ndash; champ Email &ndash;&gt;-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="email">-->
+                  <!--<i class="fa fa-envelope" aria-hidden="true"></i> email-->
+                <!--</label>-->
+                <!--<div class="BLOCK__Input">-->
+                 <!--<input formControlName="email" type="text" name="email" placeholder="Saisir un mail" ngModel>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="BLOCK__Form">-->
+              <!--&lt;!&ndash; champ Password &ndash;&gt;-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="password">-->
+                  <!--<i class="fa fa-unlock" aria-hidden="true"></i> password-->
+                <!--</label>-->
+                <!--<div class="BLOCK__Input">-->
+                  <!--<input formControlName="password" type="text" name="password" placeholder="Saisir password" ngModel>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="BLOCK__Form">-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="password">-->
+                  <!--<i class="fa fa-unlock" aria-hidden="true"></i> confirm password-->
+                <!--</label>-->
+                <!--<div class="BLOCK__Input">-->
+                  <!--<input formControlName="password2" type="text" name="password2" placeholder="Confirmer le password" ngModel>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+
+            <!--<div class="BLOCK__Form">-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="nom">-->
+                  <!--<i class="fa fa-user" aria-hidden="true"></i> nom-->
+                <!--</label>-->
+                <!--<div class="BLOCK__Input">-->
+                  <!--<input formControlName="nom" type="text" name="nom" placeholder="Saisir un nom" ngModel>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="BLOCK__Form">-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="prenom"> <i class="fa fa-user" aria-hidden="true"></i>-->
+                  <!--prenom</label>-->
+                <!--<div class="BLOCK__Input">-->
+                  <!--<input formControlName="prenom" type="text" name="prenom" placeholder="Saisir un prénom" ngModel>-->
+
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="BLOCK__Form">-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="profil">-->
+                  <!--<i class="fa fa-users" aria-hidden="true"></i>-->
+                  <!--profil-->
+                <!--</label>-->
+                <!--<div class="BLOC__Select">-->
+                  <!--<select formControlName="profil" id="profil" placeholder="Profil" name="profil" ngModel>-->
+                    <!--<option value="S" name="senior">Senior</option>-->
+                    <!--<option value="M" name="medecin">Medecin</option>-->
+                    <!--<option value="F" name="famille">Famille</option>-->
+                  <!--</select>-->
+
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Formulaire Partie droite &ndash;&gt;-->
+
+          <!--</div>-->
+          <!--<div class="BLOCK_Rightform">-->
+            <!--<div class="BLOCK__Form">-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i>-->
+                  <!--gravatar-->
+                <!--</label>-->
+                <!--<div class="BLOCK__Input">-->
+                  <!--<input formControlName="gravatar" type="text" name="gravatar" placeholder="Saisir gravatar" ngModel>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="BLOCK__Form">-->
+              <!--<label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i>-->
+                <!--code postal</label>-->
+              <!--<div class="BLOCK__Input">-->
+                <!--<input formControlName="codepostal" type="text" name="codepostal" placeholder="Saisir code postal" ngModel>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="BLOCK__Form">-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>-->
+                  <!--ville-->
+                <!--</label>-->
+                <!--<div class="BLOCK__Input">-->
+                  <!--<input formControlName="ville" type="text" name="ville" placeholder="Saisir ville" ngModel>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="BLOCK__Form">-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="telephone">-->
+                  <!--<i class="fa fa-phone" aria-hidden="true"></i> téléphone-->
+                <!--</label>-->
+                <!--<div class="BLOCK__Input">-->
+                  <!--<input formControlName="telephone" type="text" name="tel" placeholder="Saisir téléphone" ngModel>-->
+
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="BLOCK__Form">-->
+              <!--<div class="BLOCK__Field">-->
+                <!--<label name="profil">-->
+                  <!--<i class="fa fa-users" aria-hidden="true"></i>-->
+                  <!--profil-->
+                <!--</label>-->
+                <!--<div class="BLOC__Select">-->
+                  <!--<select formControlName="profil" id="profil" placeholder="Profil" name="profil" ngModel>-->
+                    <!--<option value="S" name="senior">Senior</option>-->
+                    <!--<option value="M" name="medecin">Medecin</option>-->
+                    <!--<option value="F" name="famille">Famille</option>-->
+                  <!--</select>-->
+
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="BLOCK__Footerform">-->
+          <!--<div class="BLOCK__Form">-->
+            <!--<div class="BLOCK__Field">-->
+              <!--<div class="BLOCK__Input">-->
+                <!--<button type="submit" class="validation"> Valider </button>-->
+                <!--<button type="reset" (click) ="handleClear()" class="validation"> Annuler </button>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+      <!--</form>-->
+
+    <!--</div>-->
+  <!--</div>-->
+
+<!--</div>-->
