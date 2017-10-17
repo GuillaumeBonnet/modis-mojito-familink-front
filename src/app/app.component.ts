@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router, ActivatedRoute, ParamMap} from "@angular/router";
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,11 @@ export class AppComponent {
   constructor(private route: Router) {}
 
   pageIsNotLogin() : boolean {
-    if( this.route.url === '/login' || this.route.url ===  '/groups' || this.route.url ===  '/groups/3/contacts/create-contact') {
+    if( this.route.url === '/login' || this.route.url ===  '/groups') {
       return false;
     }
     else {
-      return false;
+      return true;
     }
   }
 }
