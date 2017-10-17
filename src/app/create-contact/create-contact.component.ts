@@ -17,6 +17,7 @@ export class CreateContactComponent implements OnInit {
   private codepostalCtrl:FormControl;
   private villeCtrl:FormControl;
   private telephoneCtrl:FormControl;
+  private adresseCtrl:FormControl;
   contactForm : FormGroup;
 
 
@@ -29,7 +30,7 @@ export class CreateContactComponent implements OnInit {
     this.profilCtrl = fb.control('', [Validators.required]);
     this.telephoneCtrl = fb.control('', [Validators.required]);
 
-   //this.nomCtrl = fb.control('');
+
 
     this.contactForm = fb.group({
 
@@ -40,7 +41,8 @@ export class CreateContactComponent implements OnInit {
       gravatar : this.gravatarCtrl,
       codepostal : this.codepostalCtrl,
       ville : this.villeCtrl,
-      telephone : this.telephoneCtrl
+      telephone : this.telephoneCtrl,
+      adresse : this.adresseCtrl
     });
   }
 
