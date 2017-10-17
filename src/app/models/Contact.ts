@@ -1,5 +1,7 @@
 import Coordonnees from './Coordonnees';
-import Profil from "./Profil";
+
+import Profil from './Profil'
+
 
 import Group from './Group'
 

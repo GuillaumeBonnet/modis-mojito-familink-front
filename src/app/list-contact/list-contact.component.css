@@ -1,28 +1,78 @@
-.selected {
-    background-color: #198DBE !important;
-    color: white;
-}
 
-.contacts {
-    list-style-type: none;
-    padding: 0;
-    width: 15em;
+.LISTGROUP_CONTAINER{
+    min-height: 88vh;
+    display: flex;
   }
-  .contacts li {
-    cursor: pointer;
-    position: relative;
-    background-color: #EEE;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
+
+  .OVERVIEWLISTCONTACT{
+    border: 2px solid #61524e;
+    background-color: rgba(97, 82, 78, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: calc(100%/3);
   }
-  .contacts li.selected:hover {
+  
+  .DETAILCONTACT{
+    /* border: 1px solid blue; */
+    height: 100px;
+    width: calc(100%/3*2);
+  }
+  
+  .CONTACT{
+    border: 2px solid #61524e;
+    background-color: white;
+    width: auto;
+    height: auto;
+    margin-bottom: 5px;
+    margin-top: 5px; 
+    display: flex;
+    padding: 5px;
+  }
+  
+  .CONTACT__Gravatar{
+    width: auto;
+    height: auto;
+    border: 3px solid;
+  }
+  
+  .OVERVIEW{
+    width: calc(100%/5*4);
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .OVERVIEW__Identite{
+    width: 100%;
+    height: calc(100%/2);
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding-left: 15px;
+  }
+  
+  .OVERVIEW__Profil{
+    margin-right: 10px;
+    width: auto;
+    height: 100%;
+  }
+
+  .OVERVIEW__ImageFavori{
+      height: 22px;
+      width: 22px;
+  }
+
+  .CONTACT .selected:hover {
     background-color: #BBD8DC !important;
     color: white;
   }
-  .contacts li:hover {
+  .CONTACT:hover {
     color: #607D8B;
     background-color: #DDD;
     left: .1em;
-  }
+}
+
+.selected {
+  background-color: #198DBE !important;
+  color: white;
+}
