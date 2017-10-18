@@ -31,7 +31,7 @@ export class ApiRequestService {
 
   //PROFILS
   getProfils(): Observable<any> {
-    return this.http.get(apiUrl + '/profils');
+    return this.http.get(apiUrl + '/profils/');
   }
 
 

@@ -1,0 +1,69 @@
+
+.CONTACT_CONTAINER{
+    border: 2px solid #61524e;
+    min-height: 88vh;
+    display: flex;
+    align-items : center;
+    justify-content: center;
+    flex-direction: column; 
+  }
+  
+  .CONTACTSELECTION{
+    width: 75%;
+    height: auto;
+    margin-bottom: 5px;
+    margin-top: 5px; 
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+  }
+  
+  .CONTACT__Gravatar{
+    width: auto;
+    height: auto;
+    border: 3px solid;
+  }
+  
+  .OVERVIEW{
+    width: calc(100%/5*4);
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .OVERVIEW__Profil{
+    width: 100%;
+    height: calc(100%/2);
+    display: flex;
+    justify-content: left;
+    font-size: 30px;
+    padding-left: 15px;
+  }
+  
+  .OVERVIEW__Identite{
+    margin-right: 20px;
+    width: auto;
+    height: 100%;
+  }
+
+  .OVERVIEW__Image{
+    height: 22px;
+    width: 22px;
+  }
+
+  /* OVERVIEW__Image--click :hover{
+    color: yellow;
+  } */
+
+  .INFO{
+    padding-top: 30px;
+    padding-left: 150px;
+    font-size: 21px;
+    border: 2px solid #61524e;
+    height: 350px;
+    width: 60%;
+  }
+
+  .INFO__Edit{
+    padding-left: 10px;
+  }
