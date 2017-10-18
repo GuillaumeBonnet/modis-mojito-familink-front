@@ -1,4 +1,4 @@
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -16,7 +16,7 @@ import User from '../models/User';
 import Login from "../models/Login";
 
 export const apiUrl = `${environment.baseURL}/atelier/mvc`;  // URL to web api
-import {environment} from "../../environments/environment";
+import { environment } from "../../environments/environment";
 
 @Injectable()
 export class ApiRequestService {
@@ -24,44 +24,63 @@ export class ApiRequestService {
 
   constructor(private http: HttpClient) { }
 
-    //LOGINS
-    postLogin(login: Login): Observable<any> {
-      return this.http.post(apiUrl + '/login', login);
-    }
 
-    //PROFILS
-    getProfils(): Observable<any> {
-      return this.http.get(apiUrl + '/profils/');
+  //PROFILS
+  getProfils(): Observable<any> {
+    return this.http.get(apiUrl + '/profils/');
+  }
+
+  //======================================================================================
+  //=============================USER=====================================================
+  //======================================================================================
+  postUser(user: User): Observable<any> {
+    delete (user.id);
+    delete (user.contact.id);
+    delete (user.contact.coordonnees.id);
+    console.log("############################################")
+    console.log(user)
+    console.log(user.contact)
+    console.log(user.contact.coordonnees)
+    console.log(user.contact.profil)
+    return this.http.post(apiUrl + '/user' + '/create', user);
+  }
+
+  //LOGINS
+  postLogin(login: Login): Observable<any> {
+    return this.http.post(apiUrl + '/login', login);
   }
 
 
-    //GROUPS : =======================================================================================================
-    getGroups(): Observable<any> {
-        return this.http.get(apiUrl + '/groups' + '/');         
-    }
 
-    postGroup(groupe: Group): Observable<any> {
-      delete (groupe.owner);
-      delete (groupe.contacts);
-      delete (groupe.id);
-      return this.http.post(apiUrl + '/groups' + '/', groupe);         
+
+
+  //GROUPS : =======================================================================================================
+  getGroups(): Observable<any> {
+    return this.http.get(apiUrl + '/groups' + '/');
   }
 
-    //CONTACTS : =======================================================================================================
-  getContacts(idGroup:number): Observable<any> {
-    return this.http.get(apiUrl + '/groups' + '/' +  idGroup + '/contacts');
-    
+  postGroup(groupe: Group): Observable<any> {
+    delete (groupe.owner);
+    delete (groupe.contacts);
+    delete (groupe.id);
+    return this.http.post(apiUrl + '/groups' + '/', groupe);
   }
 
-  postContact(idGroup:number, contact:Contact): Observable<any> {
+  //CONTACTS : =======================================================================================================
+  getContacts(idGroup: number): Observable<any> {
+    return this.http.get(apiUrl + '/groups' + '/' + idGroup + '/contacts');
+
+  }
+
+  postContact(idGroup: number, contact: Contact): Observable<any> {
 
     delete (contact.id);
     delete (contact.coordonnees.id);
-      return this.http.post(apiUrl + '/groups' + '/' + idGroup + '/contact' , contact);
+    return this.http.post(apiUrl + '/groups' + '/' + idGroup + '/contact', contact);
   }
 
-  deleteContact(idGroup:number, contact:Contact) {
-    if(contact && contact.id) {
+  deleteContact(idGroup: number, contact: Contact) {
+    if (contact && contact.id) {
       return this.http.delete(apiUrl + '/groups' + '/' + idGroup + '/contacts' + '/' + contact.id);
     } else {
       throw new Error('pas de contact ou pas d\'ID');
@@ -69,8 +88,8 @@ export class ApiRequestService {
 
   }
 
-  updateContact(idGroup:number, contact:Contact) {
-    if(contact && contact.id) {
+  updateContact(idGroup: number, contact: Contact) {
+    if (contact && contact.id) {
       return this.http.put(apiUrl + '/groups' + '/' + idGroup + '/contact', contact);
       //return this.http.put(apiUrl + '/groups' + '/' + idGroup + '/contacts' + '/' + contact.id, contact);
     } else {
@@ -78,4 +97,6 @@ export class ApiRequestService {
     }
 
   }
+
+
 }
