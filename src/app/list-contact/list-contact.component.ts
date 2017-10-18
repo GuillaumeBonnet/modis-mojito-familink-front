@@ -31,13 +31,16 @@ export class ListContactComponent implements OnInit {
   ngOnInit() {
     this.contactCrudService.contactListObservable()
           .subscribe(
-          (retour:any) => this.listeContact = retour
+          (retour:any) => {
+            this.listeContact = retour; 
+            this.selectedContact = this.listeContact[0];
+          }
           , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
           , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
           
     this.groupId = Number(this.route.snapshot.paramMap.get('groupId'));
     this.contactCrudService.loadList(this.groupId);
-    this.selectedContact = ListContactComponent[0];
+    
    
     
   }
