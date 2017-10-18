@@ -6,6 +6,8 @@ import Coordonnees from "../models/Coordonnees";
 import Profil from "../models/Profil";
 
 import { ApiRequestService } from "../services/apiRequests.service";
+import {Router, ActivatedRoute, ParamMap} from "@angular/router";
+
 
 
 
@@ -24,6 +26,7 @@ export class CreateContactComponent implements OnInit {
   private profilCtrl:FormControl;
   private gravatarCtrl:FormControl;
   private codepostalCtrl:FormControl;
+  private adresseCtrl:FormControl;
   private villeCtrl:FormControl;
   private telephoneCtrl:FormControl;
   contactForm : FormGroup;
@@ -33,15 +36,17 @@ export class CreateContactComponent implements OnInit {
 
   constructor(private fb: FormBuilder
               , private apiRequestService: ApiRequestService
-              , private contactCrudService: ContactCrudService) {
+              , private contactCrudService: ContactCrudService
+              , private route: ActivatedRoute
+              , private router: Router) {
 // Création des contrôles
     this.emailCtrl = fb.control('', [Validators.email, Validators.required]);
     this.nomCtrl = fb.control('', [Validators.required]);
     this.prenomCtrl = fb.control('', [Validators.required]);
     this.profilCtrl = fb.control('', [Validators.required]);
     this.telephoneCtrl = fb.control('', [Validators.required]);
+    this.adresseCtrl = fb.control('', );
 
-   //this.nomCtrl = fb.control('');
 
     this.contactForm = fb.group({
 
@@ -51,6 +56,7 @@ export class CreateContactComponent implements OnInit {
       profil : this.profilCtrl,
       gravatar : this.gravatarCtrl,
       codepostal : this.codepostalCtrl,
+      adresse : this.adresseCtrl,
       ville : this.villeCtrl,
       telephone : this.telephoneCtrl
     });
@@ -66,18 +72,25 @@ export class CreateContactComponent implements OnInit {
         , () => console.log('create-contact > ngOnInit > subcriber > unsubscribe:'));
   }
   handleSubmit (value) {
-    console.log (this.contactForm.value.profil);
-
-    // let contactToPost = new Contact(
-    //     null
-    //     , null
-    //     , this.contactForm.value.nom
-    //     , this.contactForm.value.prenom
-    //     , new Profil(this.contactForm.value.profil, null, null)
-    //     , new Coordonnees(null, this.contactForm.value)
-    //     , this.contactForm.value.gravatar);
     
-    // this.contactCrudService.postContact(this.groupId, contactToPost);
+
+    let contactToPost = new Contact(
+        null
+        , null
+        , this.contactForm.value.nom
+        , this.contactForm.value.prenom
+        , new Profil(this.contactForm.value.profil, null, null)
+        , new Coordonnees(
+              null
+              , this.contactForm.value.adresse
+              , this.contactForm.value.codepostal
+              , this.contactForm.value.ville
+              , this.contactForm.value.telephone
+              , this.contactForm.value.email
+                          )
+        , this.contactForm.value.gravatar);
+    this.contactCrudService.postContact(Number(this.route.snapshot.paramMap.get('groupId')), contactToPost);
+    setImmediate(() => this.router.navigate(['/groups', Number(this.route.snapshot.paramMap.get('groupId'))]), 4000);
   }
 
   handleClear() {
