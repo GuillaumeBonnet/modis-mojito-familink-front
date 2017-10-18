@@ -18,7 +18,7 @@ export const PATH_GROUP: string = 'groups';
 export const PATH_CONTACT: string = 'contacts';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: PATH_HOME, redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'create-user', component: CreateUserComponent },
@@ -40,9 +40,3 @@ const routes: Routes = [
   }
   
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

@@ -1,155 +1,155 @@
-
-            <div class="container">
-              <div class="BLOCK__Header">
-
+<div class="container">
+    <div class="BLOCK__Header">
+      <h1> Créer un contact Familink</h1>
+    </div>
+    <div class="BLOCK__Center">
+  
+      <div class="formulairecontact">
+        <!-- Formulaire creation Contact -->
+        <form (ngSubmit)="handleSubmit()" method="post" action="" class="formulaire" [formGroup]="contactForm">
+          <div class="BLOCK__Middleform">
+            <!-- Formulaire Partie Email, Nom Prénom -->
+            <div class="BLOCK_Identity1">
+              <div class="BLOCK__Form">
+                <!-- champ Email -->
+                <div class="BLOCK__Field">
+  
+  
+                  <div class="BLOCK__Input">
+                    <label name="email">
+                      <i class="fa fa-gear" aria-hidden="true"></i>
+                    </label>
+  
+                    <input formControlName="email" type="text" name="email" placeholder="email *">
+                    <div *ngIf="contactForm.get('email').dirty && contactForm.get('email').hasError('email')" class="errormessage">
+                      Le champ email est invalide
+                    </div>
+                    <div *ngIf="emailCtrl.dirty && emailCtrl.hasError('required')" class="errormessage">
+                      Le champ email doit être mentionné
+                    </div>
+                  </div>
+                </div>
               </div>
-                    <div class="BLOCK__Center">
-
-                            <div class="formulairecontact">
-
-                            <!-- Formulaire creation Contact -->
-                                    <form (ngSubmit) = "handleSubmit()" method="post" action="" class="formulaire" [formGroup]="contactForm">
-                                            <div class ="BLOCK__Middleform">
-                                              <h1> Créer un contact </h1>
-                                   <!-- Formulaire Partie Email, Nom Prénom -->
-                                              <div class="BLOCK_Identity1">
-                                                <div class="BLOCK__Form">
-                                  <!-- champ Email -->
-                                                <div class="BLOCK__Field">
-
-
-                <div class="BLOCK__Input">
-                  <label name="nom">
-                                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                                  </label>
-                  <input formControlName="nom" type="text" name="nom" placeholder="Saisir un nom *">
-                  <div *ngIf="nomCtrl.dirty && nomCtrl.hasError('required')" class="errormessage">
-                    Le champ nom doit être mentionné
+              <!-- champ Nom -->
+              <div class="BLOCK__Form">
+                <div class="BLOCK__Field">
+  
+                  <div class="BLOCK__Input">
+                    <label name="nom">
+                                                      <i class="fa fa-user" aria-hidden="true"></i>
+                                                    </label>
+                    <input formControlName="nom" type="text" name="nom" placeholder="Saisir un nom *">
+                    <div *ngIf="nomCtrl.dirty && nomCtrl.hasError('required')" class="errormessage">
+                      Le champ nom doit être mentionné
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- champ Prénom -->
+              <div class="BLOCK__Form">
+                <div class="BLOCK__Field">
+  
+                  <div class="BLOCK__Input">
+                    <label name="prenom"> <i class="fa fa-user" aria-hidden="true"></i> </label>
+                    <input formControlName="prenom" type="text" name="prenom" placeholder="Saisir un prénom *">
+                    <div *ngIf="prenomCtrl.dirty && prenomCtrl.hasError('required')" class="errormessage">
+                      Le champ prénom doit être mentionné
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- champ Prénom -->
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-
+            <!-- Formulaire Partie Profil-->
+            <div class="BLOCK_Identity2">
+              <div class="BLOCK__Form">
+                <div class="BLOCK__Field">
+  
+                  <div class="BLOC__Select">
+                    <label name="profil">
+                                                      <i class="fa fa-users" aria-hidden="true"></i>
+                                                    </label>
+                    <select formControlName="profil" id="profil" placeholder="Profil" name="profil *">
+                                                       <option *ngFor="let profil of profils" [value]="profil.id">{{profil.profilName}}</option>                               
+                                                      </select>
+                    <div *ngIf="profilCtrl.dirty && profilCtrl.hasError('required')" class="errormessage">
+                      Le champ profil doit être mentionné
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- champ Gravatar -->
+              <div class="BLOCK__Form">
+  
+                <div class="BLOCK__Field">
+  
+                  <div class="BLOCK__Input">                  
+                    <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i> </label>
+                    <input formControlName="gravatar" type="text" name="gravatar" placeholder="Saisir url gravatar">
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Formulaire Partie Code postal, Ville, Adresse, telephone -->
+            <!-- champ Codepostal -->
+            <div class="BLOCK_Identity3">
+              <div class="BLOCK__Form">
+                <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i></label>
+  
                 <div class="BLOCK__Input">
-                  <label name="prenom"> <i class="fa fa-user" aria-hidden="true"></i> </label>
-                  <input formControlName="prenom" type="text" name="prenom" placeholder="Saisir un prénom *">
-                  <div *ngIf="prenomCtrl.dirty && prenomCtrl.hasError('required')" class="errormessage">
-                    Le champ prénom doit être mentionné
+                  <input formControlName="codepostal" type="text" name="codepostal" placeholder="Saisir code postal">
+                  
+                </div>
+              </div>
+              <!-- champ Adresse -->
+              <div class="BLOCK__Form">
+                <div class="BLOCK__Field">
+                  <label name="adresse"> <i class="fa fa-map-marker" aria-hidden="true"></i> </label>
+                  <div class="BLOCK__Input">
+                      <input formControlName="adresse" type="text" name="adresse" placeholder="Saisir une adresse">
+                  </div>
+                </div>
+              </div>
+              <!-- champ Ville -->
+              <div class="BLOCK__Form">
+                <div class="BLOCK__Field">
+                  <label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>  </label>
+                  <div class="BLOCK__Input">
+                    <input formControlName="ville" type="text" name="ville" placeholder="Saisir une ville">                  
+                  </div>
+                </div>
+              </div>
+              <!-- champ Téléphone -->
+              <div class="BLOCK__Form">
+                <div class="BLOCK__Field">
+                  <label name="telephone">
+                                                        <i class="fa fa-phone" aria-hidden="true"></i></label>
+                  <div class="BLOCK__Input">
+                    <input formControlName="telephone" type="text" name="tel" placeholder="téléphone *">
+                    <div *ngIf="telephoneCtrl.dirty && telephoneCtrl.hasError('required')" class="errormessage">
+                      Le champ téléphone doit être mentionné
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- Boutons de validation -->
+  
+            <div class="BLOCK__Footerform">
+              <div class="BLOCK__Form">
+                <div class="BLOCK__Field">
+                  <div class="BLOCK__Input">
+                    <p>Familink est susceptible d'utiliser vos données à des fins commerciales.</p>
+                    <button type="submit" [disabled]="contactForm.invalid" class="validation"> Valider </button>
+                    <button type="reset" (click)="handleClear()" class="validation"> Annuler </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Formulaire Partie Profil-->
-          <div class="BLOCK_Identity2">
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-
-                <div class="BLOC__Select">
-                  <label name="profil">
-                                                    <i class="fa fa-users" aria-hidden="true"></i>
-                                                  </label>
-                                                   <select formControlName="profil"  id="profil" placeholder="Profil" name="profil *">
-                                                     <option value="S" name="senior">Senior</option>
-                                                     <option value="M" name="medecin">Medecin</option>
-                                                     <option value="F" name="famille">Famille</option>
-                                                   </select>
-                                                  <div *ngIf="profilCtrl.dirty && profilCtrl.hasError('required')" class="errormessage">
-                                                          Le champ profil doit être mentionné
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                                <!-- champ Gravatar -->
-                                                <div class="BLOCK__Form">
-
-                                                  <div class="BLOCK__Field">
-
-                                                    <div class="BLOCK__Input">
-
-                                                      <label name="gravatar">
-                                                        <i class="fa fa-id-badge" aria-hidden="true"></i>
-                                                      </label>
-
-                                                      <input type="text" name="gravatar" placeholder="gravatar">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-
-              <div class="BLOCK__Field">
-
-                <div class="BLOCK__Input">                  
-                  <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i> </label>
-                  <input formControlName="gravatar" type="text" name="gravatar" placeholder="Saisir url gravatar">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Formulaire Partie Code postal, Ville, Adresse, telephone -->
-          <!-- champ Codepostal -->
-          <div class="BLOCK_Identity3">
-            <div class="BLOCK__Form">
-              <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i></label>
-
-              <div class="BLOCK__Input">
-                <input formControlName="codepostal" type="text" name="codepostal" placeholder="Saisir code postal">
-                
-              </div>
-            </div>
-            <!-- champ Adresse -->
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-                <label name="adresse"> <i class="fa fa-map-marker" aria-hidden="true"></i> </label>
-                <div class="BLOCK__Input">
-                    <input formControlName="adresse" type="text" name="adresse" placeholder="Saisir une adresse">
-                </div>
-              </div>
-            </div>
-            <!-- champ Ville -->
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-                <label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>  </label>
-                <div class="BLOCK__Input">
-                  <input formControlName="ville" type="text" name="ville" placeholder="Saisir une ville">                  
-                </div>
-              </div>
-            </div>
-            <!-- champ Téléphone -->
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-                <label name="telephone">
-                                                      <i class="fa fa-phone" aria-hidden="true"></i></label>
-                <div class="BLOCK__Input">
-                  <input formControlName="telephone" type="text" name="tel" placeholder="téléphone *">
-                  <div *ngIf="telephoneCtrl.dirty && telephoneCtrl.hasError('required')" class="errormessage">
-                    Le champ téléphone doit être mentionné
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Boutons de validation -->
-
-          <div class="BLOCK__Footerform">
-            <div class="BLOCK__Form">
-              <div class="BLOCK__Field">
-                <div class="BLOCK__Input">
-                  <p>Familink est susceptible d'utiliser vos données à des fins commerciales.</p>
-                  <button type="submit" [disabled]="contactForm.invalid" class="validation"> Valider </button>
-                  <button type="reset" (click)="handleClear()" class="validation"> Annuler </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>

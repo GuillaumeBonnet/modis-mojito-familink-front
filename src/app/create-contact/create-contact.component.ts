@@ -62,14 +62,14 @@ export class CreateContactComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-      this.apiRequestService.getProfils()
-      .subscribe(
-        (retour:any) => {
-          this.profils = retour;
-        }
-        , (erreur) => console.log('create-contact > ngOnInit > subcriber > erreur:', erreur)
-        , () => console.log('create-contact > ngOnInit > subcriber > unsubscribe:'));
+  ngOnInit() {    
+    this.apiRequestService.getProfils()
+    .subscribe(
+      (retour:any) => {
+        this.profils = retour;
+      }
+      , (erreur) => console.log('create-contact > ngOnInit > subcriber > erreur:', erreur)
+      , () => console.log('create-contact > ngOnInit > subcriber > unsubscribe:'));
   }
   handleSubmit (value) {
     
@@ -89,8 +89,8 @@ export class CreateContactComponent implements OnInit {
               , this.contactForm.value.email
                           )
         , this.contactForm.value.gravatar);
-    this.contactCrudService.postContact(Number(this.route.snapshot.paramMap.get('groupId')), contactToPost);
-    setImmediate(() => this.router.navigate(['/groups', Number(this.route.snapshot.paramMap.get('groupId'))]), 4000);
+    this.contactCrudService.postContact(Number(this.route.parent.snapshot.paramMap.get('groupId')), contactToPost);
+    setTimeout(() => this.router.navigate(['/groups', Number(this.route.parent.snapshot.paramMap.get('groupId'))]), 4000);
   }
 
   handleClear() {
