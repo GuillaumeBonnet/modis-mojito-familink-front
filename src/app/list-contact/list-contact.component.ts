@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 
 
@@ -45,18 +45,29 @@ export class ListContactComponent implements OnInit {
           , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
           
     this.groupId = Number(this.route.snapshot.paramMap.get('groupId'));
-    this.contactCrudService.loadList(this.groupId);
-    
-   
-    
+    this.contactCrudService.loadList(this.groupId);  
   }
 
+  ngOnchanges() {
+    // this.groupId = Number(this.route.snapshot.paramMap.get('groupId'));
+    // this.contactCrudService.contactListObservable()
+    // .subscribe(
+    // (retour:any) => {
+    //   this.listeContact = retour; 
+    //   this.selectedContact = this.listeContact[0];
+    // }
+    // , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
+    // , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
+    // this.contactCrudService.loadList(this.groupId); 
+  }
+  
   onSelect(contact:Contact): void {
     this.selectedContact = contact;
     console.log(this.selectedContact);
   }
 
-  handleClickGet() {
+
+  handleClickRefresh() {
     this.contactCrudService.loadList(this.groupId);
     
   }
