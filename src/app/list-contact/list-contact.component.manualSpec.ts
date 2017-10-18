@@ -6,7 +6,7 @@ import { ApiRequestService } from "../services/apiRequests.service";
 import { ContactCrudService } from "../services/contact-crud.service";
 import * as _ from "lodash";
 
-import Contact from "../models/Contact";
+import Contact from '../models/Contact';
 import Coordonnees from "../models/Coordonnees";
 
 
@@ -22,7 +22,7 @@ export class ListContactComponent implements OnInit {
 
   listeContact:any = [];
   groupId:number = 2;
-  
+
   constructor(private apiRequestService: ApiRequestService
               , private contactCrudService: ContactCrudService) { }
 
@@ -33,7 +33,7 @@ export class ListContactComponent implements OnInit {
           , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
           , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
 
-          this.contactCrudService.loadList(this.groupId);    
+          this.contactCrudService.loadList(this.groupId);
   }
 
   handleClickGet() {
@@ -57,7 +57,7 @@ export class ListContactComponent implements OnInit {
     contact.nom += 'Pos';
     contact.coordonnees.email += 'Pos';
     console.log('list-contact > handleClickPost > contact0=', contact);
-    this.contactCrudService.postContact(this.groupId, contact);    
+    this.contactCrudService.postContact(this.groupId, contact);
   }
 
 }
