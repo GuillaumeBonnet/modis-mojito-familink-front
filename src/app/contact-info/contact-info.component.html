@@ -1,6 +1,6 @@
 <div class="CONTACT_CONTAINER">
   <div class="CONTACTSELECTION">
-    <div class="CONTACT__Gravatar" [style.border-color]="selectedContact.profil?.color | lowercase"><img src={{selectedContact.gravatar}} alt="User's gravatar" /></div>
+    <div class="CONTACT__Gravatar" [style.border-color]="selectedContact.profil?.color | lowercase"><img class="CONTACT__Image" src={{selectedContact.gravatar}} alt="User's gravatar" /></div>
     <div class="OVERVIEW">
       <div class="OVERVIEW__Profil">
         <div class="OVERVIEW__Identite">{{selectedContact.lastName | uppercase}} {{selectedContact.firstName | titlecase}}</div>

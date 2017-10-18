@@ -22,6 +22,12 @@ export class ListContactComponent implements OnInit {
   listeContact:any = [];
   groupId:number;
   selectedContact : Contact;
+
+  isDisplay: boolean = true;
+  
+  displayClick() {
+    this.isDisplay = !this.isDisplay;
+  }
   
   constructor(private apiRequestService: ApiRequestService
               , private contactCrudService: ContactCrudService
