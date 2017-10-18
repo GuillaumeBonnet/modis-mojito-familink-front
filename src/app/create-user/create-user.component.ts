@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 
+import Profil from '../models/Profil';
 import User from '../models/User';
 import Contact from "../models/Contact";
 import Coordonnees from "../models/Coordonnees";
@@ -64,24 +65,37 @@ export class CreateUserComponent implements OnInit {
   }
 
   handleSubmit(value) {
-
     console.log(this.userForm.value.email);
-    let contact = new Contact(
-      null
-      , null
-      , this.userForm.value.nom
-      , this.userForm.value.prenom
-      , null
-      , new Coordonnees(
+    let user = new User(
+      null,
+      new Contact(
         null
         , null
-        , this.userForm.value.codepostal
-        , this.userForm.value.ville
-        , this.userForm.value.telephone
-        , this.userForm.value.email
+        , this.userForm.value.nom
+        , this.userForm.value.prenom
+        ,
+        new Profil(
+          1,
+          null,
+          null
+          )
+      , new Coordonnees(
+          null
+          , this.userForm.value.adresse
+          , this.userForm.value.codepostal
+          , this.userForm.value.ville
+          , this.userForm.value.telephone
+          , this.userForm.value.email
+        )
+        , this.userForm.value.gravatar
       )
-      , this.userForm.value.gravatar)
-    this.apiRequestService.postContact(5, contact).subscribe(
+        ,  this.userForm.value.password
+    )
+    console.log(user)
+    console.log(user.contact)
+    console.log(user.contact.coordonnees)
+    console.log(user.contact.profil)
+    this.apiRequestService.postUser(user).subscribe(
       (result) => console.log("dans sub post result:", result)
       , (erreur) => console.log("dans sub post error:", erreur)
       , () => console.log("dans sub post unsub:")
