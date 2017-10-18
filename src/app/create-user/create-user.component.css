@@ -127,11 +127,13 @@ label{
 .BLOC__Select select {
   border-radius:6px;
   border:0;
-  height:30px;
+  height:33px;
   text-align:left;
-  width: 96%;
+  width: 93%;
   border: 1px solid gray;
   padding: 8px 12px !important;
+  margin-left: 11px;
+  color: gray;
 }
 
 .BLOCK__Input button {
