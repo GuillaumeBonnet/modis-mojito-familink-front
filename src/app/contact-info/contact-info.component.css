@@ -1,6 +1,6 @@
 
 .CONTACT_CONTAINER{
-    border: 2px solid #61524e;
+    /* border: 2px solid #61524e; */
     min-height: 88vh;
     display: flex;
     align-items : center;
@@ -22,6 +22,11 @@
     width: auto;
     height: auto;
     border: 3px solid;
+  }
+
+  .CONTACT__Image{
+    max-width: 80px;
+    max-height: 80px;
   }
   
   .OVERVIEW{

@@ -39,6 +39,11 @@
     border: 3px solid;
   }
 
+  .CONTACT__Image{
+    max-width: 80px;
+    max-height: 80px;
+  }
+  
   .OVERVIEW{
     width: calc(100%/5*4);
     height: inherit;
