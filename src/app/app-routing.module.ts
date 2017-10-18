@@ -18,7 +18,7 @@ export const PATH_GROUP: string = 'groups';
 export const PATH_CONTACT: string = 'contacts';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: PATH_HOME, redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'create-user', component: CreateUserComponent },
@@ -31,7 +31,7 @@ const routes: Routes = [
     path: PATH_GROUP + '/:groupId',
     component : ListContactComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: PATH_CONTACT + '/1'},// TODO change '1'
+      { path: '', pathMatch: 'full', redirectTo: PATH_CONTACT},
       { path: PATH_CONTACT + '/create-contact', component: CreateContactComponent },      
       { path: PATH_CONTACT + '/:contactId', component: ContactInfoComponent },
       { path: PATH_CONTACT + '/:contactId' + '/edit-contact', component: EditContactComponent }
@@ -40,9 +40,3 @@ const routes: Routes = [
   }
   
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

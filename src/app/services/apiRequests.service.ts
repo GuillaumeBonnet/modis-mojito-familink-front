@@ -24,15 +24,34 @@ export class ApiRequestService {
 
   constructor(private http: HttpClient) { }
 
-  //LOGINS
-  postLogin(login: Login): Observable<any> {
-    return this.http.post(apiUrl + '/login', login);
-  }
 
   //PROFILS
   getProfils(): Observable<any> {
     return this.http.get(apiUrl + '/profils/');
   }
+
+  //======================================================================================
+  //=============================USER=====================================================
+  //======================================================================================
+  postUser(user: User): Observable<any> {
+    delete (user.id);
+    delete (user.contact.id);
+    delete (user.contact.coordonnees.id);
+    console.log("############################################")
+    console.log(user)
+    console.log(user.contact)
+    console.log(user.contact.coordonnees)
+    console.log(user.contact.profil)
+    return this.http.post(apiUrl + '/user' + '/create', user);
+  }
+
+  //LOGINS
+  postLogin(login: Login): Observable<any> {
+    return this.http.post(apiUrl + '/login', login);
+  }
+
+
+
 
 
   //GROUPS : =======================================================================================================
@@ -78,19 +97,6 @@ export class ApiRequestService {
     }
 
   }
-  //======================================================================================
-  //=============================USER=====================================================
-  //======================================================================================
-  postUser(user: User): Observable<any> {
-    delete (user.id);
-    delete (user.contact.id);
-    delete (user.contact.coordonnees.id);
-    console.log("############################################")
-    console.log(user)
-    console.log(user.contact)
-    console.log(user.contact.coordonnees)
-    console.log(user.contact.profil)
-    return this.http.post(apiUrl + '/user' + '/create', user);
-  }
+
 
 }

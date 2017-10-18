@@ -1,26 +1,13 @@
 <div class="LISTGROUP_CONTAINER">
-  <!-- <a [routerLink]="" routerLinkActive="active">groups-id</a> -->
-  <!-- <a [routerLink]="['contacts', 1]" routerLinkActive="active">contact-info</a>
-  <a [routerLink]="['contacts', 'create-contact']" routerLinkActive="active">create-contact</a>
-  <a routerLink="contacts/1/edit-contact" routerLinkActive="active">edit-contact</a>
-<p></p> -->
-  <!-- <div>
-  <button (click) = "handleClickGet()">consoleLogContactHTTPget</button>
-</div>
-
-<div>
-  <button (click) = "handleClickPost()">consoleLogContactHTTPpost</button>
-</div>
-
-<div>
-  <button (click) = "handleClickDelete()">consoleLogContactHTTPdelete</button>
-</div>
-
-<div>
-  <button (click) = "handleClickUpdate()">consoleLogContactHTTPupdate</button>
-</div> -->
   <div class="OVERVIEWLISTCONTACT">
-    <div class="CONTACT">search bar</div>
+    <input class="CONTACT" type="text" name="searchText" placeholder="Rechercher">
+    <div class = "flex"> 
+      <a href = "" [routerLink]="['/groups', groupId, 'contacts', 'create-contact']"
+      routerLinkActive="active">Créer nouveau contact</a>
+      <button (click)="handleClickRefresh()">Refresh</button>
+    </div>
+   
+
     <div class="CONTACT" *ngFor="let contact of listeContact" (click)="onSelect(contact)" [class.selected]="contact === selectedContact">
       <div class="CONTACT__Gravatar" [style.border-color]="contact.profil?.color | lowercase"><img src={{contact.gravatar}} alt="User's gravatar"/></div>
       <div class="OVERVIEW">
@@ -35,7 +22,7 @@
 
   <div class="DETAILCONTACT">
       <app-contact-info [selectedContact]="selectedContact"></app-contact-info>
-    <!-- <router-outlet></router-outlet> -->
+       <!-- <router-outlet></router-outlet> -->
   </div>
 
 
