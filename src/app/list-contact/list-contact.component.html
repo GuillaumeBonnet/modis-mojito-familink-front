@@ -27,11 +27,12 @@
         <div class="OVERVIEW__Identite">{{contact.lastName | uppercase}} {{contact.firstName | titlecase}}</div>
         <div class="OVERVIEW__Identite">
           <div class="OVERVIEW__Profil">{{contact.profil?.profilName | titlecase}}</div>
-          <div class="OVERVIEW__Profil"><img class="OVERVIEW__ImageFavori" src="../../assets/Images/etoile_favori.jpg" alt="étoile des favoris"/></div>
+          <div class="OVERVIEW__Profil"><img class="OVERVIEW__ImageFavori" src="../../assets/Images/Etoile.png" alt="étoile des favoris"/></div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="DETAILCONTACT">
       <app-contact-info [selectedContact]="selectedContact"></app-contact-info>
     <!-- <router-outlet></router-outlet> -->

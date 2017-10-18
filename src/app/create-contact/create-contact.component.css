@@ -133,9 +133,10 @@ label{
   border: 0;
   height: 33px;
   text-align: left;
-  width: 91%;
-  margin-left: 15px;
-  padding-left: 4px;
+  width: 93%;
+  border: 1px solid gray;
+  padding: 8px 12px !important;
+  margin-left: 11px;
   color: gray;
 }
 
