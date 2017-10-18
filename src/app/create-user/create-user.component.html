@@ -102,10 +102,10 @@
                   <label name="profil">
                     <i class="fa fa-users" aria-hidden="true"></i>
                   </label>
-                  <select formControlName="profil"  id="profil" placeholder="Profil" name="profil *">
-                    <option value="S" name="senior">Senior</option>
+                  <select formControlName="profil" id="profil" placeholder="Profil" name="profil *"> <option *ngFor="let profil of profils" [value]="profil.id">{{profil.profilName}}</option>
+                    <!-- <option value="S" name="senior">Senior</option>
                     <option value="M" name="medecin">Medecin</option>
-                    <option value="F" name="famille">Famille</option>
+                    <option value="F" name="famille">Famille</option> -->
                   </select>
                   <div *ngIf="profilCtrl.dirty && profilCtrl.hasError('required')" class="errormessage">
                           Le champ profil doit être mentionné
@@ -122,7 +122,7 @@
 
                   <label name="gravatar"> <i class="fa fa-id-badge" aria-hidden="true"></i> </label>
 
-                  <input type="text" name="gravatar" placeholder="gravatar">
+                  <input formControlName="gravatar" type="text" name="gravatar" placeholder="gravatar">
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@
               <label name="codepostal"> <i class="fa fa-map-marker" aria-hidden="true"></i></label>
 
               <div class="BLOCK__Input">
-                <input type="text" name="codepostal" placeholder="Saisir code postal">
+                <input formControlName="codepostal" type="text" name="codepostal" placeholder="Saisir code postal">
               </div>
             </div>
             <!-- champ Adresse -->
@@ -143,7 +143,7 @@
               <div class="BLOCK__Field">
                 <label name="adresse"> <i class="fa fa-map-marker" aria-hidden="true"></i> </label>
                 <div class="BLOCK__Input">
-                  <input type="text" name="adresse" placeholder="Saisir une adresse">
+                  <input formControlName="adresse" type="text" name="adresse" placeholder="Saisir une adresse">
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@
               <div class="BLOCK__Field">
                 <label name="ville"> <i class="fa fa-map-marker" aria-hidden="true"></i>  </label>
                 <div class="BLOCK__Input">
-                  <input type="text" name="ville" placeholder="Saisir ville">
+                  <input  formControlName="ville" type="text" name="ville" placeholder="Saisir ville">
                 </div>
               </div>
             </div>
