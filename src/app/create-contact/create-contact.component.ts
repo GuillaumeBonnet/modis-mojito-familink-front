@@ -58,7 +58,7 @@ export class CreateContactComponent implements OnInit {
       codepostal : this.codepostalCtrl,
       adresse : this.adresseCtrl,
       ville : this.villeCtrl,
-      telephone : this.telephoneCtrl
+      telephone : this.telephoneCtrl,
     });
   }
 

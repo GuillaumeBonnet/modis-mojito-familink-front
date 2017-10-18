@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule, ReactiveFormsModule}    from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { CreateUserComponent } from './create-user/create-user.component';
@@ -21,11 +21,11 @@ import { ListeGroupComponent } from './liste-group/liste-group.component';
 
 import { ApiRequestService } from './services/apiRequests.service';
 import { ContactCrudService } from './services/contact-crud.service';
-import { LoginService } from "./services/login.service";
-import { HeaderInterceptorService } from "./services/header-interceptor.service"
+import { LoginService } from './services/login.service';
+import { HeaderInterceptorService } from './services/header-interceptor.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-    
+
 
 
 
@@ -58,7 +58,7 @@ import { HeaderComponent } from './header/header.component';
               ContactCrudService,
               LoginService,
               { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptorService, multi: true }
-            ], 
+            ],
 
   bootstrap: [AppComponent]
 })

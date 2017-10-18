@@ -40,6 +40,13 @@ export class ApiRequestService {
         return this.http.get(apiUrl + '/groups' + '/');         
     }
 
+    postGroup(groupe: Group): Observable<any> {
+      delete (groupe.owner);
+      delete (groupe.contacts);
+      delete (groupe.id);
+      return this.http.post(apiUrl + '/groups' + '/', groupe);         
+  }
+
     //CONTACTS : =======================================================================================================
   getContacts(idGroup:number): Observable<any> {
     return this.http.get(apiUrl + '/groups' + '/' +  idGroup + '/contacts');
