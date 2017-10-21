@@ -38,19 +38,30 @@ export class ContactCrudService {
       );
   }
 
-  postContact(groupId: number, contact:Contact): void {
-    if(contact) {
-      this.apiRequestService.postContact(groupId, contact).subscribe(
-        (retour) => { //todo retour parse id et insérer dans idContact et idCoordonnees
-            this.contactList.unshift(contact);
-            this.subjectContactList.next(this.contactList);
-        }
-        , (erreur) => console.log('contact-crud > postContact > subscribe > erreur:\n', erreur)
-        , () => console.log('contact-crud > postContact > subscribe > unsubscribe')
-      );
-    } else {
-      throw Error("pas de contact objet");
-    }
+  postContact(groupId: number, contact:Contact): Promise<any> {// if I set the type as Promise it forces me to declare a synchronous return outside of the subscribe
+    return new Promise((resolve, reject) => {
+      if(contact) {
+        this.apiRequestService.postContact(groupId, contact).subscribe(
+          (retour) => { //todo retour parse id et insérer dans idContact et idCoordonnees
+              this.contactList.unshift(contact);
+              this.subjectContactList.next(this.contactList);
+              resolve();
+          }
+          , (erreur) => {
+            console.log('contact-crud > postContact > subscribe > erreur:\n', erreur);
+            reject('contact-crud > postContact > subscribe > erreur:\n' + erreur);
+          }
+          , () => console.log('contact-crud > postContact > subscribe > unsubscribe')
+        );
+      } else {      
+        reject('contact-crud > postContact > else > mauvais contact fourni à la fn crud:\n');
+        throw Error("pas de contact objet");
+      }      
+    });
+    
+    
+    
+    
   }
 
   //update fonctionne mais retourne une erreur donc le tableau local n'est pas mis à jour

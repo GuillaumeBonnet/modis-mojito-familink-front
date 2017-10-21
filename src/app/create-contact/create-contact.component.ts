@@ -89,8 +89,9 @@ export class CreateContactComponent implements OnInit {
               , this.contactForm.value.email
                           )
         , this.contactForm.value.gravatar);
-    this.contactCrudService.postContact(Number(this.route.parent.snapshot.paramMap.get('groupId')), contactToPost);
-    setTimeout(() => this.router.navigate(['/groups', Number(this.route.parent.snapshot.paramMap.get('groupId'))]), 4000);
+    this.contactCrudService.postContact(Number(this.route.parent.snapshot.paramMap.get('groupId')), contactToPost)
+    .then(() => this.router.navigate(['/groups', Number(this.route.parent.snapshot.paramMap.get('groupId')), 'contacts', 1]));
+    //setTimeout(() => this.router.navigate(['/groups', Number(this.route.parent.snapshot.paramMap.get('groupId')), 'contacts', 1]), 4000);
   }
 
   handleClear() {

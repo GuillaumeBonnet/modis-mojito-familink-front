@@ -24,10 +24,8 @@ export class ContactInfoComponent implements OnInit {
   
 
   ngOnInit() {
-    console.log("mon Comp DEtail est init====================================================");
     this.contactCrudService.getSelectedContact().subscribe(
       (result) => {
-        console.log("dans le subcribe après return");
         this.selectedContact = result;
       }
       , (error) => console.log('contact-info > ngOnInit > subscribe > error', error)
