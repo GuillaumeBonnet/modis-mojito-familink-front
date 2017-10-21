@@ -12,6 +12,9 @@ export class ContactCrudService {
   contactList : Contact[] = [];
   subjectContactList = new Subject();
 
+  selectedContact :  Contact;
+  subjectSelectedContact = new Subject();
+
   constructor(private apiRequestService: ApiRequestService) { }
 
   contactListObservable(): Observable<any> {
@@ -83,5 +86,15 @@ export class ContactCrudService {
       throw Error("pas de contact à modifier");
     }
        
+  }
+
+  setSelectedContact(contact:Contact): void {
+    this.selectedContact = contact;
+    this.subjectSelectedContact.next(contact);
+  }
+
+  getSelectedContact(): Observable<any> {
+    setTimeout(() => this.subjectSelectedContact.next(this.selectedContact) );
+    return this.subjectSelectedContact;
   }
 }

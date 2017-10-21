@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import Contact from '../models/Contact'
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import Contact from '../models/Contact';
+import { ContactCrudService } from "../services/contact-crud.service";
+
 
 @Component({
   selector: 'app-contact-info',
@@ -8,7 +10,9 @@ import Contact from '../models/Contact'
 })
 export class ContactInfoComponent implements OnInit {
 
-  @Input()
+  constructor(private contactCrudService: ContactCrudService) { }
+
+ 
   selectedContact: Contact;
 
   isDisplay: boolean = true;
@@ -17,9 +21,16 @@ export class ContactInfoComponent implements OnInit {
     this.isDisplay = !this.isDisplay;
   }
 
-  constructor() { }
+  
 
   ngOnInit() {
+    console.log("mon Comp DEtail est init====================================================");
+    this.contactCrudService.getSelectedContact().subscribe(
+      (result) => {
+        console.log("dans le subcribe après return");
+        this.selectedContact = result;
+      }
+      , (error) => console.log('contact-info > ngOnInit > subscribe > error', error)
+      , () => console.log('contact-info > ngOnInit > subscribe > unsubscribe') );
   }
-
 }

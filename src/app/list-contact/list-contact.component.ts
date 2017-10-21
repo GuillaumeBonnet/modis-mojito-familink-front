@@ -21,7 +21,7 @@ export class ListContactComponent implements OnInit {
 
   listeContact:any = [];
   groupId:number;
-  selectedContact : Contact;
+  selectedContact: Contact;
   
   constructor(private apiRequestService: ApiRequestService
               , private contactCrudService: ContactCrudService
@@ -29,15 +29,25 @@ export class ListContactComponent implements OnInit {
               ,  private router: Router) { }
 
   ngOnInit() {
-    this.contactCrudService.contactListObservable()
-          .subscribe(
-          (retour:any) => {
-            this.listeContact = retour; 
-            this.selectedContact = this.listeContact[0];
-          }
-          , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
-          , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
-          
+    
+    this.contactCrudService.contactListObservable().subscribe(
+      (retour:any) => {
+        this.listeContact = retour; 
+        this.contactCrudService.setSelectedContact(this.listeContact[2]);
+      }
+      , (erreur) => console.log('ListContactComp > ngOnInit > contactListObservable > subcriber > erreur:', erreur)
+      , () => console.log('ListContactComp > ngOnInit > contactListObservable > subcriber > unsubscribe:')
+    );
+
+    this.contactCrudService.getSelectedContact().subscribe(
+      (result) => this.selectedContact = result
+      , (erreur) => console.log('ListContactComp > ngOnInit > getSelectedContact > subcriber > erreur:', erreur)
+      , () => console.log('ListContactComp > ngOnInit > getSelectedContact > subcriber > unsubscribe:')
+    );
+     
+  
+    
+    
     this.groupId = Number(this.route.snapshot.paramMap.get('groupId'));
     this.contactCrudService.loadList(this.groupId);  
   }
@@ -56,8 +66,12 @@ export class ListContactComponent implements OnInit {
   }
   
   onSelect(contact:Contact): void {
-    this.selectedContact = contact;
-    console.log(this.selectedContact);
+    // this.contactCrudService.setSelectedContact(contact);
+    this.router.navigate(['/groups', this.groupId, 'contacts', 1]);
+    this.contactCrudService.setSelectedContact(contact);
+    
+    console.log('list-contact > onSelect > contact :', contact);
+    
   }
 
 
