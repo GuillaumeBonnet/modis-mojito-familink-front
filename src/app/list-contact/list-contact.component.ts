@@ -33,7 +33,7 @@ export class ListContactComponent implements OnInit {
     this.contactCrudService.contactListObservable().subscribe(
       (retour:any) => {
         this.listeContact = retour; 
-        this.contactCrudService.setSelectedContact(this.listeContact[2]);
+        this.contactCrudService.setSelectedContact(this.listeContact[Number(this.route.firstChild.snapshot.params.contactId)-1]);
       }
       , (erreur) => console.log('ListContactComp > ngOnInit > contactListObservable > subcriber > erreur:', erreur)
       , () => console.log('ListContactComp > ngOnInit > contactListObservable > subcriber > unsubscribe:')
@@ -50,19 +50,6 @@ export class ListContactComponent implements OnInit {
     
     this.groupId = Number(this.route.snapshot.paramMap.get('groupId'));
     this.contactCrudService.loadList(this.groupId);  
-  }
-
-  ngOnchanges() {
-    // this.groupId = Number(this.route.snapshot.paramMap.get('groupId'));
-    // this.contactCrudService.contactListObservable()
-    // .subscribe(
-    // (retour:any) => {
-    //   this.listeContact = retour; 
-    //   this.selectedContact = this.listeContact[0];
-    // }
-    // , (erreur) => console.log('ListContactComp > ngOnInit > subcriber > erreur:', erreur)
-    // , () => console.log('ListContactComp > ngOnInit > subcriber > unsubscribe:'));
-    // this.contactCrudService.loadList(this.groupId); 
   }
   
   onSelect(contact:Contact): void {

@@ -33,7 +33,7 @@ export class ListeGroupComponent implements OnInit {
   }
 
   onSelect(group: Group): void {
-    this.router.navigate(['/groups', group.id]);
+    this.router.navigate(['/groups', group.id, 'contacts', 1]);
   }
 
   handleClickGet() {
