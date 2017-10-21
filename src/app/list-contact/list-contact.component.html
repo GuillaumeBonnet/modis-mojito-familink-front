@@ -8,7 +8,7 @@
     </div>
    
 
-    <div class="CONTACT" *ngFor="let contact of listeContact" (click)="onSelect(contact)" [class.selected]="contact === selectedContact">
+    <div class="CONTACT" *ngFor="let contact of listeContact;let i = index" (click)="onSelect(contact, i)" [class.selected]="contact === selectedContact">
       <div class="CONTACT__Gravatar" [style.border-color]="contact.profil?.color | lowercase"><img src={{contact.gravatar}} alt="User's gravatar"/></div>
       <div class="OVERVIEW">
         <div class="OVERVIEW__Identite">{{contact.lastName | uppercase}} {{contact.firstName | titlecase}}</div>

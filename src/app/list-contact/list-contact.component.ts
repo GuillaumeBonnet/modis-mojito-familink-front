@@ -52,9 +52,8 @@ export class ListContactComponent implements OnInit {
     this.contactCrudService.loadList(this.groupId);  
   }
   
-  onSelect(contact:Contact): void {
-    // this.contactCrudService.setSelectedContact(contact);
-    this.router.navigate(['/groups', this.groupId, 'contacts', 1]);
+  onSelect(contact:Contact, index:number): void {
+    this.router.navigate(['/groups', this.groupId, 'contacts', index+1]);
     this.contactCrudService.setSelectedContact(contact);
     
     console.log('list-contact > onSelect > contact :', contact);
