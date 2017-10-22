@@ -34,8 +34,8 @@
   }
 
   .CONTACT__Gravatar{
-    width: auto;
-    height: auto;
+    width: 100px;
+    height: 100px;
     border: 3px solid;
   }
 
